@@ -1,0 +1,275 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:btp:task4:proposed-input:1.0.0",
+  "title": "Proposed Task 4 input contract (live Task 3 handoff pending)",
+  "description": "A local proposed interface. Runtime adapter additionally rejects conflicting aliases and duplicate passage IDs.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "query",
+    "provenance",
+    "passages"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "query": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "kind",
+        "description"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "constructed_example",
+            "task3_output"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "passages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "passage_id"
+        ],
+        "properties": {
+          "passage_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "document_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "source_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "language": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "source_group_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "origin_document_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "source_type": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "author": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "organization": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "publication_date": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "has_citations": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": true
+          },
+          "extraction_metadata": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "method": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "extraction_method": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "page_number": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              },
+              "page_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "image_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "ocr_confidence": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "additionalProperties": true
+          },
+          "document_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "language": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_group_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "origin_document_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "extraction_method": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "method": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "page_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "image_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "page_number": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "ocr_confidence": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

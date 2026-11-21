@@ -1,0 +1,324 @@
+{
+  "schema_version": "1.0.0",
+  "query": "What does the Ramayana say about Rama and Ayodhya?",
+  "provenance": {
+    "kind": "constructed_example",
+    "description": "Developer-authored simulated passages and metadata for interface testing only. No real Task 3 output or retrieved research sources."
+  },
+  "passages": [
+    {
+      "passage_id": "HTML-IN",
+      "text": "Rama is a central character in the Ramayana, which associates his kingdom with Ayodhya.",
+      "document_id": "DOC-HTML",
+      "source_id": "SOURCE-DOC-HTML",
+      "url": "https://fixtures.invalid/doc-html",
+      "title": "Simulated html example HTML-IN",
+      "language": "en",
+      "extraction_method": "direct",
+      "source_metadata": {
+        "source_type": "academic",
+        "author": "Simulated fixture author",
+        "document_type": "html",
+        "source_country": "IN",
+        "publication_date": "2024-01-01",
+        "has_citations": false
+      }
+    },
+    {
+      "passage_id": "PDF-EN",
+      "text": "The Ramayana tells the story of Rama and describes Ayodhya as his home and kingdom.",
+      "document_id": "DOC-PDF",
+      "source_id": "SOURCE-DOC-PDF",
+      "url": "https://fixtures.invalid/doc-pdf",
+      "title": "Simulated text_pdf example PDF-EN",
+      "language": "en",
+      "extraction_method": "direct",
+      "source_metadata": {
+        "source_type": "book",
+        "author": "Simulated fixture author",
+        "document_type": "text_pdf",
+        "source_country": "IN",
+        "publication_date": "2024-01-01",
+        "has_citations": false,
+        "source_group_id": "SIMULATED-COPY-GROUP",
+        "origin_document_id": "DOC-PDF"
+      },
+      "page_number": 1,
+      "page_id": "DOC-PDF-PAGE-1"
+    },
+    {
+      "passage_id": "SCAN-HI",
+      "text": "रामायण में राम का संबंध अयोध्या से बताया गया है।",
+      "document_id": "DOC-SCAN",
+      "source_id": "SOURCE-DOC-SCAN",
+      "url": "https://fixtures.invalid/doc-scan",
+      "title": "Simulated scanned_pdf example SCAN-HI",
+      "language": "hi",
+      "extraction_method": "ocr",
+      "source_metadata": {
+        "source_type": "manuscript",
+        "author": "Simulated fixture author",
+        "document_type": "scanned_pdf",
+        "source_country": "IN",
+        "publication_date": "2024-01-01",
+        "has_citations": false
+      },
+      "page_number": 1,
+      "page_id": "DOC-SCAN-PAGE-1",
+      "ocr_confidence": 0.92
+    },
+    {
+      "passage_id": "IMAGE-HI",
+      "text": "यह उदाहरण राम और अयोध्या की रामायण परंपरा का वर्णन करता है।",
+      "document_id": "DOC-IMAGE",
+      "source_id": "SOURCE-DOC-IMAGE",
+      "url": "https://fixtures.invalid/doc-image",
+      "title": "Simulated image example IMAGE-HI",
+      "language": "hi",
+      "extraction_method": "ocr",
+      "source_metadata": {
+        "source_type": "institutional",
+        "author": "Simulated fixture author",
+        "document_type": "image",
+        "source_country": "IN",
+        "publication_date": "2024-01-01",
+        "has_citations": false
+      },
+      "image_id": "DOC-IMAGE-IMAGE-1",
+      "ocr_confidence": 0.73
+    },
+    {
+      "passage_id": "FOREIGN-REL",
+      "text": "This international literary discussion examines Rama, Ayodhya and the narrative traditions of the Ramayana.",
+      "document_id": "DOC-FOREIGN",
+      "source_id": "SOURCE-DOC-FOREIGN",
+      "url": "https://fixtures.invalid/doc-foreign",
+      "title": "Simulated html example FOREIGN-REL",
+      "language": "en",
+      "extraction_method": "direct",
+      "source_metadata": {
+        "source_type": "scholarly",
+        "author": "Simulated fixture author",
+        "document_type": "html",
+        "source_country": "GB",
+        "publication_date": "2024-01-01",
+        "has_citations": false
+      }
+    },
+    {
+      "passage_id": "TEXT-PRIMARY",
+      "text": "In the Ramayana narrative Rama leaves Ayodhya for exile and later returns to his kingdom.",
+      "document_id": "DOC-TEXT",
+      "source_id": "SOURCE-DOC-TEXT",
+      "url": "https://fixtures.invalid/doc-text",
+      "title": "Simulated text_pdf example TEXT-PRIMARY",
+      "language": "en",
+      "extraction_method": "direct",
+      "source_metadata": {
+        "source_type": "book",
+        "author": "Simulated fixture author",
+        "document_type": "text_pdf",
+        "source_country": "IN",
+        "publication_date": "2024-01-01",
+        "has_citations": false
+      },
+      "page_number": 1,
+      "page_id": "DOC-TEXT-PAGE-1"
+    },
+    {
+      "passage_id": "BLOG-REL",
+      "text": "A short discussion of Rama in the Ramayana and the epic city of Ayodhya.",
+      "document_id": "DOC-BLOG",
+      "source_id": "SOURCE-DOC-BLOG",
+      "url": "https://fixtures.invalid/doc-blog",
+      "title": "Simulated html example BLOG-REL",
+      "language": "en",
+      "extraction_method": "direct",
+      "source_metadata": {
+        "source_type": "blog",
+        "author": "Simulated fixture author",
+        "document_type": "html",
+        "source_country": "IN",
+        "publication_date": "2024-01-01",
+        "has_citations": false
+      }
+    },
+    {
+      "passage_id": "COPY-A",
+      "text": "The Ramayana tells the story of Rama and describes Ayodhya as his home and kingdom.",
+      "document_id": "DOC-COPY-A",
+      "source_id": "SOURCE-DOC-COPY-A",
+      "url": "https://fixtures.invalid/doc-copy-a",
+      "title": "Simulated html example COPY-A",
+      "language": "en",
+      "extraction_method": "direct",
+      "source_metadata": {
+        "source_type": "blog",
+        "author": "Simulated fixture author",
+        "document_type": "html",
+        "source_country": "IN",
+        "publication_date": "2024-01-01",
+        "has_citations": false,
+        "source_group_id": "SIMULATED-COPY-GROUP",
+        "origin_document_id": "DOC-PDF"
+      }
+    },
+    {
+      "passage_id": "COPY-B",
+      "text": "The Ramayana tells the story of Rama and describes Ayodhya as his home and kingdom.",
+      "document_id": "DOC-COPY-B",
+      "source_id": "SOURCE-DOC-COPY-B",
+      "url": "https://fixtures.invalid/doc-copy-b",
+      "title": "Simulated text_pdf example COPY-B",
+      "language": "en",
+      "extraction_method": "direct",
+      "source_metadata": {
+        "source_type": "book",
+        "author": "Simulated fixture author",
+        "document_type": "text_pdf",
+        "source_country": "IN",
+        "publication_date": "2024-01-01",
+        "has_citations": false,
+        "source_group_id": "SIMULATED-COPY-GROUP",
+        "origin_document_id": "DOC-PDF"
+      },
+      "page_number": 1,
+      "page_id": "DOC-COPY-B-PAGE-1"
+    },
+    {
+      "passage_id": "INDIA-UNREL",
+      "text": "ISRO and IIT researchers measured the surface of the Moon during the Chandrayaan mission. This engineering report concerns lunar instrumentation.",
+      "document_id": "DOC-ISRO",
+      "source_id": "SOURCE-DOC-ISRO",
+      "url": "https://fixtures.invalid/doc-isro",
+      "title": "Simulated html example INDIA-UNREL",
+      "language": "en",
+      "extraction_method": "direct",
+      "source_metadata": {
+        "source_type": "academic",
+        "author": "Simulated fixture author",
+        "document_type": "html",
+        "source_country": "IN",
+        "publication_date": "2024-01-01",
+        "has_citations": false
+      }
+    },
+    {
+      "passage_id": "INDIA-RAIL",
+      "text": "Indian Railways updated passenger timetables and rail infrastructure in Delhi and Mumbai.",
+      "document_id": "DOC-RAIL",
+      "source_id": "SOURCE-DOC-RAIL",
+      "url": "https://fixtures.invalid/doc-rail",
+      "title": "Simulated text_pdf example INDIA-RAIL",
+      "language": "en",
+      "extraction_method": "direct",
+      "source_metadata": {
+        "source_type": "institutional",
+        "author": "Simulated fixture author",
+        "document_type": "text_pdf",
+        "source_country": "IN",
+        "publication_date": "2024-01-01",
+        "has_citations": false
+      },
+      "page_number": 1,
+      "page_id": "DOC-RAIL-PAGE-1"
+    },
+    {
+      "passage_id": "INDIA-RIVER",
+      "text": "Hydrological instruments measured Ganga river flow near Varanasi during the monsoon.",
+      "document_id": "DOC-RIVER",
+      "source_id": "SOURCE-DOC-RIVER",
+      "url": "https://fixtures.invalid/doc-river",
+      "title": "Simulated scanned_pdf example INDIA-RIVER",
+      "language": "en",
+      "extraction_method": "ocr",
+      "source_metadata": {
+        "source_type": "academic",
+        "author": "Simulated fixture author",
+        "document_type": "scanned_pdf",
+        "source_country": "IN",
+        "publication_date": "2024-01-01",
+        "has_citations": false
+      },
+      "page_number": 1,
+      "page_id": "DOC-RIVER-PAGE-1",
+      "ocr_confidence": 0.92
+    },
+    {
+      "passage_id": "WEATHER",
+      "text": "The local forecast predicts sunshine with a chance of rain in the evening.",
+      "document_id": "DOC-WEATHER",
+      "source_id": "SOURCE-DOC-WEATHER",
+      "url": "https://fixtures.invalid/doc-weather",
+      "title": "Simulated html example WEATHER",
+      "language": "en",
+      "extraction_method": "direct",
+      "source_metadata": {
+        "source_type": "news",
+        "author": "Simulated fixture author",
+        "document_type": "html",
+        "source_country": "IN",
+        "publication_date": "2024-01-01",
+        "has_citations": false
+      }
+    },
+    {
+      "passage_id": "COOKING",
+      "text": "Boil potatoes until tender, mash them and stir in butter and salt.",
+      "document_id": "DOC-COOK",
+      "source_id": "SOURCE-DOC-COOK",
+      "url": "https://fixtures.invalid/doc-cook",
+      "title": "Simulated image example COOKING",
+      "language": "en",
+      "extraction_method": "ocr",
+      "source_metadata": {
+        "source_type": "blog",
+        "author": "Simulated fixture author",
+        "document_type": "image",
+        "source_country": "IN",
+        "publication_date": "2024-01-01",
+        "has_citations": false
+      },
+      "image_id": "DOC-COOK-IMAGE-1",
+      "ocr_confidence": 0.92
+    },
+    {
+      "passage_id": "MATH",
+      "text": "A triangle has three sides. Its interior angles sum to one hundred and eighty degrees in Euclidean geometry.",
+      "document_id": "DOC-MATH",
+      "source_id": "SOURCE-DOC-MATH",
+      "url": "https://fixtures.invalid/doc-math",
+      "title": "Simulated text_pdf example MATH",
+      "language": "en",
+      "extraction_method": "direct",
+      "source_metadata": {
+        "source_type": "book",
+        "author": "Simulated fixture author",
+        "document_type": "text_pdf",
+        "source_country": "IN",
+        "publication_date": "2024-01-01",
+        "has_citations": false
+      },
+      "page_number": 1,
+      "page_id": "DOC-MATH-PAGE-1"
+    },
+    {
+      "passage_id": "EUROPE",
+      "text": "The archive catalog describes railway construction and industrial machinery in nineteenth century Europe.",
+      "document_id": "DOC-EUROPE",
+      "source_id": "SOURCE-DOC-EUROPE",
+      "url": "https://fixtures.invalid/doc-europe",
+      "title": "Simulated html example EUROPE",
+      "language": "en",
+      "extraction_method": "direct",
+      "source_metadata": {
+        "source_type": "academic",
+        "author": "Simulated fixture author",
+        "document_type": "html",
+        "source_country": "IN",
+        "publication_date": "2024-01-01",
+        "has_citations": false
+      }
+    }
+  ]
+}

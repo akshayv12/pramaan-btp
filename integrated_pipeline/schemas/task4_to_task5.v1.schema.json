@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:btp:task4:proposed-output:1.0.0",
+  "title": "Proposed ranked-evidence wrapper for a future consumer",
+  "description": "No summarizer is connected. This envelope contains evidence and a consumer-stub label, not a generated answer or reliability percentage.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "query",
+    "status",
+    "ranked_evidence",
+    "traceability",
+    "provenance",
+    "is_simulated",
+    "integration"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "query": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "ok",
+        "no_relevant_evidence"
+      ]
+    },
+    "ranked_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rank",
+          "passage_id",
+          "text",
+          "query_relevance",
+          "indian_context_relevance",
+          "source_signal",
+          "final_score"
+        ],
+        "properties": {
+          "rank": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "passage_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "query_relevance": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "indian_context_relevance": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "source_signal": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "final_score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "feature_breakdown": {
+            "type": "object"
+          },
+          "provenance": {
+            "type": "object"
+          },
+          "source_support": {
+            "type": "object",
+            "description": "Preserved group counters describe all input candidates before relevance filtering; no independent-source agreement is established."
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "kind",
+        "description"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "constructed_example",
+            "task3_output"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "is_simulated": {
+      "type": "boolean"
+    },
+    "traceability": {
+      "type": "object",
+      "required": [
+        "selected_evidence_ids",
+        "selected_references",
+        "references_available",
+        "source_support_scope",
+        "source_independence_established",
+        "text_similarity_establishes_agreement"
+      ],
+      "properties": {
+        "selected_evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "selected_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "passage_id",
+              "reference_available"
+            ],
+            "properties": {
+              "passage_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reference_available": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "references_available": {
+          "type": "boolean"
+        },
+        "source_support_scope": {
+          "enum": [
+            "all_input_candidates_before_filtering",
+            "not_included"
+          ]
+        },
+        "source_independence_established": {
+          "const": false
+        },
+        "text_similarity_establishes_agreement": {
+          "const": false
+        }
+      },
+      "additionalProperties": true
+    },
+    "integration": {
+      "type": "object",
+      "required": [
+        "task3",
+        "task5",
+        "actual_task5_available"
+      ],
+      "properties": {
+        "task3": {
+          "enum": [
+            "constructed_fixture",
+            "supplied_package"
+          ]
+        },
+        "task5": {
+          "const": "consumer_stub_only"
+        },
+        "actual_task5_available": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

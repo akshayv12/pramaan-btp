@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0.0",
+  "query": "How can researchers use these manuscript collections?",
+  "status": "ok",
+  "ranked_evidence": [
+    {
+      "rank": 1,
+      "passage_id": "document 1/page 1",
+      "text": "The archive provides a public catalogue of manuscripts. Researchers can request reading-room access.",
+      "query_relevance": 0.9,
+      "indian_context_relevance": 0.4,
+      "source_signal": 0.8,
+      "final_score": 0.85,
+      "provenance": {
+        "source_metadata": {
+          "document_id": "D1",
+          "url": "https://archive.fixtures.invalid/catalogue",
+          "title": "Constructed source 1",
+          "source_type": "institutional",
+          "language": "en"
+        },
+        "extraction_metadata": {
+          "method": "DIRECT_EXTRACTION",
+          "page_number": 1
+        }
+      }
+    },
+    {
+      "rank": 2,
+      "passage_id": "document 2/page 1",
+      "text": "The library helps researchers locate manuscript collections. Staff provide catalogue guidance and reference assistance.",
+      "query_relevance": 0.9,
+      "indian_context_relevance": 0.4,
+      "source_signal": 0.8,
+      "final_score": 0.85,
+      "provenance": {
+        "source_metadata": {
+          "document_id": "D2",
+          "url": "https://library.fixtures.invalid/catalogue",
+          "title": "Constructed source 2",
+          "source_type": "institutional",
+          "language": "en"
+        },
+        "extraction_metadata": {
+          "method": "DIRECT_EXTRACTION",
+          "page_number": 1
+        }
+      }
+    }
+  ],
+  "is_simulated": true,
+  "provenance": {
+    "kind": "constructed_example",
+    "description": "Locally authored contract example; no live source or factual accuracy claim."
+  },
+  "traceability": {
+    "selected_evidence_ids": [
+      "document 1/page 1",
+      "document 2/page 1"
+    ],
+    "selected_references": [
+      {
+        "passage_id": "document 1/page 1",
+        "document_id": "D1",
+        "url": "https://archive.fixtures.invalid/catalogue",
+        "title": "Constructed source 1",
+        "language": "en",
+        "method": "DIRECT_EXTRACTION",
+        "page_number": 1,
+        "reference_available": true
+      },
+      {
+        "passage_id": "document 2/page 1",
+        "document_id": "D2",
+        "url": "https://library.fixtures.invalid/catalogue",
+        "title": "Constructed source 2",
+        "language": "en",
+        "method": "DIRECT_EXTRACTION",
+        "page_number": 1,
+        "reference_available": true
+      }
+    ],
+    "references_available": true,
+    "source_support_scope": "not_included",
+    "source_independence_established": false,
+    "text_similarity_establishes_agreement": false
+  },
+  "integration": {
+    "task3": "constructed_fixture",
+    "task5": "consumer_stub_only",
+    "actual_task5_available": false
+  }
+}

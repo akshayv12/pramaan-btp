@@ -1,0 +1,22 @@
+{
+  "schema_version": "task5.support_policy.v1",
+  "high_requires_nli_entailment": false,
+  "high_allow_unknown_source_with_nli": false,
+  "calibration": {
+    "status": "model_judged_pilot",
+    "query_count": 35,
+    "development_queries": 20,
+    "heldout_queries": 10,
+    "heldout_evaluated": true,
+    "human_review_attested": false,
+    "reference_labels": "blinded Gemini judgments with machine-authored source references",
+    "judge_model": "gemini-3.5-flash-lite",
+    "fit_objective": "4 * false High labels + missed High labels; fixed citation, conflict, OCR and question-coverage guards",
+    "note": "Pilot tuning against fallible model judgments, not human calibration or a truth probability.",
+    "deployment_review": "Website defaults to Gemini selection/review when configured. CLI retains same-provider default. Local Qwen self-review High is provisionally capped at Medium after two held-out overratings; Gemini-reviewed Qwen is eligible for High.",
+    "supplementary_queries": 5
+  },
+  "high_blocked_judge_models": [
+    "qwen3:4b-instruct-2507-q4_K_M"
+  ]
+}

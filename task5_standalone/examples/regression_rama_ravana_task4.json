@@ -1,0 +1,2472 @@
+{
+  "task4_output": {
+    "schema_version": "1.0",
+    "task3_summary": {
+      "processed": 4,
+      "duplicate": 0,
+      "empty": 5,
+      "skipped": 2,
+      "failed": 0,
+      "total_documents": 11,
+      "total_passages": 52
+    },
+    "ranking": {
+      "top_k": 24,
+      "config": {
+        "relevance_weights": {
+          "lexical_weight": 1.0,
+          "semantic_weight": 0.0
+        },
+        "semantic_model": {
+          "name": ".venv/models/bge-m3",
+          "batch_size": 4,
+          "device": "cpu",
+          "cache_folder": ".venv/models",
+          "revision": "9a0624b896d81da7492a910ffa53731274b6cf3d",
+          "local_files_only": true
+        },
+        "context_weights": {
+          "w_script": 0.2615554450139791,
+          "w_entity": 0.1836532824196681,
+          "w_place": 0.06080958218468986,
+          "w_institution": 0.08834378821779065,
+          "w_primary": 0.09970942342209287,
+          "w_vocab": 0.08436449382426534,
+          "w_query_ctx": 0.22156398491751406
+        },
+        "ranking_weights": {
+          "query_relevance_weight": 0.430406653580725,
+          "indian_context_weight": 0.40340182045583983,
+          "evidence_weight": 0.1661915259634352
+        },
+        "filter": {
+          "enabled": false,
+          "threshold": 0.0
+        },
+        "evidence": {
+          "reference_date": "2026-11-12",
+          "duplicate_threshold": 0.92,
+          "related_text_threshold": 0.65
+        },
+        "output": {
+          "include_feature_breakdown": true,
+          "include_provenance": true,
+          "include_source_support": true
+        }
+      }
+    },
+    "queries": [
+      {
+        "schema_version": "1.0.0",
+        "query": "why rama and ravana fought each oher?",
+        "status": "ok",
+        "ranked_evidence": [
+          {
+            "rank": 1,
+            "passage_id": "a34cec27_p1_chunk1",
+            "text": "WhatsApp Facebook X Telegram Pinterest Advertisement\nLast updated: 25 October 2026\nQuick answer: Dussehra (Vijayadashami) celebrates two victories at once: Lord Rama 's victory over Ravana, told in the Ramayana , and Goddess Durga 's victory over the buffalo-demon Mahishasura, told in the Devi Mahatmya. North and west India mostly remember Rama with Ramlila and Ravana Dahan; eastern India mostly remembers Durga at the end of Durga Puja. Both stories carry one message: dharma wins in the end. In 2026, Vijayadashami was on Tuesday 20 October (Drik Panchang )\nAdvertisement\nThis guide tells both legends in more detail, as the main texts tell them, and explains how they come together on one festival. For dates, muhurat and puja, see our Dussehra 2026 guide\nThe two Dussehra legends at a glance\nRama and Ravana Durga and Mahishasura\nMain text Valmiki Ramayana, Yuddha Kanda; Tulsidas's Ramcharitmanas, Lanka Kand Devi Mahatmya (Durga Saptashati), chapters 2 to 4, in the Markandeya Purana\nThe wrong Ravana carries Sita away from Panchavati Mahishasura defeats the gods and takes over heaven\nThe hero Rama, with Lakshmana, Hanuman, Sugriva and Vibhishana The Devi, formed from the radiance of all the gods\nThe end Rama kills Ravana in battle at Lanka The Devi slays Mahishasura; she is praised as Mahishasura Mardini\nHow it is celebrated Ramlila, Ravana Dahan, Bharat Milap Durga Puja, Sindoor Khela, immersion, Navratri worship\nRama and Ravana: the story from the Ramayana\nExile and the abduction of Sita",
+            "query_relevance": 0.081,
+            "indian_context_relevance": 0.62,
+            "source_signal": 0.769,
+            "final_score": 0.413,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 1.0,
+                "place_feature": 0.5,
+                "institution_feature": 0.0,
+                "primary_text_feature": 1.0,
+                "contextual_vocab_feature": 1.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.985,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "a34cec27",
+                "url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+                "canonical_url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura",
+                "domain": "hindutone.com",
+                "title": "Dussehra Story: Both Legends of Vijayadashami",
+                "author": "HinduTone Dharma Desk",
+                "publication_date": "2026-06-04",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "34488341_dussehra-story-rama-ravana-durga-mahishasura.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/34488341_dussehra-story-rama-ravana-durga-mahishasura.html",
+                "word_count": 242
+              }
+            },
+            "source_support": {
+              "document_id": "document:a34cec27",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:hindutone.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+              "origin_group_id": "document:a34cec27",
+              "same_origin_passage_ids": [
+                "a34cec27_p1_chunk10",
+                "a34cec27_p1_chunk11",
+                "a34cec27_p1_chunk12",
+                "a34cec27_p1_chunk13",
+                "a34cec27_p1_chunk2",
+                "a34cec27_p1_chunk3",
+                "a34cec27_p1_chunk4",
+                "a34cec27_p1_chunk5",
+                "a34cec27_p1_chunk6",
+                "a34cec27_p1_chunk7",
+                "a34cec27_p1_chunk8",
+                "a34cec27_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 2,
+            "passage_id": "a34cec27_p1_chunk2",
+            "text": "How it is celebrated Ramlila, Ravana Dahan, Bharat Milap Durga Puja, Sindoor Khela, immersion, Navratri worship Rama and Ravana: the story from the Ramayana Exile and the abduction of Sita\nRama, prince of Ayodhya, went into fourteen years of forest exile to keep his father Dasharatha's promise, with his wife Sita and brother Lakshmana. While they lived at Panchavati, Ravana, the ten-headed king of Lanka, sent the demon Maricha in the form of a golden deer to lure the brothers away. Ravana then carried Sita off in his aerial chariot. The old vulture Jatayu fought to stop him and was mortally wounded\nAdvertisement\nHanuman, Sugriva and the bridge to Lanka\nSearching for Sita, Rama and Lakshmana met Hanuman and the vanara king Sugriva in Kishkindha. Hanuman leapt across the sea, found Sita in Ravana's Ashoka grove, gave her Rama's ring and, before returning, set Lanka on fire with his burning tail. Ravana's brother Vibhishana advised him to return Sita; when Ravana refused, Vibhishana crossed over to Rama. The vanara army then built a bridge (setu) to Lanka under the direction of Nala\nAdvertisement\nThe war and the fall of Ravana\nIn the long war, Ravana's brother Kumbhakarna and his son Indrajit fell, Indrajit at Lakshmana's hands. When Rama stood weary before the final battle with Ravana, the sage Agastya came to him and taught him the Aditya Hridayam, a hymn to the Sun. Its opening verses describe that moment\nततो युद्धपरिश्रान्तं समरे चिन्तया स्थितम् ।",
+            "query_relevance": 0.111,
+            "indian_context_relevance": 0.568,
+            "source_signal": 0.769,
+            "final_score": 0.405,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.038,
+                "entity_feature": 1.0,
+                "place_feature": 1.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.5,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.985,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "a34cec27",
+                "url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+                "canonical_url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura",
+                "domain": "hindutone.com",
+                "title": "Dussehra Story: Both Legends of Vijayadashami",
+                "author": "HinduTone Dharma Desk",
+                "publication_date": "2026-06-04",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Mixed",
+                "detected_language": "Sanskrit (Fallback)",
+                "task3_reliability": "HIGH",
+                "source_file": "34488341_dussehra-story-rama-ravana-durga-mahishasura.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/34488341_dussehra-story-rama-ravana-durga-mahishasura.html",
+                "word_count": 245
+              }
+            },
+            "source_support": {
+              "document_id": "document:a34cec27",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:hindutone.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+              "origin_group_id": "document:a34cec27",
+              "same_origin_passage_ids": [
+                "a34cec27_p1_chunk1",
+                "a34cec27_p1_chunk10",
+                "a34cec27_p1_chunk11",
+                "a34cec27_p1_chunk12",
+                "a34cec27_p1_chunk13",
+                "a34cec27_p1_chunk3",
+                "a34cec27_p1_chunk4",
+                "a34cec27_p1_chunk5",
+                "a34cec27_p1_chunk6",
+                "a34cec27_p1_chunk7",
+                "a34cec27_p1_chunk8",
+                "a34cec27_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 3,
+            "passage_id": "a34cec27_p1_chunk10",
+            "text": "face every trial, and wisdom to walk the path of dharma. Keep my family safe, united and free of negativity, and let your light always shine in our home Advertisement\nUse the share buttons on this page to send these blessings to your family and friends\nFrequently asked questions\nWhat is the story behind Dussehra?\nAs commonly told, Dussehra celebrates two victories: Lord Rama defeating Ravana, the king of Lanka, as told in the Ramayana, and Goddess Durga slaying the buffalo-demon Mahishasura, as told in the Devi Mahatmya. Both mark the triumph of dharma on the tenth day\nWhy did Lord Rama fight Ravana?\nRavana carried Sita away from the forest hermitage at Panchavati. Rama, with Lakshmana, Hanuman, Sugriva's army and Vibhishana, crossed to Lanka and fought to bring her back after Ravana refused to return her\nHow did Goddess Durga defeat Mahishasura?\nIn the Devi Mahatmya, the radiance of all the gods joins to form the Devi, and each god gives her a weapon. Mahishasura changes form again and again, as buffalo, lion, man and elephant, until the Devi pins him down, pierces him with her trident and cuts off his head\nWhich scriptures tell the two Dussehra stories?\nRama's war with Ravana is told in the Yuddha Kanda of the Valmiki Ramayana and in later versions such as Tulsidas's Ramcharitmanas. Durga's victory over Mahishasura is told in chapters 2 to 4 of the Devi Mahatmya, part of the Markandeya Purana\nDoes the Ramayana say Ravana died on Vijayadashami?",
+            "query_relevance": 0.119,
+            "indian_context_relevance": 0.547,
+            "source_signal": 0.769,
+            "final_score": 0.4,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 1.0,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 1.0,
+                "contextual_vocab_feature": 0.5,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.985,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "a34cec27",
+                "url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+                "canonical_url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura",
+                "domain": "hindutone.com",
+                "title": "Dussehra Story: Both Legends of Vijayadashami",
+                "author": "HinduTone Dharma Desk",
+                "publication_date": "2026-06-04",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "34488341_dussehra-story-rama-ravana-durga-mahishasura.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/34488341_dussehra-story-rama-ravana-durga-mahishasura.html",
+                "word_count": 250
+              }
+            },
+            "source_support": {
+              "document_id": "document:a34cec27",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:hindutone.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+              "origin_group_id": "document:a34cec27",
+              "same_origin_passage_ids": [
+                "a34cec27_p1_chunk1",
+                "a34cec27_p1_chunk11",
+                "a34cec27_p1_chunk12",
+                "a34cec27_p1_chunk13",
+                "a34cec27_p1_chunk2",
+                "a34cec27_p1_chunk3",
+                "a34cec27_p1_chunk4",
+                "a34cec27_p1_chunk5",
+                "a34cec27_p1_chunk6",
+                "a34cec27_p1_chunk7",
+                "a34cec27_p1_chunk8",
+                "a34cec27_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 4,
+            "passage_id": "c78ae9d2_p1_chunk8",
+            "text": "devoted husband who never touched Sita against her will. His downfall was not a lack of knowledge but a surplus of pride Why is Ravana worshiped in some Hindu communities?\nSome groups, especially in parts of Maharashtra and Madhya Pradesh, honor him as a wise king and a scholar of the Atharva Veda . His ten heads are seen as a symbol of intellectual mastery, not evil\nWhat is the deeper meaning of Rama’s arrow hitting Ravana’s navel?\nThe navel is the center of the manipura chakra, the seat of ego and personal power. The arrow represents the cutting of the ego’s attachment to the body. Without that attachment, the amrita of immortality drains away\nHow does the Ramayana relate to Hindu esotericism?\nThe Ramayana is a coded text for the practice of sadhana . Rama is the soul, Sita is the mind, Hanuman is the breath, and Ravana is the ego. The war is the path of yoga\nThe Lesson of the Burning Effigy\nThe effigy burns every year. The crowd cheers, then goes home. The heads are gone, but Ravana is not dead. He is waiting in the next year’s bamboo and paper, and in the heads of everyone who watched",
+            "query_relevance": 0.041,
+            "indian_context_relevance": 0.608,
+            "source_signal": 0.7,
+            "final_score": 0.379,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 1.0,
+                "place_feature": 1.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 1.0,
+                "contextual_vocab_feature": 0.5,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "c78ae9d2",
+                "url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+                "canonical_url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why",
+                "domain": "legrandgrimoire.com",
+                "title": "Rama vs Ravana: who wins and why",
+                "author": "Le Grand Grimoire",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "why rama and ravana fought each oher?"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "cca1848c_rama-vs-ravana-who-wins-and-why.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/cca1848c_rama-vs-ravana-who-wins-and-why.html",
+                "word_count": 203
+              }
+            },
+            "source_support": {
+              "document_id": "document:c78ae9d2",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:legrandgrimoire.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+              "origin_group_id": "document:c78ae9d2",
+              "same_origin_passage_ids": [
+                "c78ae9d2_p1_chunk1",
+                "c78ae9d2_p1_chunk2",
+                "c78ae9d2_p1_chunk3",
+                "c78ae9d2_p1_chunk4",
+                "c78ae9d2_p1_chunk5",
+                "c78ae9d2_p1_chunk6",
+                "c78ae9d2_p1_chunk7",
+                "c78ae9d2_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 5,
+            "passage_id": "a34cec27_p1_chunk11",
+            "text": "Tulsidas's Ramcharitmanas. Durga's victory over Mahishasura is told in chapters 2 to 4 of the Devi Mahatmya, part of the Markandeya Purana Does the Ramayana say Ravana died on Vijayadashami?\nThe link between Rama's victory and Vijayadashami comes from long-standing tradition, Ramlila performances and regional calendars. Different traditions place the events on different days, so it is best described as the tradition behind the festival\nWhen was Dussehra in 2026?\nDussehra (Vijayadashami) 2026 was on Tuesday 20 October 2026 in India, after Sharad Navratri from Sunday 11 to Monday 19 October, per Drik Panchang\nWhat is the message of the Dussehra story?\nBoth legends teach that dharma prevails over adharma. Many people take Vijayadashami as a day to let go of their own inner Ravana, such as pride, anger and greed, and to begin good work with courage\nEditor's note\nEditor's note (25 October 2026): This page was expanded on 25 October 2026. The stories follow the Valmiki Ramayana (Yuddha Kanda) and the Devi Mahatmya (chapters 2 to 4); details differ between regional versions, and the link with the tenth day is presented as tradition. Sanskrit verses are taken from sanskritdocuments.org texts (Aditya Hridayam verses 1 and 2; Mahishasura Mardini Stotram verse 1). The 2026 dates are from Drik Panchang for New Delhi\nExplore more on HinduTone\nDussehra / Vijayadashami 2026: complete guide\nRavana Dahan: why we burn Ravana and what it means\nNavratri 2026: the nine days of worship\nSaraswati Puja and Vidyarambham on Vijayadashami\nAdvertisement",
+            "query_relevance": 0.039,
+            "indian_context_relevance": 0.558,
+            "source_signal": 0.769,
+            "final_score": 0.37,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 0.5,
+                "place_feature": 1.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 1.0,
+                "contextual_vocab_feature": 1.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.985,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "a34cec27",
+                "url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+                "canonical_url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura",
+                "domain": "hindutone.com",
+                "title": "Dussehra Story: Both Legends of Vijayadashami",
+                "author": "HinduTone Dharma Desk",
+                "publication_date": "2026-06-04",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "34488341_dussehra-story-rama-ravana-durga-mahishasura.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/34488341_dussehra-story-rama-ravana-durga-mahishasura.html",
+                "word_count": 247
+              }
+            },
+            "source_support": {
+              "document_id": "document:a34cec27",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:hindutone.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+              "origin_group_id": "document:a34cec27",
+              "same_origin_passage_ids": [
+                "a34cec27_p1_chunk1",
+                "a34cec27_p1_chunk10",
+                "a34cec27_p1_chunk12",
+                "a34cec27_p1_chunk13",
+                "a34cec27_p1_chunk2",
+                "a34cec27_p1_chunk3",
+                "a34cec27_p1_chunk4",
+                "a34cec27_p1_chunk5",
+                "a34cec27_p1_chunk6",
+                "a34cec27_p1_chunk7",
+                "a34cec27_p1_chunk8",
+                "a34cec27_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 6,
+            "passage_id": "c78ae9d2_p1_chunk3",
+            "text": "esoteric traditions read the navel as the manipura chakra, the burning center of ego and desire. The arrow is knowledge. The sun is the self Where the Story Comes From\nThe Ramayana predates written history. Valmiki’s Sanskrit version is the earliest text, but oral traditions reach back further. The epic was retold across Asia: the Thai Ramakien , the Indonesian Kakawin Ramayana , the Cambodian Reamker . In each, the core remains: a king who overreaches, a prince who restores order\nBy the 16th century, Tulsidas composed the Ramcharitmanas in Awadhi, a vernacular Hindi. This version became the devotional standard for northern India. In it, Rama is not just a prince but God himself, and Ravana’s sin is not simply kidnapping Sita but the arrogance of placing himself above the divine\nThe battle is fought on a precise geography. Lanka is described as a golden city on a mountain, surrounded by a moat of fire. The bridge Rama builds — the Rama Setu — is still debated by geologists. Some say it is a natural formation. Others say it was built\nRama and Ravana as Two Selves\nEsoteric Hinduism reads the Ramayana as a map of the psyche. Rama is the jivatman (the individual soul) governed by dharma. Ravana is the ahamkara (the ego) with its ten heads: the five jnanendriyas (senses of perception) and five karmendriyas (organs of action). The ten heads are not a deformity. They are a catalogue of hunger",
+            "query_relevance": 0.093,
+            "indian_context_relevance": 0.528,
+            "source_signal": 0.7,
+            "final_score": 0.369,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 1.0,
+                "place_feature": 0.5,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.5,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "c78ae9d2",
+                "url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+                "canonical_url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why",
+                "domain": "legrandgrimoire.com",
+                "title": "Rama vs Ravana: who wins and why",
+                "author": "Le Grand Grimoire",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "why rama and ravana fought each oher?"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "cca1848c_rama-vs-ravana-who-wins-and-why.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/cca1848c_rama-vs-ravana-who-wins-and-why.html",
+                "word_count": 243
+              }
+            },
+            "source_support": {
+              "document_id": "document:c78ae9d2",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:legrandgrimoire.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+              "origin_group_id": "document:c78ae9d2",
+              "same_origin_passage_ids": [
+                "c78ae9d2_p1_chunk1",
+                "c78ae9d2_p1_chunk2",
+                "c78ae9d2_p1_chunk4",
+                "c78ae9d2_p1_chunk5",
+                "c78ae9d2_p1_chunk6",
+                "c78ae9d2_p1_chunk7",
+                "c78ae9d2_p1_chunk8",
+                "c78ae9d2_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 7,
+            "passage_id": "a34cec27_p1_chunk3",
+            "text": "Ravana, the sage Agastya came to him and taught him the Aditya Hridayam, a hymn to the Sun. Its opening verses describe that moment ततो युद्धपरिश्रान्तं समरे चिन्तया स्थितम् ।\nरावणं चाग्रतो दृष्ट्वा युद्धाय समुपस्थितम् ॥ १॥\ntato yuddhapariśrāntaṃ samare cintayā sthitam\nrāvaṇaṃ cāgrato dṛṣṭvā yuddhāya samupasthitam || 1\nदैवतैश्च समागम्य द्रष्टुमभ्यागतो रणम् ।\nउपागम्याब्रवीद्राममगस्त्यो भगवानृषिः ॥ २॥\ndaivataiśca samāgamya draṣṭumabhyāgato raṇam\nupāgamyābravīdrāmamagastyo bhagavānṛṣiḥ || 2\nMeaning: Then, seeing Rama exhausted by the battle and standing lost in thought, with Ravana before him ready to fight, the revered sage Agastya, who had come with the gods to watch the battle, approached Rama and spoke. The full hymn is in our Aditya Hridayam guide\nAdvertisement\nRama then fought Ravana and finally struck him down with a weapon empowered by Brahma. Vibhishana was crowned king of Lanka, and Rama returned to Ayodhya with Sita and Lakshmana, a homecoming that many families remember at Diwali\nRavana: more than a villain\nTradition also remembers Ravana as a learned scholar and a devotee of Shiva; the Shiva Tandava Stotram is attributed to him (see our Shiva Tandava Stotram guide ). His fall is told as the result of pride and desire, not lack of learning. The ten heads are often read as ten faults to overcome; see the ten heads of Ravana explained and Ravana Dahan: meaning and significance\nAdvertisement\nDurga and Mahishasura: the story from the Devi Mahatmya\nMahishasura conquers heaven",
+            "query_relevance": 0.103,
+            "indian_context_relevance": 0.474,
+            "source_signal": 0.769,
+            "final_score": 0.363,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.148,
+                "entity_feature": 1.0,
+                "place_feature": 0.5,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.0,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.985,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "a34cec27",
+                "url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+                "canonical_url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura",
+                "domain": "hindutone.com",
+                "title": "Dussehra Story: Both Legends of Vijayadashami",
+                "author": "HinduTone Dharma Desk",
+                "publication_date": "2026-06-04",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Mixed",
+                "detected_language": "Sanskrit",
+                "task3_reliability": "HIGH",
+                "source_file": "34488341_dussehra-story-rama-ravana-durga-mahishasura.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/34488341_dussehra-story-rama-ravana-durga-mahishasura.html",
+                "word_count": 237
+              }
+            },
+            "source_support": {
+              "document_id": "document:a34cec27",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:hindutone.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+              "origin_group_id": "document:a34cec27",
+              "same_origin_passage_ids": [
+                "a34cec27_p1_chunk1",
+                "a34cec27_p1_chunk10",
+                "a34cec27_p1_chunk11",
+                "a34cec27_p1_chunk12",
+                "a34cec27_p1_chunk13",
+                "a34cec27_p1_chunk2",
+                "a34cec27_p1_chunk4",
+                "a34cec27_p1_chunk5",
+                "a34cec27_p1_chunk6",
+                "a34cec27_p1_chunk7",
+                "a34cec27_p1_chunk8",
+                "a34cec27_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 8,
+            "passage_id": "a34cec27_p1_chunk8",
+            "text": "children, see our shorter Dussehra story for kids . For the longer narratives, read the Ramayana simplified and the story of Goddess Durga and Mahishasura Share the Vijayadashami 2026 blessing\nOn Vijayadashami we remember, as commonly told, how Maa Durga vanquished Mahishasura and how Lord Rama triumphed over Ravana. These stories remind us that dharma always prevails, that light overcomes darkness, and that courage rooted in faith never fails. Sharing a blessing on this sacred day is a small act of love that carries that victory into every home. Take a moment today to send one of these heartfelt wishes to your family and dear ones\nAdvertisement\nShami shloka for Vijayadashami\nशमी शमयते पापं शमी शत्रुविनाशिनी। अर्जुनस्य धनुर्धारी रामस्य प्रियदर्शिनी॥\nShami shamayate papam shami shatru-vinashini, arjunasya dhanurdhari ramasya priyadarshini\nMeaning: The Shami tree takes away sin and destroys enemies; it held Arjuna's bow and is dear to Lord Rama. Many families recite this while offering Shami (Jammi) leaves on Vijayadashami\nRama mantra to chant on Dussehra\nरामाय रामभद्राय रामचन्द्राय वेधसे। रघुनाथाय नाथाय सीतायाः पतये नमः॥\nRamaya ramabhadraya ramachandraya vedhase, raghunathaya nathaya sitayah pataye namah\nMeaning: Salutations to Rama, to Ramabhadra, to Ramachandra the creator, to the lord of the Raghu clan, to the husband of Sita\nAdvertisement\nVijayadashami 2026 messages to share\nMay the light of Vijayadashami fill our home with peace, love and togetherness. Happy Dussehra to my dearest family! 🪔 Share on WhatsApp",
+            "query_relevance": 0.043,
+            "indian_context_relevance": 0.529,
+            "source_signal": 0.769,
+            "final_score": 0.36,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.122,
+                "entity_feature": 1.0,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.5,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.985,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "a34cec27",
+                "url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+                "canonical_url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura",
+                "domain": "hindutone.com",
+                "title": "Dussehra Story: Both Legends of Vijayadashami",
+                "author": "HinduTone Dharma Desk",
+                "publication_date": "2026-06-04",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Mixed",
+                "detected_language": "Sanskrit",
+                "task3_reliability": "HIGH",
+                "source_file": "34488341_dussehra-story-rama-ravana-durga-mahishasura.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/34488341_dussehra-story-rama-ravana-durga-mahishasura.html",
+                "word_count": 235
+              }
+            },
+            "source_support": {
+              "document_id": "document:a34cec27",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:hindutone.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+              "origin_group_id": "document:a34cec27",
+              "same_origin_passage_ids": [
+                "a34cec27_p1_chunk1",
+                "a34cec27_p1_chunk10",
+                "a34cec27_p1_chunk11",
+                "a34cec27_p1_chunk12",
+                "a34cec27_p1_chunk13",
+                "a34cec27_p1_chunk2",
+                "a34cec27_p1_chunk3",
+                "a34cec27_p1_chunk4",
+                "a34cec27_p1_chunk5",
+                "a34cec27_p1_chunk6",
+                "a34cec27_p1_chunk7",
+                "a34cec27_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 9,
+            "passage_id": "c78ae9d2_p1_chunk1",
+            "text": "Mythology · 2026-08-20\nRama vs Ravana: who wins and why\nIn this guide\nWhat the Ramayana Actually Says\nWhere the Story Comes From\nRama and Ravana as Two Selves\nHow the War Is Practiced Today\nHow the Ramayana Differs from Other Epics\nWhat People Get Wrong\nThe Lesson of the Burning Effigy\nA Brahmin scholar with ten heads, master of the Vedas, inventor of the veena , and the only being Shiva ever called “my son,” once dragged a woman by her hair across a courtyard. That woman was Sita. That scholar was Ravana. And the war that followed was not a war between good and evil. It was a war between two men who both knew the scriptures, who both had performed austerities, and who both believed they were right\nRama wins the battle against Ravana, but the victory is not a simple triumph of light over darkness. It is the exhaustion of a karmic debt, the end of a cycle that began long before the war, and the final lesson in a spiritual anatomy that Indian esoteric traditions have mapped for centuries\nMeta: The Ramayana war between Rama and Ravana is the central epic conflict of Hindu mythology, but esoteric traditions read it as an allegory of the inner battle between the disciplined soul and the ten-headed mind\nWhat the Ramayana Actually Says",
+            "query_relevance": 0.063,
+            "indian_context_relevance": 0.535,
+            "source_signal": 0.7,
+            "final_score": 0.359,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 1.0,
+                "place_feature": 0.5,
+                "institution_feature": 0.0,
+                "primary_text_feature": 1.0,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "c78ae9d2",
+                "url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+                "canonical_url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why",
+                "domain": "legrandgrimoire.com",
+                "title": "Rama vs Ravana: who wins and why",
+                "author": "Le Grand Grimoire",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "why rama and ravana fought each oher?"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "cca1848c_rama-vs-ravana-who-wins-and-why.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/cca1848c_rama-vs-ravana-who-wins-and-why.html",
+                "word_count": 225
+              }
+            },
+            "source_support": {
+              "document_id": "document:c78ae9d2",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:legrandgrimoire.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+              "origin_group_id": "document:c78ae9d2",
+              "same_origin_passage_ids": [
+                "c78ae9d2_p1_chunk2",
+                "c78ae9d2_p1_chunk3",
+                "c78ae9d2_p1_chunk4",
+                "c78ae9d2_p1_chunk5",
+                "c78ae9d2_p1_chunk6",
+                "c78ae9d2_p1_chunk7",
+                "c78ae9d2_p1_chunk8",
+                "c78ae9d2_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 10,
+            "passage_id": "c78ae9d2_p1_chunk9",
+            "text": "then goes home. The heads are gone, but Ravana is not dead. He is waiting in the next year’s bamboo and paper, and in the heads of everyone who watched\nThe Ramayana does not end with a victory. It ends with Rama returning to Ayodhya, a kingdom that is perfect but empty. Sita is tested again. The story never settles. That is the point. The war is not fought once. It is fought every time a human being chooses between the voices of the ten heads and the one voice that says enough\nFor more on the symbolic framework of Hindu mythology, read our guide to the mythology hub . To understand the esoteric anatomy of the ten heads, consult the glossary of Hindu deities . And for a deeper look at the internal battle, see our guide to the Ramayana as a spiritual allegory",
+            "query_relevance": 0.095,
+            "indian_context_relevance": 0.485,
+            "source_signal": 0.7,
+            "final_score": 0.353,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 1.0,
+                "place_feature": 0.5,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "c78ae9d2",
+                "url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+                "canonical_url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why",
+                "domain": "legrandgrimoire.com",
+                "title": "Rama vs Ravana: who wins and why",
+                "author": "Le Grand Grimoire",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "why rama and ravana fought each oher?"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "cca1848c_rama-vs-ravana-who-wins-and-why.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/cca1848c_rama-vs-ravana-who-wins-and-why.html",
+                "word_count": 145
+              }
+            },
+            "source_support": {
+              "document_id": "document:c78ae9d2",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:legrandgrimoire.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+              "origin_group_id": "document:c78ae9d2",
+              "same_origin_passage_ids": [
+                "c78ae9d2_p1_chunk1",
+                "c78ae9d2_p1_chunk2",
+                "c78ae9d2_p1_chunk3",
+                "c78ae9d2_p1_chunk4",
+                "c78ae9d2_p1_chunk5",
+                "c78ae9d2_p1_chunk6",
+                "c78ae9d2_p1_chunk7",
+                "c78ae9d2_p1_chunk8"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 11,
+            "passage_id": "21bb07e2_p1_chunk1",
+            "text": "Primary antagonist in the Hindu epic Ramayana\nSeveral terms redirect here. For other uses, see Ravan (disambiguation)\nRavana ( Sanskrit : रावण , romanized : Rāvaṇa , lit. ' roaring ' ) is the principal antagonist of the ancient Hindu epic Ramayana and its several other versions . He is traditionally depicted as a ten-headed rakshasa (demon) king of Lanka . In the Ramayana , Ravana is described as the eldest son of sage Vishrava and Kaikasi . He abducted Rama 's wife, Sita , and took her to his kingdom of Lanka, where he held her in the Ashoka Vatika . Rama, with the support of vanara King Sugriva and his army of vanaras, launched a rescue operation for Sita against Ravana in Lanka. Ravana was subsequently slain, and Rama rescued his beloved wife Sita. His epic defeat is celebrated yearly by burning a large effigy, depicting the ten-headed Ravana, during the Hindu festival of Dussehra\nRavana was well-versed in the six shastras and the four Vedas , including the Shiva Tandava Stotra . Ravana is also considered to be an ardent devotee of Shiva . Images of Ravana are often seen associated with Shiva at temples. He also appears in the Buddhist Mahayana text Laṅkāvatāra Sūtra , in Buddhist Jatakas , as well as in Jain Ramayanas . In Vaishnava scriptures , he is depicted as one of Vishnu 's cursed doorkeepers\nEtymology\nStatue of Ravana, South India, 18th century CE, British Museum",
+            "query_relevance": 0.068,
+            "indian_context_relevance": 0.537,
+            "source_signal": 0.643,
+            "final_score": 0.352,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.005,
+                "entity_feature": 1.0,
+                "place_feature": 0.5,
+                "institution_feature": 0.0,
+                "primary_text_feature": 1.0,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "21bb07e2",
+                "url": "https://en.wikipedia.org/wiki/Ravana",
+                "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+                "domain": "en.wikipedia.org",
+                "title": "Ravana - Wikipedia",
+                "language": "en",
+                "task2_source_type": "non_profit",
+                "content_type": "html",
+                "licence": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+                "licence_category": "cc-by-sa-4.0",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Mixed",
+                "detected_language": "Sanskrit (Fallback)",
+                "task3_reliability": "HIGH",
+                "source_file": "21bb07e2_Ravana.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/21bb07e2_Ravana.html",
+                "word_count": 245
+              }
+            },
+            "source_support": {
+              "document_id": "document:21bb07e2",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:en.wikipedia.org",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+              "origin_group_id": "document:21bb07e2",
+              "same_origin_passage_ids": [
+                "21bb07e2_p1_chunk10",
+                "21bb07e2_p1_chunk11",
+                "21bb07e2_p1_chunk12",
+                "21bb07e2_p1_chunk13",
+                "21bb07e2_p1_chunk14",
+                "21bb07e2_p1_chunk15",
+                "21bb07e2_p1_chunk16",
+                "21bb07e2_p1_chunk17",
+                "21bb07e2_p1_chunk18",
+                "21bb07e2_p1_chunk19",
+                "21bb07e2_p1_chunk2",
+                "21bb07e2_p1_chunk20",
+                "21bb07e2_p1_chunk21",
+                "21bb07e2_p1_chunk3",
+                "21bb07e2_p1_chunk4",
+                "21bb07e2_p1_chunk5",
+                "21bb07e2_p1_chunk6",
+                "21bb07e2_p1_chunk7",
+                "21bb07e2_p1_chunk8",
+                "21bb07e2_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 12,
+            "passage_id": "9915a330_p1_chunk1",
+            "text": "Themes\nand Colors\nKey\nLitCharts assigns a color and icon to each theme in The Ramayana , which you can use to track the themes throughout the work\nHeroism\nDuty, Honor, and Loyalty\nGood vs. Evil\nStorytelling, Teaching, and Morality\nSummary\nAnalysis\nThe narrator says again that every person who Ravana sent into battle didn't return. Ravana stands in a tower and watches the battle for a while. The carnage makes him exceptionally angry. He performs ritual prayers, dresses in his armor, and when he's dressed, he looks very heroic. Ravana summons his chariot and vows that at the end of the day, either Sita or Ravana's own wife will be a widow\nThe narration creates a sense of dread by making it extremely clear that Ravana is fighting a losing battle. Though Ravana is described as looking heroic, the story has already shown that looking heroic isn't at all the same as acting heroic. This connects to Ravana's love of show and display, however\nActive\nThemes\nRavana 's resolve attracts the attention of the gods, and they send down Indra 's chariot to help Rama . The charioteer introduces himself as Matali , and explains that the gods Indra, Brahma , and Shiva sent him to help Rama, and he lists the chariot's special powers. Rama wonders aloud if the rakshasas sent Matali as a trap, but both Hanuman and Lakshmana insist that the chariot is real. Rama gathers his weapons and climbs into the chariot",
+            "query_relevance": 0.107,
+            "indian_context_relevance": 0.455,
+            "source_signal": 0.643,
+            "final_score": 0.336,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 1.0,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "9915a330",
+                "url": "https://www.litcharts.com/lit/the-ramayana/12-rama-and-ravana-in-battle",
+                "canonical_url": "https://litcharts.com/lit/the-ramayana/12-rama-and-ravana-in-battle",
+                "domain": "www.litcharts.com",
+                "title": "LitCharts",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "why rama and ravana fought each oher?",
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "d514aef7_12-rama-and-ravana-in-battle.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/d514aef7_12-rama-and-ravana-in-battle.html",
+                "word_count": 247
+              }
+            },
+            "source_support": {
+              "document_id": "document:9915a330",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:litcharts.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://www.litcharts.com/lit/the-ramayana/12-rama-and-ravana-in-battle",
+              "origin_group_id": "document:9915a330",
+              "same_origin_passage_ids": [
+                "9915a330_p1_chunk2",
+                "9915a330_p1_chunk3",
+                "9915a330_p1_chunk4",
+                "9915a330_p1_chunk5",
+                "9915a330_p1_chunk6",
+                "9915a330_p1_chunk7",
+                "9915a330_p1_chunk8",
+                "9915a330_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 13,
+            "passage_id": "a34cec27_p1_chunk9",
+            "text": "Sita Advertisement Vijayadashami 2026 messages to share May the light of Vijayadashami fill our home with peace, love and togetherness. Happy Dussehra to my dearest family! 🪔 Share on WhatsApp\nDear Amma and Papa, your love has always been my strength. May Maa Durga and Lord Rama bless you with good health and joy this Dussehra. 🙏 Share on WhatsApp\nHappy Dussehra, my friend! May every darkness in your life give way to light, and may your path be filled with courage and happiness. ✨ Share on WhatsApp\nWishing you and your family a blessed Vijayadashami. May this season of victory bring you clarity, harmony and success in all good work. Share on WhatsApp\nMay Maa Durga, who vanquished Mahishasura, give you the strength to overcome every fear and obstacle. Jai Mata Di and Happy Vijayadashami! 🌺 Share on WhatsApp\nMay Lord Rama's courage and righteousness guide your every step, and may dharma always light your way. Jai Shri Ram! Happy Dussehra! 🏹 Share on WhatsApp\nAdvertisement\nA short Vijayadashami prayer\nMaa Durga, Lord Rama, on this day of victory I bow before you with a humble heart. Just as you overcame Mahishasura and Ravana, help me overcome the anger, pride and fear within me. Grant me strength to stand for what is right, courage to face every trial, and wisdom to walk the path of dharma. Keep my family safe, united and free of negativity, and let your light always shine in our home\nAdvertisement",
+            "query_relevance": 0.047,
+            "indian_context_relevance": 0.447,
+            "source_signal": 0.769,
+            "final_score": 0.329,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 1.0,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.0,
+                "contextual_vocab_feature": 0.5,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.985,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "a34cec27",
+                "url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+                "canonical_url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura",
+                "domain": "hindutone.com",
+                "title": "Dussehra Story: Both Legends of Vijayadashami",
+                "author": "HinduTone Dharma Desk",
+                "publication_date": "2026-06-04",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "34488341_dussehra-story-rama-ravana-durga-mahishasura.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/34488341_dussehra-story-rama-ravana-durga-mahishasura.html",
+                "word_count": 246
+              }
+            },
+            "source_support": {
+              "document_id": "document:a34cec27",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:hindutone.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+              "origin_group_id": "document:a34cec27",
+              "same_origin_passage_ids": [
+                "a34cec27_p1_chunk1",
+                "a34cec27_p1_chunk10",
+                "a34cec27_p1_chunk11",
+                "a34cec27_p1_chunk12",
+                "a34cec27_p1_chunk13",
+                "a34cec27_p1_chunk2",
+                "a34cec27_p1_chunk3",
+                "a34cec27_p1_chunk4",
+                "a34cec27_p1_chunk5",
+                "a34cec27_p1_chunk6",
+                "a34cec27_p1_chunk7",
+                "a34cec27_p1_chunk8"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 14,
+            "passage_id": "21bb07e2_p1_chunk13",
+            "text": "Rama's triumph over evil Ravanahatha According to mythology, the ravanahatha , an ancient bowed string instrument , was created by Ravana and is still used as a Rajasthani folk instrument\nIn other religions\nMural painting depicting Thotsakan (Ravana) at Wat Phra Kaew , Thailand\nIn the Rin-spuns-pa Tibetan Ramayana, it is prophesied that Ravana will return as the Buddha incarnation of Vishnu in Kali Yuga\nThe Arunachal Pradesh Tai Khamti Ramayana (Phra Chow Lamang) shows Rama as a Bodhisattva who was reborn so Ravana could torture him\nIn the Laotian Buddhist text Phra Lak Phra Lam , Rama is a Bodhisattva and the embodiment of virtues, while Ravana is a Brahmin (\" mahabrahma \") son of Virulaha who is highly materialistic. [ citation needed ]\nIn the Cambodian Buddhist text Preah Ream , Buddha is an incarnation of Rama and Ravana is a rakshasa. [ citation needed ]\nIn the Thai Buddhist text Ramakien , Ravana is a rakshasa known as \"Thotsakan\" (ทศกัณฐ์, from Sanskrit दशकण्ठ, Daśakaṇṭha, \"ten necks\"), and is depicted with green skin. [ citation needed ]\nIn the Karandavyuha Sutra , Yama asks if the visitor in hell (Avalokitesvara), whom he hasn't seen yet, is a god or a demon, and whether he is Vishnu, Mahesvara , or the rakshasa Ravana\nJainism\nFurther information: Salakapurusa\nA diorama in Jain Museum of Madhuban depicting Ravana",
+            "query_relevance": 0.061,
+            "indian_context_relevance": 0.458,
+            "source_signal": 0.643,
+            "final_score": 0.318,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.009,
+                "entity_feature": 1.0,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "21bb07e2",
+                "url": "https://en.wikipedia.org/wiki/Ravana",
+                "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+                "domain": "en.wikipedia.org",
+                "title": "Ravana - Wikipedia",
+                "language": "en",
+                "task2_source_type": "non_profit",
+                "content_type": "html",
+                "licence": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+                "licence_category": "cc-by-sa-4.0",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Mixed",
+                "detected_language": "Sanskrit (Fallback)",
+                "task3_reliability": "HIGH",
+                "source_file": "21bb07e2_Ravana.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/21bb07e2_Ravana.html",
+                "word_count": 227
+              }
+            },
+            "source_support": {
+              "document_id": "document:21bb07e2",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:en.wikipedia.org",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+              "origin_group_id": "document:21bb07e2",
+              "same_origin_passage_ids": [
+                "21bb07e2_p1_chunk1",
+                "21bb07e2_p1_chunk10",
+                "21bb07e2_p1_chunk11",
+                "21bb07e2_p1_chunk12",
+                "21bb07e2_p1_chunk14",
+                "21bb07e2_p1_chunk15",
+                "21bb07e2_p1_chunk16",
+                "21bb07e2_p1_chunk17",
+                "21bb07e2_p1_chunk18",
+                "21bb07e2_p1_chunk19",
+                "21bb07e2_p1_chunk2",
+                "21bb07e2_p1_chunk20",
+                "21bb07e2_p1_chunk21",
+                "21bb07e2_p1_chunk3",
+                "21bb07e2_p1_chunk4",
+                "21bb07e2_p1_chunk5",
+                "21bb07e2_p1_chunk6",
+                "21bb07e2_p1_chunk7",
+                "21bb07e2_p1_chunk8",
+                "21bb07e2_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 15,
+            "passage_id": "21bb07e2_p1_chunk15",
+            "text": "Ravana's perspective in a modern setting Author Anand Neelakantan published the novel Asura: Tale of the Vanquished in 2012, in which the character Ravana is depicted as a human-like figure\nAuthor Amish Tripathi 's 2019 novel Raavan: Enemy of Aryavarta chronicles the life of Ravana until the time he kidnaps Sita . It is the third book in Tripathi's Ram Chandra Series\nIn 2026, Ravana was portrayed by Yash in the film, Ramayana: Part 1\nSee also\nAsura – Mythical beings in Indian religions\nBull Demon King – Character in the novel Journey to the West\nDaitya – Race in Hindu mythology\nDanava (Hinduism) – Race in Hindu mythology\nKeibu Keioiba – Half man, half tiger of Meitei folklore\nRakshasa – Race in Hindu mythology\nReferences\n1 2 Kant, Anjani (2008). Women and the Law . APH Publishing. ISBN 978-81-7648-456-5\n↑ Wheeler, James Talboys (1869). The History of India from the Earliest Ages . Vol. II The Rámáyana and the Vedic period. N. Trubner & Co. p. 281\n↑ Brown, Nathan Robert (2 August 2011). The Mythology of Supernatural: The signs and symbols behind the popular TV show . Berkley Boulevard books, Newwork. ISBN 9781101517529 . Retrieved 12 May 2020\n↑ Justin W. Henry, Ravana's Kingdom: The Ramayana and Sri Lankan History from Below , Oxford University Press, p.3\n↑ \"Sunderkand explanation\" (PDF) . sunderkandsatsangsamuh.org . Archived from the original (PDF) on 18 July 2021 . Retrieved 12 May 2020",
+            "query_relevance": 0.026,
+            "indian_context_relevance": 0.485,
+            "source_signal": 0.643,
+            "final_score": 0.314,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 1.0,
+                "place_feature": 0.5,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "21bb07e2",
+                "url": "https://en.wikipedia.org/wiki/Ravana",
+                "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+                "domain": "en.wikipedia.org",
+                "title": "Ravana - Wikipedia",
+                "language": "en",
+                "task2_source_type": "non_profit",
+                "content_type": "html",
+                "licence": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+                "licence_category": "cc-by-sa-4.0",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "21bb07e2_Ravana.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/21bb07e2_Ravana.html",
+                "word_count": 240
+              }
+            },
+            "source_support": {
+              "document_id": "document:21bb07e2",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:en.wikipedia.org",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+              "origin_group_id": "document:21bb07e2",
+              "same_origin_passage_ids": [
+                "21bb07e2_p1_chunk1",
+                "21bb07e2_p1_chunk10",
+                "21bb07e2_p1_chunk11",
+                "21bb07e2_p1_chunk12",
+                "21bb07e2_p1_chunk13",
+                "21bb07e2_p1_chunk14",
+                "21bb07e2_p1_chunk16",
+                "21bb07e2_p1_chunk17",
+                "21bb07e2_p1_chunk18",
+                "21bb07e2_p1_chunk19",
+                "21bb07e2_p1_chunk2",
+                "21bb07e2_p1_chunk20",
+                "21bb07e2_p1_chunk21",
+                "21bb07e2_p1_chunk3",
+                "21bb07e2_p1_chunk4",
+                "21bb07e2_p1_chunk5",
+                "21bb07e2_p1_chunk6",
+                "21bb07e2_p1_chunk7",
+                "21bb07e2_p1_chunk8",
+                "21bb07e2_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 16,
+            "passage_id": "21bb07e2_p1_chunk21",
+            "text": "Saturdays at 9\" . Indiantelevision.com . 16 November 2006 ↑ \"Amish Tripathi's 'Raavan: Enemy of Aryavarta' hits stands\" . Business Standard . 2 July 2019 . Retrieved 4 July 2019\n↑ \"Amish Tripathi's 'Raavan- Enemy of Aryavarta' to release in July\" . The Times of India . 8 May 2019 . Retrieved 4 July 2019\n↑ \"Excerpt: Raavan; Enemy of Aryavarta by Amish\" . Hindustan Times . 29 June 2019 . Retrieved 4 July 2019\n↑ \"Exclusive: Yash undergoes look test for Ramayana, Ranbir Kapoor's speculation for the role of Rama is true\" . Bollywood Hungama . 23 August 2023. Archived from the original on 23 August 2023 . Retrieved 12 November 2026\nBibliography\nDoniger, Wendy (1993). Purana Perennis: Reciprocity and transformation in Hindu and Jaina texts . SUNY Press . ISBN 9780791413814 – via Google Books\nUdayakumar, S.P. (2005). Presenting the Past: Anxious history and ancient future in Hindutva India . Greenwood Publishing Group\nExternal links\nWikimedia Commons has media related to Rāvaṇa\nWikiquote has quotations related to Ravana\nRawana the Historical King of Heladiwa\" . Ramayana Research . Archived from the original on 8 July 2013\nPreceded by Kubera\nEmperor of Lanka\nSucceeded by Vibhisana",
+            "query_relevance": 0.019,
+            "indian_context_relevance": 0.486,
+            "source_signal": 0.643,
+            "final_score": 0.311,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 0.5,
+                "place_feature": 0.5,
+                "institution_feature": 0.0,
+                "primary_text_feature": 1.0,
+                "contextual_vocab_feature": 0.5,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "21bb07e2",
+                "url": "https://en.wikipedia.org/wiki/Ravana",
+                "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+                "domain": "en.wikipedia.org",
+                "title": "Ravana - Wikipedia",
+                "language": "en",
+                "task2_source_type": "non_profit",
+                "content_type": "html",
+                "licence": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+                "licence_category": "cc-by-sa-4.0",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "21bb07e2_Ravana.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/21bb07e2_Ravana.html",
+                "word_count": 197
+              }
+            },
+            "source_support": {
+              "document_id": "document:21bb07e2",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:en.wikipedia.org",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+              "origin_group_id": "document:21bb07e2",
+              "same_origin_passage_ids": [
+                "21bb07e2_p1_chunk1",
+                "21bb07e2_p1_chunk10",
+                "21bb07e2_p1_chunk11",
+                "21bb07e2_p1_chunk12",
+                "21bb07e2_p1_chunk13",
+                "21bb07e2_p1_chunk14",
+                "21bb07e2_p1_chunk15",
+                "21bb07e2_p1_chunk16",
+                "21bb07e2_p1_chunk17",
+                "21bb07e2_p1_chunk18",
+                "21bb07e2_p1_chunk19",
+                "21bb07e2_p1_chunk2",
+                "21bb07e2_p1_chunk20",
+                "21bb07e2_p1_chunk3",
+                "21bb07e2_p1_chunk4",
+                "21bb07e2_p1_chunk5",
+                "21bb07e2_p1_chunk6",
+                "21bb07e2_p1_chunk7",
+                "21bb07e2_p1_chunk8",
+                "21bb07e2_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 17,
+            "passage_id": "21bb07e2_p1_chunk3",
+            "text": "Samhita , a book on Hindu astrology . Beyond his role in the epic Ramayana, he is revered in the Ayurvedic tradition as a pioneer of pharmaceutical science (Bhaishajya Kalpana)\nHe is credited as the author of the Arka Prakasha, a foundational Sanskrit compendium on the science of distillation . In this text, Ravana describes the extraction of volatile oils and aromatic essences which is a method used to preserve the Virya (potency) of plants that might otherwise be degraded by standard decoction (Kwatha) methods. Additionally, traditional accounts attribute works on Ayurvedic Alchemy ( Rasashastra ) and pulse diagnosis (Nadi Pariksha) to him, establishing his significance within the Vedic medical lineage. In some later versions, he is said to have possessed the nectar of immortality, which was stored inside his belly thanks to a celestial boon from Brahma . In the War with Lord Rama, Ravana was killed by a powerful Brahma's weapon shot by Rama which was gifted to Rama by Sage Agstya\nBiography\nBirth\nPainting depicting Ravana cutting off Jatayu 's wing while abducting Sita , by Raja Ravi Varma\nRavana was born to the Brahmin sage Vishrava and the Daitya princess Kaikasi in Treta Yuga . Villagers from Chapra in Bihar claim that Chapra was named after Vishrava, and that Ravana was born there",
+            "query_relevance": 0.047,
+            "indian_context_relevance": 0.455,
+            "source_signal": 0.643,
+            "final_score": 0.311,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 1.0,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "21bb07e2",
+                "url": "https://en.wikipedia.org/wiki/Ravana",
+                "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+                "domain": "en.wikipedia.org",
+                "title": "Ravana - Wikipedia",
+                "language": "en",
+                "task2_source_type": "non_profit",
+                "content_type": "html",
+                "licence": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+                "licence_category": "cc-by-sa-4.0",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "21bb07e2_Ravana.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/21bb07e2_Ravana.html",
+                "word_count": 217
+              }
+            },
+            "source_support": {
+              "document_id": "document:21bb07e2",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:en.wikipedia.org",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+              "origin_group_id": "document:21bb07e2",
+              "same_origin_passage_ids": [
+                "21bb07e2_p1_chunk1",
+                "21bb07e2_p1_chunk10",
+                "21bb07e2_p1_chunk11",
+                "21bb07e2_p1_chunk12",
+                "21bb07e2_p1_chunk13",
+                "21bb07e2_p1_chunk14",
+                "21bb07e2_p1_chunk15",
+                "21bb07e2_p1_chunk16",
+                "21bb07e2_p1_chunk17",
+                "21bb07e2_p1_chunk18",
+                "21bb07e2_p1_chunk19",
+                "21bb07e2_p1_chunk2",
+                "21bb07e2_p1_chunk20",
+                "21bb07e2_p1_chunk21",
+                "21bb07e2_p1_chunk4",
+                "21bb07e2_p1_chunk5",
+                "21bb07e2_p1_chunk6",
+                "21bb07e2_p1_chunk7",
+                "21bb07e2_p1_chunk8",
+                "21bb07e2_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 18,
+            "passage_id": "9915a330_p1_chunk3",
+            "text": "by anger. Further, Ravana ignores fate and allows his emotions to govern his actions. This suggests that he's not going to make it out of this battle alive Active Themes\nRama pauses and decides that if he kills Ravana 's army, Ravana himself might experience a change of heart. This strategy proves unsuccessful, however, as Ravana continues to chase Rama. Ravana blows a conch shell as a challenge, and out of the universe Vishnu 's conch answers with its own call. Matali follows this by blowing Indra 's conch, and the battle begins. Ravana shoots arrows at Rama, but Rama's arrows stop Ravana's from hitting him\nRama approaches the battle from a logical standpoint and seeks to give Ravana every possible opportunity to make the decision to concede (and live). Rama seeks to spread goodness whenever possible, even to those who wish to kill him. Rama's bow and arrows are again his weapon of choice, and their power enforces Rama's own heroism\nActive\nThemes\nGet the entire The Ramayana LitChart as a printable PDF\nMy students can't get enough of your charts and their results have gone through the roof.\" -Graham S\nDownload\nRavana notices that Rama is riding in Indra 's chariot, which makes him angry that the gods are supporting Rama. He shoots more arrows at Rama and again, Rama's arrows neutralize Ravana's attack. Even when Ravana uses all 20 arms to shoot arrows, none of them reach Rama",
+            "query_relevance": 0.121,
+            "indian_context_relevance": 0.363,
+            "source_signal": 0.643,
+            "final_score": 0.305,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 0.5,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "9915a330",
+                "url": "https://www.litcharts.com/lit/the-ramayana/12-rama-and-ravana-in-battle",
+                "canonical_url": "https://litcharts.com/lit/the-ramayana/12-rama-and-ravana-in-battle",
+                "domain": "www.litcharts.com",
+                "title": "LitCharts",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "why rama and ravana fought each oher?",
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "d514aef7_12-rama-and-ravana-in-battle.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/d514aef7_12-rama-and-ravana-in-battle.html",
+                "word_count": 241
+              }
+            },
+            "source_support": {
+              "document_id": "document:9915a330",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:litcharts.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://www.litcharts.com/lit/the-ramayana/12-rama-and-ravana-in-battle",
+              "origin_group_id": "document:9915a330",
+              "same_origin_passage_ids": [
+                "9915a330_p1_chunk1",
+                "9915a330_p1_chunk2",
+                "9915a330_p1_chunk4",
+                "9915a330_p1_chunk5",
+                "9915a330_p1_chunk6",
+                "9915a330_p1_chunk7",
+                "9915a330_p1_chunk8",
+                "9915a330_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 19,
+            "passage_id": "21bb07e2_p1_chunk20",
+            "text": ". Retrieved 1 July 2020 ↑ \"Sri Lankan revives Ravana's musical instrument\" . The Island . Sri Lanka. 9 March 2008 ↑ Vyas, Lallan Prasad. Prachi Darshan . p. 98\n↑ Sharma, S.R. (1940). Jainism and Karnataka Culture . Dharwar, IN: Karnatak Historical Research Society. p. 76\n↑ Dalal, Roshen (2010). Hinduism: An alphabetical guide . Penguin Books India. p. 338. ISBN 9780143414216\n↑ Ramanujan, A.K. (1991). \"Three hundred Rāmāyaṇas: Five examples and Three thoughts on Translation\" . In Paula Richman (ed.). Many Rāmāyaṇas: The diversity of a narrative tradition in south Asia . University of California Press. p. 35. ISBN 978-0-520-07589-4\n↑ Pandian, M.S.S. (2 November 1998). \"Ravana as antidote\" . Outlook India . Archived from the original on 16 January 2018 . Retrieved 20 June 2019\n↑ Nalankilli, Thanjai (April 2006). \"Censorship of Dravidian voices in Tamil Nadu (India) in 1948, 1949\" . Tamil Tribune . Archived from the original on 8 January 2018\n↑ Sivapriyan, E.T.B. (5 August 2020). \"Ram Temple: Tamilians praise Ravana on Twitter \" . Deccan Herald . Retrieved 21 November 2021\n↑ Yamunan, Sruthisagar (6 July 2019). \"Why Sri Lanka named its first-ever satellite after Ravana\" . Scroll.in . Retrieved 2 July 2020\n↑ \"Zee TV enters new genre with 'Ravan' on Saturdays at 9\" . Indiantelevision.com . 16 November 2006\n↑ \"Amish Tripathi's 'Raavan: Enemy of Aryavarta' hits stands\" . Business Standard . 2 July 2019 . Retrieved 4 July 2019",
+            "query_relevance": 0.017,
+            "indian_context_relevance": 0.466,
+            "source_signal": 0.643,
+            "final_score": 0.302,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 1.0,
+                "place_feature": 1.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.0,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "21bb07e2",
+                "url": "https://en.wikipedia.org/wiki/Ravana",
+                "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+                "domain": "en.wikipedia.org",
+                "title": "Ravana - Wikipedia",
+                "language": "en",
+                "task2_source_type": "non_profit",
+                "content_type": "html",
+                "licence": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+                "licence_category": "cc-by-sa-4.0",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "21bb07e2_Ravana.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/21bb07e2_Ravana.html",
+                "word_count": 239
+              }
+            },
+            "source_support": {
+              "document_id": "document:21bb07e2",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:en.wikipedia.org",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+              "origin_group_id": "document:21bb07e2",
+              "same_origin_passage_ids": [
+                "21bb07e2_p1_chunk1",
+                "21bb07e2_p1_chunk10",
+                "21bb07e2_p1_chunk11",
+                "21bb07e2_p1_chunk12",
+                "21bb07e2_p1_chunk13",
+                "21bb07e2_p1_chunk14",
+                "21bb07e2_p1_chunk15",
+                "21bb07e2_p1_chunk16",
+                "21bb07e2_p1_chunk17",
+                "21bb07e2_p1_chunk18",
+                "21bb07e2_p1_chunk19",
+                "21bb07e2_p1_chunk2",
+                "21bb07e2_p1_chunk21",
+                "21bb07e2_p1_chunk3",
+                "21bb07e2_p1_chunk4",
+                "21bb07e2_p1_chunk5",
+                "21bb07e2_p1_chunk6",
+                "21bb07e2_p1_chunk7",
+                "21bb07e2_p1_chunk8",
+                "21bb07e2_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 20,
+            "passage_id": "c78ae9d2_p1_chunk5",
+            "text": "is a towering structure of bamboo and paper, ten heads painted in red and gold, stuffed with firecrackers. An arrow of flame is shot into its navel. The crowd cheers\nBut the practice is older than the pyrotechnics. Villages across India perform Ramlila , a dramatic reenactment of the Ramayana that can last nine days or a month. The actors are often local men who have taken vows of purity during the performance. The actor playing Ravana must fast, avoid certain foods, and meditate on the king’s arrogance as a warning\nTemples dedicated to Ravana are rare but exist. In Bisrakh, Uttar Pradesh, a temple honors Ravana as a local ancestor. In Mandu, Madhya Pradesh, a shrine marks the site where his wife, Mandodari, is said to have meditated. These are not contradictions. They are reminders that the Ramayana is a story about a man, not a monster\nIn esoteric traditions, the recitation of the Ramayana itself is a sadhana (spiritual practice). The Rama Taraka Mantra (“Ram”) is chanted to purify the mind. The name of Rama is said to burn through karma like the arrow through Ravana’s navel\nHow the Ramayana Differs from Other Epics\nThe Western reader might compare the Ramayana to the Iliad . Both involve a war over a woman. Both end with a city destroyed. But the difference is crucial",
+            "query_relevance": 0.032,
+            "indian_context_relevance": 0.424,
+            "source_signal": 0.7,
+            "final_score": 0.301,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 0.5,
+                "place_feature": 1.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "c78ae9d2",
+                "url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+                "canonical_url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why",
+                "domain": "legrandgrimoire.com",
+                "title": "Rama vs Ravana: who wins and why",
+                "author": "Le Grand Grimoire",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "why rama and ravana fought each oher?"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "cca1848c_rama-vs-ravana-who-wins-and-why.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/cca1848c_rama-vs-ravana-who-wins-and-why.html",
+                "word_count": 225
+              }
+            },
+            "source_support": {
+              "document_id": "document:c78ae9d2",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:legrandgrimoire.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+              "origin_group_id": "document:c78ae9d2",
+              "same_origin_passage_ids": [
+                "c78ae9d2_p1_chunk1",
+                "c78ae9d2_p1_chunk2",
+                "c78ae9d2_p1_chunk3",
+                "c78ae9d2_p1_chunk4",
+                "c78ae9d2_p1_chunk6",
+                "c78ae9d2_p1_chunk7",
+                "c78ae9d2_p1_chunk8",
+                "c78ae9d2_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 21,
+            "passage_id": "c78ae9d2_p1_chunk6",
+            "text": "Epics The Western reader might compare the Ramayana to the Iliad . Both involve a war over a woman. Both end with a city destroyed. But the difference is crucial\nIn the Iliad , Achilles fights for glory and grief. In the Ramayana, Rama fights because he must. He has no rage. He offers Ravana multiple chances to surrender. Even after Ravana dies, Rama weeps for him and tells his brother Lakshmana to learn from Ravana’s wisdom. The enemy is not a villain. He is a teacher whose lesson is paid in death\nThe closest parallel in Western esotericism is the Mabinogion or the Chanson de Roland , but neither contains the same moral ambiguity. The Bhagavad Gita , another Hindu text, is a more direct parallel: Arjuna, like Rama, faces enemies who are his own family. But the Gita stops at the edge of the battlefield. The Ramayana crosses it\nIn Zoroastrianism, the battle between Ahura Mazda and Angra Mainyu is a cosmic war of light and darkness. The Ramayana refuses this dualism. Ravana is a devotee of Shiva. He does not hate the gods. He simply wants everything. The war is not between two worlds but between two versions of the same world\nWhat People Get Wrong",
+            "query_relevance": 0.041,
+            "indian_context_relevance": 0.413,
+            "source_signal": 0.7,
+            "final_score": 0.301,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 0.5,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 1.0,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "c78ae9d2",
+                "url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+                "canonical_url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why",
+                "domain": "legrandgrimoire.com",
+                "title": "Rama vs Ravana: who wins and why",
+                "author": "Le Grand Grimoire",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "why rama and ravana fought each oher?"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "cca1848c_rama-vs-ravana-who-wins-and-why.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/cca1848c_rama-vs-ravana-who-wins-and-why.html",
+                "word_count": 209
+              }
+            },
+            "source_support": {
+              "document_id": "document:c78ae9d2",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:legrandgrimoire.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+              "origin_group_id": "document:c78ae9d2",
+              "same_origin_passage_ids": [
+                "c78ae9d2_p1_chunk1",
+                "c78ae9d2_p1_chunk2",
+                "c78ae9d2_p1_chunk3",
+                "c78ae9d2_p1_chunk4",
+                "c78ae9d2_p1_chunk5",
+                "c78ae9d2_p1_chunk7",
+                "c78ae9d2_p1_chunk8",
+                "c78ae9d2_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 22,
+            "passage_id": "21bb07e2_p1_chunk12",
+            "text": "Brahmins of Gujarat claim to be descendants of Ravana, and sometimes have \"Ravan\" as their surnames Saraswat Brahmins from Mathura claim Ravana as a saraswat Brahmin as per his lineage\nThe Gondi people of central India claim to be descendants of Ravana, and have temples for him, his wife Mandodari, and their son Meghnad. They also state that Ravana was an ancient Gond king, the tenth dharmaguru of their tribe, and the eighteenth lingo (divine teacher). Annually on Dussehra , the Gondis from the village of Paraswadi carry an image of Ravana riding on an elephant in a procession. He is also worshipped by the Nihali people\nTemples\nThe following temples in India are for Ravana as a Shiva Bhakta\nDashanan Temple, Kanpur, Uttar Pradesh\nRavana Temple, Bisrakh, Greater Noida, Uttar Pradesh\nKakinada Ravana Temple, Andhra Pradesh\nRavangram Ravana Temple, Vidisha, Madhya Pradesh\nMandsaur, Madhya Pradesh\nMandore Ravan Temple, Jodhpur\nBaijanath Temple, Kangra District, Himachal Pradesh\nRavaleshwara temple- Malavalli, mandya district of Karnataka\nInfluence on culture and art\nRavana with Hanuman in tholu bommalata , a shadow puppet tradition of Andhra Pradesh , India\nRavana-Dahan (burning effigy of Ravana)\nAn effigy of Ravana with burning sparklers on Dusshera . Dashehra Diwali Mela in Manchester, England, 2006\nEffigies of Ravana are burned on Vijayadashami in many places throughout India to symbolize Rama's triumph over evil\nRavanahatha\nAccording to mythology, the ravanahatha , an ancient bowed string instrument , was created by Ravana and is still used as a Rajasthani folk instrument",
+            "query_relevance": 0.06,
+            "indian_context_relevance": 0.416,
+            "source_signal": 0.643,
+            "final_score": 0.301,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 0.5,
+                "place_feature": 1.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.0,
+                "contextual_vocab_feature": 0.5,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "21bb07e2",
+                "url": "https://en.wikipedia.org/wiki/Ravana",
+                "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+                "domain": "en.wikipedia.org",
+                "title": "Ravana - Wikipedia",
+                "language": "en",
+                "task2_source_type": "non_profit",
+                "content_type": "html",
+                "licence": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+                "licence_category": "cc-by-sa-4.0",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "21bb07e2_Ravana.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/21bb07e2_Ravana.html",
+                "word_count": 250
+              }
+            },
+            "source_support": {
+              "document_id": "document:21bb07e2",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:en.wikipedia.org",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+              "origin_group_id": "document:21bb07e2",
+              "same_origin_passage_ids": [
+                "21bb07e2_p1_chunk1",
+                "21bb07e2_p1_chunk10",
+                "21bb07e2_p1_chunk11",
+                "21bb07e2_p1_chunk13",
+                "21bb07e2_p1_chunk14",
+                "21bb07e2_p1_chunk15",
+                "21bb07e2_p1_chunk16",
+                "21bb07e2_p1_chunk17",
+                "21bb07e2_p1_chunk18",
+                "21bb07e2_p1_chunk19",
+                "21bb07e2_p1_chunk2",
+                "21bb07e2_p1_chunk20",
+                "21bb07e2_p1_chunk21",
+                "21bb07e2_p1_chunk3",
+                "21bb07e2_p1_chunk4",
+                "21bb07e2_p1_chunk5",
+                "21bb07e2_p1_chunk6",
+                "21bb07e2_p1_chunk7",
+                "21bb07e2_p1_chunk8",
+                "21bb07e2_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 23,
+            "passage_id": "21bb07e2_p1_chunk5",
+            "text": "couple and they completed their education from their father, with Ravana being a great scholar of the Vedas. [ citation needed ] Boon from Brahma Illustration depicting Ravana, circa 1920\nRavana and his two brothers, Kumbhakarna and Vibhishana , performed penance on Mount Gokarna for 10,000 years and won boons from Brahma. Ravana was blessed with a boon that would make him invincible to all the creations of Brahma, except for humans. He also received weapons, a chariot, as well as the ability to shapeshift from Brahma. According to the Ramayana , demigods approached Brahma since Ravana was causing harm on Earth. Lord Vishnu appeared and gave blessings that Rama would incarnate as a human and kill Ravana since his invincibility boon did not include humans\nDevotee of Shiva\nSee also: Ravananugraha\nRavananugraha theme",
+            "query_relevance": 0.06,
+            "indian_context_relevance": 0.413,
+            "source_signal": 0.643,
+            "final_score": 0.299,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 0.5,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 1.0,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "21bb07e2",
+                "url": "https://en.wikipedia.org/wiki/Ravana",
+                "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+                "domain": "en.wikipedia.org",
+                "title": "Ravana - Wikipedia",
+                "language": "en",
+                "task2_source_type": "non_profit",
+                "content_type": "html",
+                "licence": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+                "licence_category": "cc-by-sa-4.0",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "21bb07e2_Ravana.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/21bb07e2_Ravana.html",
+                "word_count": 134
+              }
+            },
+            "source_support": {
+              "document_id": "document:21bb07e2",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:en.wikipedia.org",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+              "origin_group_id": "document:21bb07e2",
+              "same_origin_passage_ids": [
+                "21bb07e2_p1_chunk1",
+                "21bb07e2_p1_chunk10",
+                "21bb07e2_p1_chunk11",
+                "21bb07e2_p1_chunk12",
+                "21bb07e2_p1_chunk13",
+                "21bb07e2_p1_chunk14",
+                "21bb07e2_p1_chunk15",
+                "21bb07e2_p1_chunk16",
+                "21bb07e2_p1_chunk17",
+                "21bb07e2_p1_chunk18",
+                "21bb07e2_p1_chunk19",
+                "21bb07e2_p1_chunk2",
+                "21bb07e2_p1_chunk20",
+                "21bb07e2_p1_chunk21",
+                "21bb07e2_p1_chunk3",
+                "21bb07e2_p1_chunk4",
+                "21bb07e2_p1_chunk6",
+                "21bb07e2_p1_chunk7",
+                "21bb07e2_p1_chunk8",
+                "21bb07e2_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 24,
+            "passage_id": "21bb07e2_p1_chunk10",
+            "text": "to kill them due to Brahma's boon. The war was stopped by Brahma and Ravana formed an alliance with them, he learnt several magical tricks or maya from those demons\nRavana had defeated the vanara warriors namely Hanuman, Sugriva, Neela and even Rama's brother Lakshmana twice during his war with Rama. As per the original six books of Valmiki Ramayana, only lord Rama the incarnation of Vishnu defeated Ravana and killed him after several days of single duel\nHe killed Anaranya, the king of Ayodhya , although he cursed Ravana to be slain by Rama\nRavana had wrestled his brother Kubera and vanquished him for the Pushpaka Vimana\nImmolation of Vedavati\nRavana found Vedavati sitting in meditation as a tapasvini and was captivated by her beauty. He proposed his hand in marriage to her, and was rejected. Ravana, firmly rejected at every turn, grabbed her hair and tried assaulting her. The furious Vedavati cursed Ravana that she would be born once more, and would be the cause of his death. She subsequently leapt into the ritual havan that was present in her vicinity, immolating herself\nRape of Rambha",
+            "query_relevance": 0.078,
+            "indian_context_relevance": 0.394,
+            "source_signal": 0.643,
+            "final_score": 0.299,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 0.5,
+                "place_feature": 0.5,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 1.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "21bb07e2",
+                "url": "https://en.wikipedia.org/wiki/Ravana",
+                "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+                "domain": "en.wikipedia.org",
+                "title": "Ravana - Wikipedia",
+                "language": "en",
+                "task2_source_type": "non_profit",
+                "content_type": "html",
+                "licence": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+                "licence_category": "cc-by-sa-4.0",
+                "query_slug": "01_why-rama-and-ravana-fought-each-oher",
+                "source_queries": [
+                  "\"rama\" \"ravana\" \"fought\" \"each\" \"oher\""
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "21bb07e2_Ravana.html",
+                "source_path": "downloads/html_pages/01_why-rama-and-ravana-fought-each-oher/21bb07e2_Ravana.html",
+                "word_count": 188
+              }
+            },
+            "source_support": {
+              "document_id": "document:21bb07e2",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:en.wikipedia.org",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://en.wikipedia.org/wiki/Ravana",
+              "origin_group_id": "document:21bb07e2",
+              "same_origin_passage_ids": [
+                "21bb07e2_p1_chunk1",
+                "21bb07e2_p1_chunk11",
+                "21bb07e2_p1_chunk12",
+                "21bb07e2_p1_chunk13",
+                "21bb07e2_p1_chunk14",
+                "21bb07e2_p1_chunk15",
+                "21bb07e2_p1_chunk16",
+                "21bb07e2_p1_chunk17",
+                "21bb07e2_p1_chunk18",
+                "21bb07e2_p1_chunk19",
+                "21bb07e2_p1_chunk2",
+                "21bb07e2_p1_chunk20",
+                "21bb07e2_p1_chunk21",
+                "21bb07e2_p1_chunk3",
+                "21bb07e2_p1_chunk4",
+                "21bb07e2_p1_chunk5",
+                "21bb07e2_p1_chunk6",
+                "21bb07e2_p1_chunk7",
+                "21bb07e2_p1_chunk8",
+                "21bb07e2_p1_chunk9"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          }
+        ],
+        "is_simulated": false,
+        "provenance": {
+          "kind": "task3_output",
+          "description": "Passages extracted by Task 3 from documents collected by Task 2.",
+          "task3_schema_version": "1.0",
+          "query_slugs": [
+            "01_why-rama-and-ravana-fought-each-oher"
+          ],
+          "documents_considered": 11,
+          "document_status_counts": {
+            "processed": 4,
+            "duplicate": 0,
+            "empty": 5,
+            "skipped": 2,
+            "failed": 0
+          },
+          "passages_supplied": 52,
+          "field_mapping": {
+            "ocr_confidence": "Task 3 0-100 OCR percentage divided by 100; omitted for direct text",
+            "source_type": "Task 2 academic->academic, government->institutional, others unknown"
+          }
+        },
+        "traceability": {
+          "selected_evidence_ids": [
+            "a34cec27_p1_chunk1",
+            "a34cec27_p1_chunk2",
+            "a34cec27_p1_chunk10",
+            "c78ae9d2_p1_chunk8",
+            "a34cec27_p1_chunk11",
+            "c78ae9d2_p1_chunk3",
+            "a34cec27_p1_chunk3",
+            "a34cec27_p1_chunk8",
+            "c78ae9d2_p1_chunk1",
+            "c78ae9d2_p1_chunk9",
+            "21bb07e2_p1_chunk1",
+            "9915a330_p1_chunk1",
+            "a34cec27_p1_chunk9",
+            "21bb07e2_p1_chunk13",
+            "21bb07e2_p1_chunk15",
+            "21bb07e2_p1_chunk21",
+            "21bb07e2_p1_chunk3",
+            "9915a330_p1_chunk3",
+            "21bb07e2_p1_chunk20",
+            "c78ae9d2_p1_chunk5",
+            "c78ae9d2_p1_chunk6",
+            "21bb07e2_p1_chunk12",
+            "21bb07e2_p1_chunk5",
+            "21bb07e2_p1_chunk10"
+          ],
+          "selected_references": [
+            {
+              "passage_id": "a34cec27_p1_chunk1",
+              "document_id": "a34cec27",
+              "url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+              "title": "Dussehra Story: Both Legends of Vijayadashami",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "a34cec27_p1_chunk2",
+              "document_id": "a34cec27",
+              "url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+              "title": "Dussehra Story: Both Legends of Vijayadashami",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "a34cec27_p1_chunk10",
+              "document_id": "a34cec27",
+              "url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+              "title": "Dussehra Story: Both Legends of Vijayadashami",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "c78ae9d2_p1_chunk8",
+              "document_id": "c78ae9d2",
+              "url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+              "title": "Rama vs Ravana: who wins and why",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "a34cec27_p1_chunk11",
+              "document_id": "a34cec27",
+              "url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+              "title": "Dussehra Story: Both Legends of Vijayadashami",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "c78ae9d2_p1_chunk3",
+              "document_id": "c78ae9d2",
+              "url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+              "title": "Rama vs Ravana: who wins and why",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "a34cec27_p1_chunk3",
+              "document_id": "a34cec27",
+              "url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+              "title": "Dussehra Story: Both Legends of Vijayadashami",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "a34cec27_p1_chunk8",
+              "document_id": "a34cec27",
+              "url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+              "title": "Dussehra Story: Both Legends of Vijayadashami",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "c78ae9d2_p1_chunk1",
+              "document_id": "c78ae9d2",
+              "url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+              "title": "Rama vs Ravana: who wins and why",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "c78ae9d2_p1_chunk9",
+              "document_id": "c78ae9d2",
+              "url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+              "title": "Rama vs Ravana: who wins and why",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "21bb07e2_p1_chunk1",
+              "document_id": "21bb07e2",
+              "url": "https://en.wikipedia.org/wiki/Ravana",
+              "title": "Ravana - Wikipedia",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "9915a330_p1_chunk1",
+              "document_id": "9915a330",
+              "url": "https://www.litcharts.com/lit/the-ramayana/12-rama-and-ravana-in-battle",
+              "title": "LitCharts",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "a34cec27_p1_chunk9",
+              "document_id": "a34cec27",
+              "url": "https://hindutone.com/festivals/dussehra-story-rama-ravana-durga-mahishasura/",
+              "title": "Dussehra Story: Both Legends of Vijayadashami",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "21bb07e2_p1_chunk13",
+              "document_id": "21bb07e2",
+              "url": "https://en.wikipedia.org/wiki/Ravana",
+              "title": "Ravana - Wikipedia",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "21bb07e2_p1_chunk15",
+              "document_id": "21bb07e2",
+              "url": "https://en.wikipedia.org/wiki/Ravana",
+              "title": "Ravana - Wikipedia",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "21bb07e2_p1_chunk21",
+              "document_id": "21bb07e2",
+              "url": "https://en.wikipedia.org/wiki/Ravana",
+              "title": "Ravana - Wikipedia",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "21bb07e2_p1_chunk3",
+              "document_id": "21bb07e2",
+              "url": "https://en.wikipedia.org/wiki/Ravana",
+              "title": "Ravana - Wikipedia",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "9915a330_p1_chunk3",
+              "document_id": "9915a330",
+              "url": "https://www.litcharts.com/lit/the-ramayana/12-rama-and-ravana-in-battle",
+              "title": "LitCharts",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "21bb07e2_p1_chunk20",
+              "document_id": "21bb07e2",
+              "url": "https://en.wikipedia.org/wiki/Ravana",
+              "title": "Ravana - Wikipedia",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "c78ae9d2_p1_chunk5",
+              "document_id": "c78ae9d2",
+              "url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+              "title": "Rama vs Ravana: who wins and why",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "c78ae9d2_p1_chunk6",
+              "document_id": "c78ae9d2",
+              "url": "https://legrandgrimoire.com/guides/mythology/rama-vs-ravana-who-wins-and-why/",
+              "title": "Rama vs Ravana: who wins and why",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "21bb07e2_p1_chunk12",
+              "document_id": "21bb07e2",
+              "url": "https://en.wikipedia.org/wiki/Ravana",
+              "title": "Ravana - Wikipedia",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "21bb07e2_p1_chunk5",
+              "document_id": "21bb07e2",
+              "url": "https://en.wikipedia.org/wiki/Ravana",
+              "title": "Ravana - Wikipedia",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "21bb07e2_p1_chunk10",
+              "document_id": "21bb07e2",
+              "url": "https://en.wikipedia.org/wiki/Ravana",
+              "title": "Ravana - Wikipedia",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            }
+          ],
+          "references_available": true,
+          "source_support_scope": "all_input_candidates_before_filtering",
+          "source_independence_established": false,
+          "text_similarity_establishes_agreement": false
+        },
+        "integration": {
+          "task3": "supplied_package",
+          "task5": "consumer_stub_only",
+          "actual_task5_available": false
+        },
+        "candidate_count": 52
+      }
+    ]
+  }
+}

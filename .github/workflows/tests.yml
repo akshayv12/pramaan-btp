@@ -1,0 +1,36 @@
+name: Offline checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install baseline dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Verify preserved source and Task 5 mirror
+        run: python scripts/check_release.py
+      - name: Task 5
+        run: python -m unittest discover -s task5_standalone/tests -q
+      - name: Website and API
+        run: python -m unittest discover -s website/tests -q
+      - name: Tasks 1-5 integration with local fixtures
+        run: >-
+          python -m pytest integrated_pipeline/tests integrated_pipeline/integration_tests
+          integrated_pipeline/task2_search_collect
+          integrated_pipeline/Task1_Multilingual_Query_Generator -q
+      - name: Frontend
+        run: node --test website/tests/ui.test.js

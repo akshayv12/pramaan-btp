@@ -1,0 +1,13 @@
+{
+  "semantic_model": {
+    "name": ".venv/models/bge-m3",
+    "device": "cpu",
+    "batch_size": 4,
+    "cache_folder": ".venv/models",
+    "revision": "9a0624b896d81da7492a910ffa53731274b6cf3d",
+    "local_files_only": true
+  },
+  "evidence": {
+    "reference_date": "2026-11-09"
+  }
+}

@@ -1,0 +1,985 @@
+{
+  "task4_output": {
+    "schema_version": "1.0",
+    "task3_summary": {
+      "processed": 3,
+      "duplicate": 0,
+      "empty": 0,
+      "skipped": 0,
+      "failed": 0,
+      "total_documents": 3,
+      "total_passages": 10
+    },
+    "ranking": {
+      "top_k": 24,
+      "config": {
+        "relevance_weights": {
+          "lexical_weight": 1.0,
+          "semantic_weight": 0.0
+        },
+        "semantic_model": {
+          "name": ".venv/models/bge-m3",
+          "batch_size": 4,
+          "device": "cpu",
+          "cache_folder": ".venv/models",
+          "revision": "9a0624b896d81da7492a910ffa53731274b6cf3d",
+          "local_files_only": true
+        },
+        "context_weights": {
+          "w_script": 0.2615554450139791,
+          "w_entity": 0.1836532824196681,
+          "w_place": 0.06080958218468986,
+          "w_institution": 0.08834378821779065,
+          "w_primary": 0.09970942342209287,
+          "w_vocab": 0.08436449382426534,
+          "w_query_ctx": 0.22156398491751406
+        },
+        "ranking_weights": {
+          "query_relevance_weight": 0.430406653580725,
+          "indian_context_weight": 0.40340182045583983,
+          "evidence_weight": 0.1661915259634352
+        },
+        "filter": {
+          "enabled": false,
+          "threshold": 0.0
+        },
+        "evidence": {
+          "reference_date": "2026-11-12",
+          "duplicate_threshold": 0.92,
+          "related_text_threshold": 0.65
+        },
+        "output": {
+          "include_feature_breakdown": true,
+          "include_provenance": true,
+          "include_source_support": true
+        }
+      }
+    },
+    "queries": [
+      {
+        "schema_version": "1.0.0",
+        "query": "Tell me about sundarakanda",
+        "status": "ok",
+        "ranked_evidence": [
+          {
+            "rank": 1,
+            "passage_id": "c13b6a25_p1_chunk2",
+            "text": "to My Account Bookmarks Manage Subscriptions Need help with your subscription? customersupport@thehindu.co.in 1800 102 1878 The glory of Sundarakanda Updated - October 18, 2026 01:44 pm IST SEE ALL Remove\nSrimad Ramayana is composed as the very essence of the Vedas. Reciting the Ramayana carries the sanctity and spiritual merit of Vedic recitation, Damal S. Ramakrishnan said in a discourse. Traditionally, the name Ramayana is associated with the four Vedas: “ Ra ” with the Rigveda, “ Ma ” with the Samaveda, “ Ya ” with the Yajurveda, and “ Na ” with the Atharvanaveda. Great acharyas, saints, and poets have celebrated the glory of the Ramayana and Lord Rama. In Tamil, poet Kambar immortalised the story of Rama through his Kamba Ramayanam. Sundarakanda in the Ramayana holds a special sacred place. In Sundarakanda, Hanuman’s mother Anjana Devi affectionately calls him Sundara. Through his divine vision, Maharshi Valmiki knew this sacred name and named it Sundarakanda, which celebrates Hanuman and his unparalleled devotion to Rama. Another significant interpretation of Valmiki behind the name Sundarakanda is defined in the sloka: “ Sundare Sundaro Rama ” — In Sundarakanda Rama is beautiful; “ Sundare Sundari Katha ” — The story narrated in it is beautiful; “ Sundare Sundari Sita ” — Sita Devi is beautiful in her purity, courage, and unwavering devotion; “ Sundare Sundaram Vanam ” – The Ashoka Vatika is beautiful; “ Sundare Sundaram Kavyam ” — Valmiki’s poetic brilliance reaches its sublime expression; and “ Sundare Sundara: Kapi: — In Sundarakanda, Sundara, that is beautiful Hanuman, holds the key",
+            "query_relevance": 0.179,
+            "indian_context_relevance": 0.283,
+            "source_signal": 0.771,
+            "final_score": 0.319,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 1.0,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 1.0,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 0.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.998,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "c13b6a25",
+                "url": "https://www.thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+                "canonical_url": "https://thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+                "domain": "www.thehindu.com",
+                "title": "The glory of Sundarakanda",
+                "author": "The Hindu",
+                "publication_date": "2026-10-17",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_tell-me-about-sundarakanda",
+                "source_queries": [
+                  "Tell me about sundarakanda"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "54d75aac_article71592643.html",
+                "source_path": "downloads/html_pages/01_tell-me-about-sundarakanda/54d75aac_article71592643.html",
+                "word_count": 260
+              }
+            },
+            "source_support": {
+              "document_id": "document:c13b6a25",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:thehindu.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://www.thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+              "origin_group_id": "document:c13b6a25",
+              "same_origin_passage_ids": [
+                "c13b6a25_p1_chunk1",
+                "c13b6a25_p1_chunk3",
+                "c13b6a25_p1_chunk4"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 2,
+            "passage_id": "d2ded002_p1_chunk1",
+            "text": "Look up sa:सुन्दरकाण्ड in Wiktionary, the free dictionary\nSundarakanda or Sundara Kanda is the fifth book in the ancient Indian epic Ramayana\nSundarakanda may also refer to these Indian films\nSundarakanda (1991 film) , a Kannada film starring Shankar Nag\nSundarakanda (1992 film) , a Telugu film starring Daggubati Venkatesh and Meena\nSundarakanda (2001 film) , a Kannada film directed by M. S. Rajashekar\nSundarakanda (2008 film) , a Telugu film starring Allari Naresh and Charmy Kaur\nSundarakanda (2025 film) , a Telugu film of 2025\nSee also\nSundara (disambiguation)\nSundara Kandam , a 1992 film\nKanda (disambiguation)\nTopics referred to by the same term",
+            "query_relevance": 0.239,
+            "indian_context_relevance": 0.088,
+            "source_signal": 0.643,
+            "final_score": 0.245,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.028,
+                "entity_feature": 0.0,
+                "place_feature": 0.5,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 0.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "d2ded002",
+                "url": "https://en.wikipedia.org/wiki/Sundarakanda",
+                "canonical_url": "https://en.wikipedia.org/wiki/Sundarakanda",
+                "domain": "en.wikipedia.org",
+                "title": "Sundarakanda - Wikipedia",
+                "language": "en",
+                "task2_source_type": "non_profit",
+                "content_type": "html",
+                "licence": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+                "licence_category": "cc-by-sa-4.0",
+                "query_slug": "01_tell-me-about-sundarakanda",
+                "source_queries": [
+                  "Tell me about sundarakanda"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Mixed",
+                "detected_language": "Sanskrit (Fallback)",
+                "task3_reliability": "HIGH",
+                "source_file": "d2ded002_Sundarakanda.html",
+                "source_path": "downloads/html_pages/01_tell-me-about-sundarakanda/d2ded002_Sundarakanda.html",
+                "word_count": 105
+              }
+            },
+            "source_support": {
+              "document_id": "document:d2ded002",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:en.wikipedia.org",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://en.wikipedia.org/wiki/Sundarakanda",
+              "origin_group_id": "document:d2ded002",
+              "same_origin_passage_ids": [],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 3,
+            "passage_id": "c13b6a25_p1_chunk3",
+            "text": "beautiful; “ Sundare Sundaram Kavyam ” — Valmiki’s poetic brilliance reaches its sublime expression; and “ Sundare Sundara: Kapi: — In Sundarakanda, Sundara, that is beautiful Hanuman, holds the key\nIn Kamba Ramayanam, Kambar connects the five elements (Panchabhoothas) with Hanuman in “ Anjile Ondru Petraan ”. He refers to Hanuman as Vayuputra (air), leaps across the ocean (water), travels to Lanka through Akasha (sky), and finds Mother Sita, who arose from Mother Earth (earth). Finally, Hanuman uses Agni (fire) to burn Lanka. Sundarakanda narrates Hanuman’s mission to reunite Rama and Sita. Thus, Hanuman’s service reflects the speed, certainty, protective purpose, and unfailing nature associated with the Rama baana. Hanuman is not merely Rama’s messenger; he is Rama’s resolve in motion\nPublished - October 17, 2026 05:06 am IST\nCopy link\nEmail\nFacebook\nTwitter\nTelegram\nLinkedIn\nWhatsApp\nReddit\nSEE ALL\nRemove\n0 / 0 Sign in to unlock member-only benefits!\nAccess 10 free stories every month\nSave stories to read later\nAccess to comment on every story\nSign-up/manage your newsletter subscriptions with a single click\nGet notified by email for early access to discounts & offers on our products\nLooks like you are already logged in from more than 5 devices! To continue logging in, remove at least one device from the below list\nTerms & conditions | Institutional Subscriber\nComments\nComments have to be in English, and in full sentences. They cannot be abusive or personal. Please abide by our community guidelines for posting your comments",
+            "query_relevance": 0.059,
+            "indian_context_relevance": 0.184,
+            "source_signal": 0.771,
+            "final_score": 0.228,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 1.0,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.0,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 0.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.998,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "c13b6a25",
+                "url": "https://www.thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+                "canonical_url": "https://thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+                "domain": "www.thehindu.com",
+                "title": "The glory of Sundarakanda",
+                "author": "The Hindu",
+                "publication_date": "2026-10-17",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_tell-me-about-sundarakanda",
+                "source_queries": [
+                  "Tell me about sundarakanda"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "54d75aac_article71592643.html",
+                "source_path": "downloads/html_pages/01_tell-me-about-sundarakanda/54d75aac_article71592643.html",
+                "word_count": 247
+              }
+            },
+            "source_support": {
+              "document_id": "document:c13b6a25",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:thehindu.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://www.thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+              "origin_group_id": "document:c13b6a25",
+              "same_origin_passage_ids": [
+                "c13b6a25_p1_chunk1",
+                "c13b6a25_p1_chunk2",
+                "c13b6a25_p1_chunk4"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 4,
+            "passage_id": "b6741f9e_p1_chunk5",
+            "text": "wrote a Telugu version for Hanuman Chalisa of Tulsidas and Sundara Kanda of Valmiki Ramayana as 'Sundarakandamu' in Telugu during 1972–74. He sang Sundarakanda in the form of Telugu songs\nA Malayalam independent translation of Sundara Kandam can be found in 'Adhyatma Ramayanam Kilipattu', written by Thunchaththu Ramanujan Ezhuthachan. Ezhuthachan wrote the translation of the Adhyatma Ramayana, a Sanskrit text connected with the Ramanandi sect\nThe Hanuman Chalisa is a different poetic contribution towards the heroics of Hanuman by Tulsidas. Though it mentions his achievements during Ramayana, it goes beyond that as well, encompassing the complete life of Hanuman\nReferences\n↑ www.wisdomlib.org (2019-01-27). \"Sundarakanda, Sundarakāṇḍa, Sundara-kanda: 2 definitions\" . www.wisdomlib.org . Retrieved 2022-11-23\n↑ aravamudan, krishnan (2014-09-22). Pure Gems of Ramayanam . PartridgeIndia. p. 369. ISBN 978-1-4828-3720-9\n↑ Robert P. Goldman; Sally Sutherland Goldman, eds. (1996), The Ramayana of Valmiki: An Epic of Ancient India : Sundarkand , Princeton University Press, pp. 80– 82, ISBN 978-0-691-06662-2\nExternal links\nSundara Kanda",
+            "query_relevance": 0.101,
+            "indian_context_relevance": 0.172,
+            "source_signal": 0.643,
+            "final_score": 0.22,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 0.5,
+                "place_feature": 0.5,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 0.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "b6741f9e",
+                "url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+                "canonical_url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+                "domain": "en.wikipedia.org",
+                "title": "Sundara Kanda - Wikipedia",
+                "language": "en",
+                "task2_source_type": "non_profit",
+                "content_type": "html",
+                "licence": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+                "licence_category": "cc-by-sa-4.0",
+                "query_slug": "01_tell-me-about-sundarakanda",
+                "source_queries": [
+                  "Tell me about sundarakanda"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "b6741f9e_Sundara_Kanda.html",
+                "source_path": "downloads/html_pages/01_tell-me-about-sundarakanda/b6741f9e_Sundara_Kanda.html",
+                "word_count": 160
+              }
+            },
+            "source_support": {
+              "document_id": "document:b6741f9e",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:en.wikipedia.org",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+              "origin_group_id": "document:b6741f9e",
+              "same_origin_passage_ids": [
+                "b6741f9e_p1_chunk1",
+                "b6741f9e_p1_chunk2",
+                "b6741f9e_p1_chunk3",
+                "b6741f9e_p1_chunk4"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 5,
+            "passage_id": "b6741f9e_p1_chunk1",
+            "text": "Fifth book of the epic Ramayana\nFor the 1992 film, see Sundara Kandam . For other uses, see Sundarakanda\nSundara Kanda ( Sanskrit : सुन्दरकाण्ड , romanized : Sundara Kāṇḍa , lit. ' beautiful chapter ' ) is the fifth book in the Hindu epic Ramayana . The original Sundara Kanda is in Sanskrit , and was composed in popular tradition by Valmiki , who was the first to scripturally record the Ramayana . Sundara Kanda is the only chapter of the Ramayana in which the principal protagonist is not Rama , but Hanuman . The work depicts the adventures of Hanuman and his selflessness, strength, and devotion to Rama are emphasised in the text. Hanuman is believed to have been fondly called \"Sundara\" by his mother Anjani , and Sage Valmiki is stated to have chosen this name over others as the Sundara Kanda is about Hanuman's journey to Lanka\nPreceded by\nKishkindha Kanda\nRamayana Kandas\nSucceeded by\nYuddha Kanda\nSummary\nMaruti returns from Lanka\nThe Sundara Kanda forms the heart of Valmiki's Ramayana and consists of a detailed, vivid account of Hanuman 's adventures. After learning about Sita, Hanuman assumes a gargantuan form and makes a colossal leap across the ocean to Lanka after defeating Surasa , the mother of the nagas, and Simhika , who is sent by the devatas\nIn Lanka, Hanuman searches for Sita, and finally finds her in the Ashoka Vatika",
+            "query_relevance": 0.027,
+            "indian_context_relevance": 0.237,
+            "source_signal": 0.643,
+            "final_score": 0.214,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.013,
+                "entity_feature": 1.0,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 0.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "b6741f9e",
+                "url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+                "canonical_url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+                "domain": "en.wikipedia.org",
+                "title": "Sundara Kanda - Wikipedia",
+                "language": "en",
+                "task2_source_type": "non_profit",
+                "content_type": "html",
+                "licence": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+                "licence_category": "cc-by-sa-4.0",
+                "query_slug": "01_tell-me-about-sundarakanda",
+                "source_queries": [
+                  "Tell me about sundarakanda"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Mixed",
+                "detected_language": "Sanskrit (Fallback)",
+                "task3_reliability": "HIGH",
+                "source_file": "b6741f9e_Sundara_Kanda.html",
+                "source_path": "downloads/html_pages/01_tell-me-about-sundarakanda/b6741f9e_Sundara_Kanda.html",
+                "word_count": 237
+              }
+            },
+            "source_support": {
+              "document_id": "document:b6741f9e",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:en.wikipedia.org",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+              "origin_group_id": "document:b6741f9e",
+              "same_origin_passage_ids": [
+                "b6741f9e_p1_chunk2",
+                "b6741f9e_p1_chunk3",
+                "b6741f9e_p1_chunk4",
+                "b6741f9e_p1_chunk5"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 6,
+            "passage_id": "b6741f9e_p1_chunk2",
+            "text": "Surasa , the mother of the nagas, and Simhika , who is sent by the devatas In Lanka, Hanuman searches for Sita, and finally finds her in the Ashoka Vatika\nIn the Ashoka Vatika, Sita is wooed and threatened by Ravana and his rakshasi mistresses to marry Ravana. Hanuman discloses himself to Sita as Rama's messenger. Hanuman reassures her, giving Rama's signet ring as a sign of good faith. He offers to carry Sita back to Rama; however, she refuses, reluctant to allow herself to be rescued by any one other than her husband. She says that Rama himself must come and avenge the insult of her abduction\nHanuman then wreaks havoc in Lanka by destroying trees and buildings, and kills Ravana's warriors. He allows himself to be captured and produced before Ravana. He gives a bold lecture to Ravana to release Sita. He is condemned and his tail is set on fire, but he escapes his bonds and, leaping from roof to roof, sets fire to Ravana's citadel, and makes the giant leap back from the island. The joyous search party returns to Kishkindha with the news\nThe act of reading\nIt is traditional to begin the reading ( pārāyaṇa ) of the Ramayana with the Sundara Kanda",
+            "query_relevance": 0.0,
+            "indian_context_relevance": 0.234,
+            "source_signal": 0.643,
+            "final_score": 0.201,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 1.0,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 0.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "b6741f9e",
+                "url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+                "canonical_url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+                "domain": "en.wikipedia.org",
+                "title": "Sundara Kanda - Wikipedia",
+                "language": "en",
+                "task2_source_type": "non_profit",
+                "content_type": "html",
+                "licence": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+                "licence_category": "cc-by-sa-4.0",
+                "query_slug": "01_tell-me-about-sundarakanda",
+                "source_queries": [
+                  "Tell me about sundarakanda"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "b6741f9e_Sundara_Kanda.html",
+                "source_path": "downloads/html_pages/01_tell-me-about-sundarakanda/b6741f9e_Sundara_Kanda.html",
+                "word_count": 209
+              }
+            },
+            "source_support": {
+              "document_id": "document:b6741f9e",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:en.wikipedia.org",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+              "origin_group_id": "document:b6741f9e",
+              "same_origin_passage_ids": [
+                "b6741f9e_p1_chunk1",
+                "b6741f9e_p1_chunk3",
+                "b6741f9e_p1_chunk4",
+                "b6741f9e_p1_chunk5"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 7,
+            "passage_id": "b6741f9e_p1_chunk4",
+            "text": "its recital brings harmony to the household. Many Hindus believe that if one does not have time to read the whole Ramayana, one should read the Sundara Kanda Other versions\nMultiple variations of the Sundara Kanda exist in other languages as well, for instance in Awadhi , the language in which the saint Tulsidas wrote the Ramacharitamanasa . The Ramacharitamanasa was written much later than Valmiki's Ramayana, in the 16th century. This text extends beyond the Valmiki's Sundara Kanda, as it also includes events of Rama 's army journey from the Kishkinda mountain to the seashore of Rameswaram ; Rama prays to Shiva ; Vibhishana , the sage Shuka and the deity of the oceans, Varuna , take refuge under Rama , and Varuna advises Rama to seek assistance from the two vanara brothers named Nala and Nila , who had the boon of being excellent architects and build a bridge from Rameswaram to Lanka (called the Rama Setu )\nAn earlier Tamil version, Ramavataram , by Kambar , is also a prevalent text among the Sri Vaishnava and Smarta Brahmins in South India\nRanganatha Ramayanam , a Telugu version of Valmiki Ramayana written by Gona Budha Reddy, also describes this episode\nM. S. Ramarao wrote a Telugu version for Hanuman Chalisa of Tulsidas and Sundara Kanda of Valmiki Ramayana as 'Sundarakandamu' in Telugu during 1972–74. He sang Sundarakanda in the form of Telugu songs",
+            "query_relevance": 0.045,
+            "indian_context_relevance": 0.172,
+            "source_signal": 0.643,
+            "final_score": 0.196,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 0.5,
+                "place_feature": 0.5,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 0.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "b6741f9e",
+                "url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+                "canonical_url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+                "domain": "en.wikipedia.org",
+                "title": "Sundara Kanda - Wikipedia",
+                "language": "en",
+                "task2_source_type": "non_profit",
+                "content_type": "html",
+                "licence": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+                "licence_category": "cc-by-sa-4.0",
+                "query_slug": "01_tell-me-about-sundarakanda",
+                "source_queries": [
+                  "Tell me about sundarakanda"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "b6741f9e_Sundara_Kanda.html",
+                "source_path": "downloads/html_pages/01_tell-me-about-sundarakanda/b6741f9e_Sundara_Kanda.html",
+                "word_count": 235
+              }
+            },
+            "source_support": {
+              "document_id": "document:b6741f9e",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:en.wikipedia.org",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+              "origin_group_id": "document:b6741f9e",
+              "same_origin_passage_ids": [
+                "b6741f9e_p1_chunk1",
+                "b6741f9e_p1_chunk2",
+                "b6741f9e_p1_chunk3",
+                "b6741f9e_p1_chunk5"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 8,
+            "passage_id": "c13b6a25_p1_chunk1",
+            "text": "You are logged in\nLoading\nYou don’t have any Active Subscription\nSubscribe now\nSubscribed with another email? Logout and Login with that one\nYour active subscription(s)\nAccount subscription benefits alongside Premium Stories, Editorials,\nOpinions and more. Unlock these with Subscription\nProducts you've access to\nAdditional Subscription Benefits\neBooks\nWebinars\nNewsletters\nGames\nMonthly Digest\nAccount Settings\nGo to My Account\nBookmarks\nManage Subscriptions\nNeed help with your subscription?\ncustomersupport@thehindu.co.in\n1800 102 1878\nThe glory of Sundarakanda\nUpdated - October 18, 2026 01:44 pm IST\nSEE ALL\nRemove",
+            "query_relevance": 0.047,
+            "indian_context_relevance": 0.0,
+            "source_signal": 0.771,
+            "final_score": 0.148,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 0.0,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.0,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 0.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.998,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "c13b6a25",
+                "url": "https://www.thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+                "canonical_url": "https://thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+                "domain": "www.thehindu.com",
+                "title": "The glory of Sundarakanda",
+                "author": "The Hindu",
+                "publication_date": "2026-10-17",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_tell-me-about-sundarakanda",
+                "source_queries": [
+                  "Tell me about sundarakanda"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "54d75aac_article71592643.html",
+                "source_path": "downloads/html_pages/01_tell-me-about-sundarakanda/54d75aac_article71592643.html",
+                "word_count": 86
+              }
+            },
+            "source_support": {
+              "document_id": "document:c13b6a25",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:thehindu.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://www.thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+              "origin_group_id": "document:c13b6a25",
+              "same_origin_passage_ids": [
+                "c13b6a25_p1_chunk2",
+                "c13b6a25_p1_chunk3",
+                "c13b6a25_p1_chunk4"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 9,
+            "passage_id": "c13b6a25_p1_chunk4",
+            "text": "| Institutional Subscriber Comments Comments have to be in English, and in full sentences. They cannot be abusive or personal. Please abide by our community guidelines for posting your comments\nWe have migrated to a new commenting platform. If you are already a registered user of The Hindu and logged in, you may continue to engage with our articles. If you do not have an account please register and login to post comments. Users can access their older comments by logging into their accounts on Vuukle",
+            "query_relevance": 0.0,
+            "indian_context_relevance": 0.0,
+            "source_signal": 0.771,
+            "final_score": 0.128,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 0.0,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.0,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 0.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.7,
+                "date_score": 0.998,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "c13b6a25",
+                "url": "https://www.thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+                "canonical_url": "https://thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+                "domain": "www.thehindu.com",
+                "title": "The glory of Sundarakanda",
+                "author": "The Hindu",
+                "publication_date": "2026-10-17",
+                "language": "en",
+                "task2_source_type": "commercial",
+                "content_type": "html",
+                "licence": "unknown",
+                "licence_category": "unknown",
+                "query_slug": "01_tell-me-about-sundarakanda",
+                "source_queries": [
+                  "Tell me about sundarakanda"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "54d75aac_article71592643.html",
+                "source_path": "downloads/html_pages/01_tell-me-about-sundarakanda/54d75aac_article71592643.html",
+                "word_count": 86
+              }
+            },
+            "source_support": {
+              "document_id": "document:c13b6a25",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:thehindu.com",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://www.thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+              "origin_group_id": "document:c13b6a25",
+              "same_origin_passage_ids": [
+                "c13b6a25_p1_chunk1",
+                "c13b6a25_p1_chunk2",
+                "c13b6a25_p1_chunk3"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          },
+          {
+            "rank": 10,
+            "passage_id": "b6741f9e_p1_chunk3",
+            "text": "joyous search party returns to Kishkindha with the news The act of reading It is traditional to begin the reading ( pārāyaṇa ) of the Ramayana with the Sundara Kanda\nThis lesson is recited by Hindus , preferably on Tuesdays or Saturdays, these days having been earmarked for special prayers to Hanuman . It happens to be for nullification of the malefic effects of the crow-mounted son of Surya and Chhaya (shadow), Shani . Ramayana reveals that Shani , who was captive at Ravana 's palace, was rescued by Hanuman . As a token of thanks, Shani offered reprieve to all devotees of Hanuman. An alternative take is that once, Shani was caught between Hanuman's shoulders and the ceiling when attempting to mount the latter to influence his stars. Unable to bear the pain, Shani offered his gratitude in return for an immediate release\nThe Dharmic faith suggests that its recital brings harmony to the household. Many Hindus believe that if one does not have time to read the whole Ramayana, one should read the Sundara Kanda\nOther versions",
+            "query_relevance": 0.0,
+            "indian_context_relevance": 0.05,
+            "source_signal": 0.643,
+            "final_score": 0.127,
+            "feature_breakdown": {
+              "indian_context": {
+                "script_feature": 0.0,
+                "entity_feature": 0.0,
+                "place_feature": 0.0,
+                "institution_feature": 0.0,
+                "primary_text_feature": 0.5,
+                "contextual_vocab_feature": 0.0,
+                "query_context_match": 0.0
+              },
+              "evidence": {
+                "source_type_score": 0.4,
+                "attribution_score": 0.3,
+                "date_score": 0.5,
+                "citation_score": 0.3,
+                "ocr_score": 1.0,
+                "provenance_score": 1.0,
+                "duplication_score": 1.0
+              }
+            },
+            "provenance": {
+              "source_metadata": {
+                "document_id": "b6741f9e",
+                "url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+                "canonical_url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+                "domain": "en.wikipedia.org",
+                "title": "Sundara Kanda - Wikipedia",
+                "language": "en",
+                "task2_source_type": "non_profit",
+                "content_type": "html",
+                "licence": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+                "licence_category": "cc-by-sa-4.0",
+                "query_slug": "01_tell-me-about-sundarakanda",
+                "source_queries": [
+                  "Tell me about sundarakanda"
+                ]
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "detected_script": "Latin",
+                "detected_language": "English",
+                "task3_reliability": "HIGH",
+                "source_file": "b6741f9e_Sundara_Kanda.html",
+                "source_path": "downloads/html_pages/01_tell-me-about-sundarakanda/b6741f9e_Sundara_Kanda.html",
+                "word_count": 179
+              }
+            },
+            "source_support": {
+              "document_id": "document:b6741f9e",
+              "document_identity_basis": "declared_document_id",
+              "source_group_id": "hostname:en.wikipedia.org",
+              "source_group_basis": "hostname_proxy",
+              "canonical_url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+              "origin_group_id": "document:b6741f9e",
+              "same_origin_passage_ids": [
+                "b6741f9e_p1_chunk1",
+                "b6741f9e_p1_chunk2",
+                "b6741f9e_p1_chunk4",
+                "b6741f9e_p1_chunk5"
+              ],
+              "near_duplicate_passage_ids": [],
+              "similar_text_passage_ids": [],
+              "similar_text_source_group_count": 1,
+              "similar_text_document_origin_count": 1,
+              "source_independence_established": false,
+              "text_similarity_establishes_agreement": false,
+              "reviewed_claims": [],
+              "scope": "all_input_candidates_before_filtering"
+            }
+          }
+        ],
+        "is_simulated": false,
+        "provenance": {
+          "kind": "task3_output",
+          "description": "Passages extracted by Task 3 from documents collected by Task 2.",
+          "task3_schema_version": "1.0",
+          "query_slugs": [
+            "01_tell-me-about-sundarakanda"
+          ],
+          "documents_considered": 3,
+          "document_status_counts": {
+            "processed": 3,
+            "duplicate": 0,
+            "empty": 0,
+            "skipped": 0,
+            "failed": 0
+          },
+          "passages_supplied": 10,
+          "field_mapping": {
+            "ocr_confidence": "Task 3 0-100 OCR percentage divided by 100; omitted for direct text",
+            "source_type": "Task 2 academic->academic, government->institutional, others unknown"
+          }
+        },
+        "traceability": {
+          "selected_evidence_ids": [
+            "c13b6a25_p1_chunk2",
+            "d2ded002_p1_chunk1",
+            "c13b6a25_p1_chunk3",
+            "b6741f9e_p1_chunk5",
+            "b6741f9e_p1_chunk1",
+            "b6741f9e_p1_chunk2",
+            "b6741f9e_p1_chunk4",
+            "c13b6a25_p1_chunk1",
+            "c13b6a25_p1_chunk4",
+            "b6741f9e_p1_chunk3"
+          ],
+          "selected_references": [
+            {
+              "passage_id": "c13b6a25_p1_chunk2",
+              "document_id": "c13b6a25",
+              "url": "https://www.thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+              "title": "The glory of Sundarakanda",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "d2ded002_p1_chunk1",
+              "document_id": "d2ded002",
+              "url": "https://en.wikipedia.org/wiki/Sundarakanda",
+              "title": "Sundarakanda - Wikipedia",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "c13b6a25_p1_chunk3",
+              "document_id": "c13b6a25",
+              "url": "https://www.thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+              "title": "The glory of Sundarakanda",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "b6741f9e_p1_chunk5",
+              "document_id": "b6741f9e",
+              "url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+              "title": "Sundara Kanda - Wikipedia",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "b6741f9e_p1_chunk1",
+              "document_id": "b6741f9e",
+              "url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+              "title": "Sundara Kanda - Wikipedia",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "b6741f9e_p1_chunk2",
+              "document_id": "b6741f9e",
+              "url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+              "title": "Sundara Kanda - Wikipedia",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "b6741f9e_p1_chunk4",
+              "document_id": "b6741f9e",
+              "url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+              "title": "Sundara Kanda - Wikipedia",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "c13b6a25_p1_chunk1",
+              "document_id": "c13b6a25",
+              "url": "https://www.thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+              "title": "The glory of Sundarakanda",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "c13b6a25_p1_chunk4",
+              "document_id": "c13b6a25",
+              "url": "https://www.thehindu.com/society/faith/the-glory-of-sundara-kanda/article71592643.ece",
+              "title": "The glory of Sundarakanda",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            },
+            {
+              "passage_id": "b6741f9e_p1_chunk3",
+              "document_id": "b6741f9e",
+              "url": "https://en.wikipedia.org/wiki/Sundara_Kanda",
+              "title": "Sundara Kanda - Wikipedia",
+              "language": "en",
+              "method": "DIRECT_EXTRACTION",
+              "reference_available": true
+            }
+          ],
+          "references_available": true,
+          "source_support_scope": "all_input_candidates_before_filtering",
+          "source_independence_established": false,
+          "text_similarity_establishes_agreement": false
+        },
+        "integration": {
+          "task3": "supplied_package",
+          "task5": "consumer_stub_only",
+          "actual_task5_available": false
+        },
+        "candidate_count": 10
+      }
+    ]
+  }
+}

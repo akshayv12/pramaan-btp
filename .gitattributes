@@ -1,0 +1,5 @@
+# Preserve byte-for-byte upstream snapshots, including their original line endings.
+* -text
+*.jpeg binary
+*.jpg binary
+*.png binary

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ask in Hindi, Roman Hindi or English. Explore concise research answers with source passages and clear evidence support.">
+  <meta name="theme-color" content="#f7f9fc">
+  <title>Pramaan — Answers with evidence</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#query">Skip to search</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Pramaan home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M9 7h11a5 5 0 0 1 0 10H9m0-10v20m0-10h8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="23" cy="25" r="3" fill="currentColor"/></svg></span>
+      <span>pramaan<span class="brand-period">.</span></span>
+    </a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <button class="nav-button" id="how-button" type="button">How it works</button>
+      <button class="nav-button history-button" id="history-button" type="button"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.4 6.5a7 7 0 1 1-.3 6M3 2.8v4.6h4.6M10 6v4l2.6 1.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Recent searches</button>
+      <span class="backend-status" id="backend-status"><span class="status-dot" aria-hidden="true"></span><span id="backend-label">Connecting</span></span>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="search-section" aria-labelledby="hero-title">
+      <div class="hero-intro" id="hero-intro">
+        <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Curiosity, backed by evidence</p>
+        <h1 id="hero-title">A clearer answer.<br><em>The sources to see why.</em></h1>
+        <p class="hero-description">Ask in English, हिन्दी, or Roman Hindi.<br>Research the web and follow the evidence behind every answer.</p>
+      </div>
+
+      <form id="search-form" class="search-form">
+        <label class="sr-only" for="query">Your research question</label>
+        <div class="query-row">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.6" cy="10.6" r="6.6" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4.4 4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <textarea id="query" name="query" rows="2" maxlength="500" placeholder="What would you like to understand?" aria-describedby="search-hint" required disabled></textarea>
+          <button class="search-submit" id="search-submit" type="submit" aria-label="Search the web" disabled><span id="submit-label">Search</span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.7" cy="8.7" r="5.3" stroke="currentColor" stroke-width="1.7"/><path d="m13 13 3.5 3.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+        </div>
+        <div class="query-toolbar">
+          <div class="language-control"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.2" stroke="currentColor" stroke-width="1.3"/><path d="M3 10h14M10 2.8c4 4 4 10.4 0 14.4-4-4-4-10.4 0-14.4Z" stroke="currentColor" stroke-width="1.3"/></svg><label class="sr-only" for="language">Answer language</label><select id="language"><option value="">Auto language</option><option value="en">English</option><option value="hi">हिन्दी</option></select></div>
+          <button type="button" class="options-toggle" id="options-toggle" aria-expanded="false" aria-controls="search-options"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="7" cy="5" r="2" fill="currentColor"/><circle cx="13" cy="10" r="2" fill="currentColor"/><circle cx="8" cy="15" r="2" fill="currentColor"/></svg>Search options</button>
+        </div>
+        <div class="search-options" id="search-options" hidden>
+          <label id="ranker-control">Task 4 evidence ranking<select id="ranker"><option value="lexical">Lexical baseline</option><option value="production">Semantic ranking · BGE-M3</option></select><small>Used once, during a fresh web search.</small></label>
+          <label>Answer generation<select id="provider"><option value="gemini">Gemini synthesis</option><option value="ollama">Local Qwen3 4B</option><option value="extractive">Source extraction</option><option value="auto">Automatic</option></select></label>
+          <label>Answer verification<select id="verification"><option value="standard">Standard · NLI and rubric review</option><option value="thorough">Thorough · add consistency check</option><option value="basic">Basic · model support review</option></select><small>Thorough generates an additional draft and takes longer.</small></label>
+          <label>Evidence selection and review<select id="judge-provider"><option value="gemini">Gemini selection and review</option><option value="same">Same provider · fully local with Qwen</option></select><small>Gemini selection/review sends the evidence to Google. Qwen still phrases the answer. Fully local Qwen review uses provisional support labels.</small></label>
+          <p id="supplied-ranking-note" hidden>Task 4 ranking is supplied. Its passages go directly to Task 5; no retrieval or upstream ranking is repeated.</p>
+          <button id="gemini-settings-button" class="text-button" type="button">Configure Gemini</button>
+          <p id="options-note">Search options are checked against the connected backend.</p>
+        </div>
+      </form>
+      <div class="search-meta"><span id="search-hint">Enter to search. Shift + Enter for a new line.</span><span id="mode-label">Connecting to your research pipeline</span></div>
+
+      <div class="suggestions" id="suggestions"><span class="suggestions-label">A place to start</span><div class="suggestion-list">
+        <button type="button" data-suggestion="How did the Green Revolution change agriculture in India?">The Green Revolution</button>
+        <button type="button" data-suggestion="भारत में यूपीआई कैसे काम करता है?">यूपीआई कैसे काम करता है?</button>
+        <button type="button" data-suggestion="What makes Madhubani painting distinctive?">Madhubani painting</button>
+      </div></div>
+      <div class="try-row" id="try-row"><button type="button" id="example-button">Explore a saved research example</button><span aria-hidden="true">·</span><button type="button" id="upload-button">Use Task 4 evidence</button><input id="task4-file" type="file" accept="application/json,.json" hidden></div>
+    </section>
+
+    <section class="progress-section" id="progress-section" aria-labelledby="progress-title" hidden>
+      <div class="progress-heading"><div><p class="eyebrow">Research in progress</p><h2 id="progress-title">Following the evidence</h2></div><div class="progress-actions"><span id="elapsed" class="elapsed">0s</span><button id="cancel-button" class="text-button" type="button">Cancel search</button></div></div>
+      <div class="stage-list" id="stage-list" aria-label="Research progress"></div>
+      <p class="progress-note" id="progress-note" role="status">Your question is queued for research.</p>
+    </section>
+
+    <section class="error-section" id="error-section" role="alert" hidden><div class="error-symbol" aria-hidden="true">!</div><div><h2 id="error-title">This search could not finish</h2><p id="error-message"></p><a id="error-log" href="#" hidden>Download the run log</a></div></section>
+
+    <section class="result-section" id="result-section" aria-labelledby="result-question" hidden>
+      <div class="result-topline"><div class="result-kicker"><span class="result-mode" id="result-mode">Live research</span><span id="result-meta"></span></div><button class="text-button" id="new-search-button" type="button">New question</button></div>
+      <h2 id="result-question" class="result-question"></h2>
+      <p class="answer-status" id="previous-result-notice" hidden>This saved result was generated by an earlier Task 5 version. Search this question again to use the current model and checks.</p>
+      <label class="answer-selector" id="answer-selector-wrap" hidden>Question in this evidence collection<select id="answer-selector"></select></label>
+      <div class="results-layout">
+        <article class="answer-article" aria-label="Research answer">
+          <div class="article-heading"><span class="section-label">The answer</span><span class="generation-label" id="generation-label"></span></div>
+          <p class="answer-status" id="answer-status" hidden></p>
+          <div class="answer-text" id="answer-text"></div>
+          <section class="support-section" aria-labelledby="support-title"><div class="support-heading"><svg viewBox="0 0 22 24" fill="none" aria-hidden="true"><path d="m11 2 8 3v6c0 5-4 9-8 11-4-2-8-6-8-11V5l8-3Z" stroke="currentColor" stroke-width="1.4"/><path d="m7 11 3 3 5-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><h3 id="support-title">How well is this supported?</h3><span id="reliability-badge" class="reliability-badge"></span></div><p id="why-text" class="why-text"></p><p class="support-footnote">A measure of evidence support, not a probability that an answer is true.</p></section>
+          <details class="limitations" id="limitations" hidden><summary>Notes and limitations</summary><ul id="warnings-list"></ul></details>
+          <details class="limitations pipeline-trace" id="verification-details" hidden><summary>Answer verification details</summary><dl id="verification-list"></dl><p id="verification-explanation"></p></details>
+          <details class="limitations pipeline-trace" id="pipeline-trace" hidden><summary>How the evidence reached this answer</summary><dl id="pipeline-trace-list"></dl></details>
+          <div class="answer-actions"><button type="button" id="copy-button"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="6" y="6" width="10" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M12 6V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.3"/></svg>Copy answer</button><a id="download-answer" href="#">Download answer</a><a id="download-json" href="#">Export evidence</a></div>
+        </article>
+        <aside class="sources-panel" aria-labelledby="sources-title"><div class="sources-heading"><h3 id="sources-title">Supporting sources</h3><span id="source-count"></span></div><p class="sources-intro">Open a passage to see what supports the answer.</p><div id="sources-list" class="sources-list"></div></aside>
+      </div>
+    </section>
+
+    <section class="principles" id="principles" aria-label="How Pramaan approaches research"><div><span class="principle-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h7v14H4zM13 5h7v14h-7zM7 9h2M15 9h3M7 12h2M15 12h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><h2>Different sources. One view.</h2><p>Useful perspectives brought together, with repeated evidence kept in check.</p></div><div><span class="principle-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 15 15 9M8 8l2-2a4.2 4.2 0 0 1 6 6l-2 2m-4-4-2 2a4.2 4.2 0 0 0 6 6l2-2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><h2>Follow the original passage.</h2><p>Major claims link back to the text used to support them.</p></div><div><span class="principle-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 18V9m7 9V5m7 13v-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M3 21h18" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><h2>Uncertainty stays visible.</h2><p>See the quality of the evidence and where the answer has limits.</p></div></section>
+  </main>
+
+  <footer class="site-footer"><span>pramaan<span class="brand-period">.</span><span class="footer-note">An evidence-first research prototype</span></span><span>English <span class="footer-separator">/</span> हिन्दी <span class="footer-separator">/</span> Roman Hindi</span></footer>
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <dialog id="how-dialog" class="info-dialog"><div class="dialog-top"><span class="section-label">From question to evidence</span><button class="close-button" type="button" data-close="how-dialog" aria-label="Close">×</button></div><h2>A little more context<br>for every answer.</h2><p>Pramaan uses your existing research pipeline to understand a question, find web sources, extract their text, rank useful passages and produce an answer.</p><ol class="how-list"><li><strong>Ask in your language</strong><span>English, Hindi or Roman Hindi. Choose the answer language in the search box.</span></li><li><strong>Research across sources</strong><span>Evidence is collected and ranked for your question. Copied sources and poor OCR are treated cautiously.</span></li><li><strong>Inspect the answer</strong><span>Click a citation to inspect its source passage. Read the support explanation before relying on a result.</span></li></ol><p class="dialog-note">Saved examples are labelled. Source extraction does not translate; Gemini synthesis requires backend configuration.</p></dialog>
+  <dialog id="history-dialog" class="history-dialog"><div class="dialog-top"><div><span class="section-label">Your workspace</span><h2>Recent searches</h2></div><button class="close-button" type="button" data-close="history-dialog" aria-label="Close recent searches">×</button></div><div id="history-list" class="history-list"></div></dialog>
+  <dialog id="gemini-dialog" class="info-dialog"><div class="dialog-top"><div><span class="section-label">Answer generation</span><h2>Configure Gemini</h2></div><button class="close-button" type="button" data-close="gemini-dialog" aria-label="Close Gemini settings">×</button></div><form id="gemini-form" class="gemini-form"><p>The selected evidence will be sent to Google for synthesis and judging. Your API key stays on the local backend and is never stored in browser history or search results.</p><label for="gemini-key">Gemini API key</label><input id="gemini-key" type="password" autocomplete="off" spellcheck="false" maxlength="500" placeholder="Leave blank to use the backend key"><label for="gemini-model">Gemini model</label><input id="gemini-model" type="text" spellcheck="false" maxlength="160" required><p class="dialog-note">A key entered here lasts for this backend session. For persistent setup, add GEMINI_API_KEY and GEMINI_MODEL to integrated_pipeline/.env, then use this form with the key field blank.</p><button id="gemini-save" type="submit" class="primary-button">Validate and use Gemini</button><p id="gemini-status" role="status"></p></form></dialog>
+</body>
+</html>

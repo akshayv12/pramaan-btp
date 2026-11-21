@@ -1,0 +1,95 @@
+{
+  "task4_output": {
+    "schema_version": "1.0",
+    "queries": [
+      {
+        "schema_version": "1.0.0",
+        "query": "राम कैसे थे? राम को क्यों भगवान मानते हैं लोग?",
+        "status": "ok",
+        "ranked_evidence": [
+          {
+            "rank": 1,
+            "passage_id": "document 1/page 1",
+            "text": "रामायण में राम को आदर्श आचरण और कर्तव्य पालन से जोड़ा जाता है। कथा में राम अपने पिता का वचन निभाने के लिए वन जाते हैं।",
+            "query_relevance": 0.9,
+            "indian_context_relevance": 0.4,
+            "source_signal": 0.8,
+            "final_score": 0.85,
+            "provenance": {
+              "source_metadata": {
+                "document_id": "D1",
+                "url": "https://archive.fixtures.invalid/catalogue",
+                "title": "निर्मित हिन्दी उदाहरण 1",
+                "source_type": "unknown",
+                "language": "hi"
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "page_number": 1
+              }
+            }
+          },
+          {
+            "rank": 2,
+            "passage_id": "document 2/page 1",
+            "text": "हिन्दू भक्ति परम्परा में राम को विष्णु का अवतार माना जाता है। राम की कथाएँ धर्म और मर्यादा के आदर्शों को प्रस्तुत करती हैं।",
+            "query_relevance": 0.9,
+            "indian_context_relevance": 0.4,
+            "source_signal": 0.8,
+            "final_score": 0.85,
+            "provenance": {
+              "source_metadata": {
+                "document_id": "D2",
+                "url": "https://library.fixtures.invalid/catalogue",
+                "title": "निर्मित हिन्दी उदाहरण 2",
+                "source_type": "unknown",
+                "language": "hi"
+              },
+              "extraction_metadata": {
+                "method": "DIRECT_EXTRACTION",
+                "page_number": 1
+              }
+            }
+          }
+        ],
+        "is_simulated": true,
+        "provenance": {
+          "kind": "constructed_example",
+          "description": "Locally authored Hindi demonstration; fictional source URLs, not a live retrieval or factual accuracy benchmark."
+        },
+        "traceability": {
+          "selected_evidence_ids": [
+            "document 1/page 1",
+            "document 2/page 1"
+          ],
+          "selected_references": [
+            {
+              "passage_id": "document 1/page 1",
+              "document_id": "D1",
+              "url": "https://archive.fixtures.invalid/catalogue",
+              "title": "निर्मित हिन्दी उदाहरण 1",
+              "language": "hi",
+              "method": "DIRECT_EXTRACTION",
+              "page_number": 1,
+              "reference_available": true
+            },
+            {
+              "passage_id": "document 2/page 1",
+              "document_id": "D2",
+              "url": "https://library.fixtures.invalid/catalogue",
+              "title": "निर्मित हिन्दी उदाहरण 2",
+              "language": "hi",
+              "method": "DIRECT_EXTRACTION",
+              "page_number": 1,
+              "reference_available": true
+            }
+          ],
+          "references_available": true,
+          "source_support_scope": "not_included",
+          "source_independence_established": false,
+          "text_similarity_establishes_agreement": false
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+-r requirements-baseline.txt
+pdfplumber
+langdetect
+jiwer
+surya-ocr
+easyocr

@@ -1,0 +1,42 @@
+{
+  "relevance_weights": {
+    "lexical_weight": 0.1513868599294766,
+    "semantic_weight": 0.8486131400705234
+  },
+  "semantic_model": {
+    "name": ".venv/models/bge-m3",
+    "batch_size": 4,
+    "device": "cpu",
+    "cache_folder": ".venv/models",
+    "revision": "9a0624b896d81da7492a910ffa53731274b6cf3d",
+    "local_files_only": true
+  },
+  "context_weights": {
+    "w_script": 0.2615554450139791,
+    "w_entity": 0.1836532824196681,
+    "w_place": 0.06080958218468986,
+    "w_institution": 0.08834378821779065,
+    "w_primary": 0.09970942342209287,
+    "w_vocab": 0.08436449382426534,
+    "w_query_ctx": 0.22156398491751406
+  },
+  "ranking_weights": {
+    "query_relevance_weight": 0.430406653580725,
+    "indian_context_weight": 0.40340182045583983,
+    "evidence_weight": 0.1661915259634352
+  },
+  "filter": {
+    "enabled": true,
+    "threshold": 0.2710979070221943
+  },
+  "evidence": {
+    "reference_date": "2026-11-12",
+    "duplicate_threshold": 0.92,
+    "related_text_threshold": 0.65
+  },
+  "output": {
+    "include_feature_breakdown": true,
+    "include_provenance": true,
+    "include_source_support": true
+  }
+}
