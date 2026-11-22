@@ -455,12 +455,24 @@ def parse_html_metadata(html_text):
     )
     out['linked_pdfs'] = list(set(pdf_links))[:5]
 
-    img_links = re.findall(
-        r'<img[^>]+src\s*=\s*["\']([^"\']+\.(?:jpg|jpeg|png|webp|gif))["\']',
-        html_text, re.IGNORECASE
-    )
-    img_links = [u for u in set(img_links) if _looks_like_content_image(u)]
-    out['linked_images'] = img_links[:5]
+    image_links = []
+    seen_images = set()
+    for tag in re.findall(r'<img\b[^>]*>', html_text, re.IGNORECASE):
+        attrs = dict(re.findall(
+            r'([:\w-]+)\s*=\s*["\']([^"\']*)["\']', tag, re.IGNORECASE
+        ))
+        image_url = attrs.get('src', '').strip()
+        if not image_url or image_url in seen_images:
+            continue
+        if not _looks_like_content_image(image_url):
+            continue
+        seen_images.add(image_url)
+        image_links.append({
+            'url': image_url,
+            'alt': attrs.get('alt', '').strip(),
+            'title': attrs.get('title', '').strip(),
+        })
+    out['linked_images'] = image_links[:5]
 
     return out
 
@@ -475,8 +487,11 @@ _IMG_DENYLIST = (
     'partner', 'sponsor', 'advert', 'banner-ad',
     '-banner', 'banner-', 'side-banner', 'cover_bottom', '-cover-',
     'pendrive', 'promo',
-    'placeholder', 'spacer', 'blank', 'pixel', 'tracking', '1x1',
+    'placeholder', 'default', 'spacer', 'blank', 'pixel', 'tracking', '1x1',
     'avatar',
+    'header', 'footer', 'menu', 'authorphoto', 'track-your-order',
+    '5star', 'star.gif', 'shopify', '/products/', '/thumbnails/',
+    'freepik', 'after-sales', 'after_sales', 'taro-pumps', 'wpparpadhe',
     'qrcode', 'qr-', '-qr', 'contact-us', 'contact_us',
     'outlook.webp', 'oli-subscription', 'download.jpg',
     '88x31', '128.png', '256.png', '512.png',
@@ -492,10 +507,16 @@ def _looks_like_content_image(img_url):
     return not any(bad in low for bad in _IMG_DENYLIST)
 
 
-def _link_is_relevant(link_url, key_terms):
+def _link_is_relevant(link_url, key_terms, metadata_text=None):
+    """Check linked-resource relevance using metadata when explicitly supplied."""
     if not key_terms:
         return True
-    low = urllib.parse.unquote(link_url).lower()
+    if metadata_text == '':
+        return False
+    # Image URLs are often hashes or CDN IDs. Use alt/title metadata when
+    # supplied; retain the URL only as a fallback for PDFs and old callers.
+    candidate = metadata_text if metadata_text is not None else link_url
+    low = urllib.parse.unquote(candidate).lower()
     alnum = re.sub(r'[^a-z0-9\u0900-\u097F]+', '', low)
     for t in key_terms:
         t_alnum = re.sub(r'[^a-z0-9\u0900-\u097F]+', '', t.lower())
@@ -630,7 +651,8 @@ def safe_filename(url, ext):
     return f"{uid}_{stem}.{ext}"
 
 
-def download_to_disk(url, fallback_ext='html', crawl_delay=None, query_slug=None):
+def download_to_disk(url, fallback_ext='html', crawl_delay=None, query_slug=None,
+                     download_dir=None):
     """
     Fetch a URL, save it to disk under downloads/<type>/<query_slug>/, and
     return a result dict. The HTTP response is guaranteed closed on every
@@ -665,7 +687,8 @@ def download_to_disk(url, fallback_ext='html', crawl_delay=None, query_slug=None
         elif real_type == 'html':
             ext = 'html'
 
-        subdir = os.path.join(DOWNLOAD_DIR, DOWNLOAD_SUBDIRS[real_type])
+        root_dir = download_dir or DOWNLOAD_DIR
+        subdir = os.path.join(root_dir, DOWNLOAD_SUBDIRS[real_type])
         if query_slug:
             subdir = os.path.join(subdir, query_slug)
         os.makedirs(subdir, exist_ok=True)
@@ -801,10 +824,17 @@ def merge_duplicates(docs):
 def load_task1_input(path):
     with open(path, encoding='utf-8-sig') as f:
         data = json.load(f)
+    return normalize_task1_objects(data, source=str(path))
+
+
+def normalize_task1_objects(data, source="request"):
+    """Normalize compact/full Task 1 shapes for in-process and API callers."""
     objects = data if isinstance(data, list) else [data]
     for i, obj in enumerate(objects):
         if not isinstance(obj, dict):
-            raise ValueError(f"Task 1 object #{i} in {path} must be a JSON object.")
+            raise ValueError(
+                f"Task 1 object #{i} in {source} must be a JSON object."
+            )
 
         # Accept both Task 1's full response (`query`) and its compact API
         # contract (`text`), while keeping one canonical shape for retrieval.
@@ -817,12 +847,13 @@ def load_task1_input(path):
 
         if 'search_queries' not in obj or not obj['search_queries']:
             raise ValueError(
-                f"Task 1 object #{i} in {path} has no non-empty 'search_queries' "
+                f"Task 1 object #{i} in {source} has no non-empty 'search_queries' "
                 f"list. Got keys: {list(obj.keys())}")
         for j, sq in enumerate(obj['search_queries']):
             if not isinstance(sq, dict):
                 raise ValueError(
-                    f"Task 1 object #{i}, search_queries[{j}] in {path} must be an object.")
+                    f"Task 1 object #{i}, search_queries[{j}] in {source} "
+                    "must be an object.")
             if not sq.get('query') and sq.get('text'):
                 sq['query'] = sq['text']
             if not sq.get('query'):
@@ -848,7 +879,8 @@ def build_keyword_boost_query(key_terms):
     return {'query': quoted, 'language': language, 'kind': 'keyword_boost', 'score': None}
 
 
-def search_and_collect(search_queries, top_k=10, download=True, query_index=None):
+def search_and_collect(search_queries, top_k=10, download=True, query_index=None,
+                       download_dir=None):
     t_start = time.time()
 
     task1_object = search_queries
@@ -879,19 +911,37 @@ def search_and_collect(search_queries, top_k=10, download=True, query_index=None
         kind = item.get('kind', 'translation')
         score = item.get('score')
         region = item.get('region', 'in-en')
+        item['original_query'] = original_query
         print(f"\n{'='*60}\n[QUERY] {q}  (lang={lang}, kind={kind})\n{'='*60}")
 
         results, engine_name = search_web(q, region=region, max_results=top_k,
                                            api_key=BRAVE_API_KEY, search_lang=lang)
         item['engine_used'] = engine_name
         item['results_returned'] = len(results)
+        item['ranked_urls'] = [
+            {
+                'rank': rank,
+                'url': r.get('url', ''),
+                'title': r.get('title', ''),
+                'canonical_url': normalize_url(r.get('url', '')),
+            }
+            for rank, r in enumerate(results, start=1)
+            if r.get('url')
+        ]
         raw_count += len(results)
 
-        for r in results:
+        for rank, r in enumerate(results, start=1):
             url = r.get('url', '')
             if not url:
                 continue
-            url_to_origin[url].append({'query': q, 'kind': kind, 'score': score, 'language': lang})
+            url_to_origin[url].append({
+                'query': q,
+                'kind': kind,
+                'score': score,
+                'language': lang,
+                'search_rank': rank,
+                'rank': rank,
+            })
             if len(r.get('text', '')) > len(url_to_snippet.get(url, {}).get('text', '')):
                 url_to_snippet[url] = r
 
@@ -928,7 +978,8 @@ def search_and_collect(search_queries, top_k=10, download=True, query_index=None
             print(f"  [DL] {url_type:5s} {url[:65]}...")
             dl = download_to_disk(url, url_type,
                                   crawl_delay=crawl_delay,
-                                  query_slug=query_slug)
+                                  query_slug=query_slug,
+                                  download_dir=download_dir)
             downloaded = dl['success']
             saved_path = dl['path']
             status_code = dl['status_code']
@@ -1132,9 +1183,18 @@ def search_and_collect(search_queries, top_k=10, download=True, query_index=None
                 r = process_url(abs_url, origin, is_linked=True, parent_id=parent_id)
                 if r: documents.append(r[0])
 
-            for img_url in html_meta.get('linked_images', []):
+            for image in html_meta.get('linked_images', []):
+                if isinstance(image, dict):
+                    img_url = image.get('url', '')
+                    image_metadata = ' '.join(
+                        filter(None, (image.get('alt'), image.get('title')))
+                    )
+                else:
+                    img_url = image
+                    image_metadata = ''
                 abs_url = urllib.parse.urljoin(url, img_url)
-                if not _link_is_relevant(abs_url, key_terms):
+                if not image_metadata or not _link_is_relevant(
+                        abs_url, key_terms, image_metadata):
                     print(f"  [IRREL] image {abs_url[:65]}")
                     continue
                 r = process_url(abs_url, origin, is_linked=True, parent_id=parent_id)
@@ -1193,7 +1253,7 @@ def save_output(documents, stats, top_k):
         d for d in documents
         if not d['needs_ocr']
         and d.get('extraction_status') == 'success'
-        and (d.get('saved_path') or d.get('text'))
+        and d.get('saved_path')
     ]
 
     ctypes = defaultdict(int)
@@ -1225,12 +1285,14 @@ def save_output(documents, stats, top_k):
     for q in variants:
         key = f"{q['query']}  [{q.get('kind', 'translation')}]"
         search_stats[key] = {
+            'original_query': q.get('original_query', ''),
             'language': q['language'],
             'kind': q.get('kind', 'translation'),
             'score': q.get('score'),
             'engine_used': q.get('engine_used', 'unknown'),
             'results_returned': q.get('results_returned', 0),
             'top_k_requested': top_k,
+            'ranked_urls': q.get('ranked_urls', []),
         }
 
     output = {
