@@ -177,7 +177,7 @@ scripts/     Source and release checks
 | Folder | What to explain |
 |---|---|
 | [Task 1](task1/README.md) | Turn the question into search-query variants |
-| [Task 2](task2/README.md) | Collect documents and preserve source metadata |
+| [Task 2](task2/README.md) | On-the-fly compliant web search, multimodal collection (HTML/PDF/images) and OCR triage |
 | [Task 3](task3/README.md) | Extract text/OCR and create evidence passages |
 | [Task 4](task4/README.md) | Rank passages for the original question |
 | [Task 5](task5/README.md) | Generate a cited answer and assess its support |
