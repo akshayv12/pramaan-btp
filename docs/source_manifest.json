@@ -39,7 +39,7 @@
     "task4/schemas/task3_to_task4.v1.schema.json": "b6578642c31e309ae789b7cd5b02481aefcc2842ff1f18d2fda33a0dee399f6a",
     "task4/schemas/task4_to_task5.v1.schema.json": "6dc795a474dd8f5a83cef4755a5284e2b4eab9b4bf317f1a215cbd778d3af1ec",
     "task4/scripts/prepare_model.py": "f4c5f28ad8642ede010c16f55ed2c5379f7b14074f43b88ffee0779140046f39",
-    "task2/main.py": "7aabd02c3449702158563dcd0da062a2b2386ac540871a22cb53259d92399daf",
+    "task2/main.py": "f07040f59b4ae20c3d20ac2cc1f77bfeff072e818b2b4cdc022650426b1a843f",
     "task2/search_engines.py": "6f9fdee470cdd86b7062bc6f2240ae04de81d2843417387e7ff205355928a084",
     "task4/task4_rank_evidence.py": "9357f0cbf87cde97f94643fe14bcca0d22497b90249fa6a1d0e23c9031a4fc3c",
     "task5/__init__.py": "63155c7940664966dfc7ab47afa49caa856b2a0d174022fed16921b2c9ff0ad6",
