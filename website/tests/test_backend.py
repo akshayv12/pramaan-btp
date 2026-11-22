@@ -15,7 +15,7 @@ from website.backend import (ROOT, TERMINAL, JobStore, atomic_json, command_for,
 READY = {"connected": True, "live_search": True, "gemini": False,
          "semantic_ranking": False, "saved_example": True,
          "default_ranker": "lexical", "default_provider": "extractive"}
-SAMPLE = ROOT / "task5_standalone/examples/supplied_task4_output.json"
+SAMPLE = ROOT / "task5/examples/supplied_task4_output.json"
 
 
 def wait_for(store, identity, statuses=TERMINAL, timeout=12):
@@ -99,7 +99,7 @@ class RequestTests(unittest.TestCase):
         self.assertIn("--query=" + query, command)
         self.assertEqual(command.count("--provider"), 1)
         self.assertIn("--lexical-only", command)
-        self.assertEqual(command[command.index("--task4-config") + 1], str(ROOT / "website/configs/lexical.json"))
+        self.assertEqual(command[command.index("--task4-config") + 1], str(ROOT / "task4/configs/website_lexical.json"))
 
     def test_unavailable_model_is_not_silently_selected(self):
         for preferences in ({"provider": "gemini"}, {"ranker": "production"}):

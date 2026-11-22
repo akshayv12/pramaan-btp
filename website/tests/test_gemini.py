@@ -15,6 +15,22 @@ MODEL='gemini-test-flash'
 
 
 class GeminiTests(unittest.TestCase):
+    def test_persistent_configuration_uses_one_shared_ignored_environment(self):
+        from website import configure_gemini
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);environment=root/'.env'
+            environment.write_text('BRAVE_API_KEY=test-brave-key\n')
+            state={'ready':True,'model':MODEL}
+            output=io.StringIO()
+            with patch.object(configure_gemini,'ROOT',root),patch.object(configure_gemini,'getpass',return_value='test-gemini-secret'),patch.object(configure_gemini,'probe',return_value=state),patch('sys.argv',['configure_gemini.py','--model',MODEL]),patch('sys.stdout',output):
+                self.assertEqual(configure_gemini.main(),0)
+            settings=environment.read_text()
+            self.assertIn('BRAVE_API_KEY=test-brave-key',settings)
+            self.assertIn('GEMINI_API_KEY=test-gemini-secret',settings)
+            self.assertEqual(list(root.iterdir()),[environment])
+            self.assertNotIn('test-gemini-secret',output.getvalue())
+            if os.name=='posix':self.assertEqual(environment.stat().st_mode & 0o777,0o600)
+
     def test_missing_key_is_explicit_and_never_calls_google(self):
         with patch.dict(os.environ,{},clear=True),patch('website.gemini.urlopen') as request:
             value=probe(MODEL)
@@ -43,7 +59,7 @@ class GeminiTests(unittest.TestCase):
         self.assertEqual(command[command.index('--model')+1],MODEL);self.assertIn('--strict',command)
 
     def test_imported_task4_evidence_ignores_upstream_ranking_options(self):
-        payload=json.loads((ROOT/'task5_standalone/examples/supplied_task4_output.json').read_text())
+        payload=json.loads((ROOT/'task5/examples/supplied_task4_output.json').read_text())
         request=validate_request({'payload':payload,'ranker':'production'},READY,'task4')
         self.assertEqual(request['ranker'],'supplied')
         command=command_for(request,Path('/tmp/test-job'),'python')

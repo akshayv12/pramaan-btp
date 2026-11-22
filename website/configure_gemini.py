@@ -1,4 +1,4 @@
-"""Configure both Task 5 entry points using a hidden prompt, never a key argument."""
+"""Configure the shared backend environment using a hidden prompt, never a key argument."""
 import argparse
 from getpass import getpass
 import os
@@ -33,8 +33,7 @@ def main():
     if not key or len(key)>500 or '\n' in key or '\r' in key:raise SystemExit('Invalid key format')
     result=probe(args.model,key)
     if not result['ready']:raise SystemExit(result['message'])
-    for folder in ('integrated_pipeline','task5_standalone'):
-        update_environment(ROOT/folder/'.env',{'GEMINI_API_KEY':key,'GEMINI_MODEL':result['model'],'TASK5_PROVIDER':'auto','TASK5_VERIFICATION':'standard'})
+    update_environment(ROOT/'.env',{'GEMINI_API_KEY':key,'GEMINI_MODEL':result['model'],'TASK5_PROVIDER':'auto','TASK5_VERIFICATION':'standard'})
     print('Gemini model access validated: '+result['model'])
     print('Saved protected, ignored backend configuration. No key was logged.')
     return 0

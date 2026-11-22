@@ -15,7 +15,7 @@ def probe(model=None,key=None):
     key=key or key_from_environment()
     result={'configured':bool(key),'ready':False,'model':model}
     if not re.fullmatch(r'[A-Za-z0-9_.-]{1,160}',model):raise ValueError('Enter a Gemini model ID, without a URL')
-    if not key:return {**result,'message':'Gemini needs a backend API key. Configure Gemini or set GEMINI_API_KEY in integrated_pipeline/.env.'}
+    if not key:return {**result,'message':'Gemini needs a backend API key. Configure Gemini or set GEMINI_API_KEY in the repository-root .env file.'}
     try:
         request=Request('https://generativelanguage.googleapis.com/v1beta/models/'+model,headers={'x-goog-api-key':key})
         with urlopen(request,timeout=10) as response:raw=response.read(1_000_001)

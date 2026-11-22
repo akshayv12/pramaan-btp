@@ -40,9 +40,10 @@ credentials*.json
 *.log
 *.pending
 *.part
-integrated_pipeline/task2_search_collect/task[1345]*.json
-integrated_pipeline/task2_search_collect/raw_results*.json
-integrated_pipeline/task2_search_collect/pipeline_run*.json
+/task[1-5]_*.json
+/task2/task[1-5]_*.json
+/task2/raw_results*.json
+/task2/pipeline_run*.json
 
 # Personal reports, slides, archives and scratch files
 output/

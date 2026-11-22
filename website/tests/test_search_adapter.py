@@ -3,12 +3,12 @@ import importlib.util
 from unittest.mock import patch
 import unittest
 
-from website.backend import PIPELINE
+from website.backend import ROOT
 
 
 class SearchAdapterTests(unittest.TestCase):
     def setUp(self):
-        spec = importlib.util.spec_from_file_location("website_search_adapter_test", PIPELINE / "task2_search_collect/search_engines.py")
+        spec = importlib.util.spec_from_file_location("website_search_adapter_test", ROOT / "task2/search_engines.py")
         self.module = importlib.util.module_from_spec(spec)
         try:
             spec.loader.exec_module(self.module)

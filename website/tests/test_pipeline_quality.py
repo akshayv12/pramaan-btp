@@ -6,9 +6,9 @@ import sys
 import tempfile
 import unittest
 
-from website.backend import PIPELINE
+from website.backend import ROOT
 
-sys.path.insert(0,str(PIPELINE))
+sys.path.insert(0,str(ROOT/'task4'))
 
 
 class UpstreamQualityTests(unittest.TestCase):
@@ -28,7 +28,7 @@ class UpstreamQualityTests(unittest.TestCase):
         self.assertEqual(lexical_relevance('1985',[{'text':'1990'}])[0],0)
 
     def test_article_extraction_ignores_empty_parser_node_and_keeps_inline_words(self):
-        path=PIPELINE/'Indian-Context-Retrieval-Summarization-task-3-baseline/src/extractor.py'
+        path=ROOT/'task3/src/extractor.py'
         spec=importlib.util.spec_from_file_location('quality_extractor_test',path)
         module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
         html='''<html><body><nav>Menu unrelated terms</nav><div class="mw-parser-output"></div>

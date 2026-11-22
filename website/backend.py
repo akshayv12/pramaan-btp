@@ -17,7 +17,8 @@ from website.gemini import probe as gemini_probe,key_from_environment
 from task5.config import DEFAULT_GEMINI_MODEL
 
 ROOT = Path(__file__).resolve().parents[1]
-PIPELINE = ROOT / "integrated_pipeline"
+PIPELINE = ROOT / "pipeline"
+TASK4 = ROOT / "task4"
 TERMINAL = {"completed", "partial", "failed", "cancelled", "interrupted"}
 STAGES = [("query", "Understand question", "task1_input.json"),
           ("search", "Find sources", "task3_input.json"),
@@ -71,17 +72,16 @@ def pipeline_environment(request=None):
 
 def capabilities(python,gemini_state=None):
     from task5.config import load_env_file
-    load_env_file(PIPELINE / ".env")
-    load_env_file(ROOT / "task5_standalone/.env")
+    load_env_file(ROOT / ".env")
     probe = "import importlib.util,json; print(json.dumps({m:bool(importlib.util.find_spec(m)) for m in ['numpy','sklearn','requests','bs4','pymupdf','ddgs','fastapi','torch','sentence_transformers','onnxruntime','tokenizers']}))"
     try:
         result = subprocess.run([python, "-c", probe], capture_output=True, text=True, timeout=15)
         libraries = json.loads(result.stdout) if result.returncode == 0 else {}
     except (OSError, ValueError, subprocess.TimeoutExpired):
         libraries = {}
-    config = read_json(PIPELINE / "configs/deployment.json") or {}
+    config = read_json(TASK4 / "configs/deployment.json") or {}
     model = Path(config.get("semantic_model", {}).get("name", "not-configured"))
-    model = model if model.is_absolute() else PIPELINE / model
+    model = model if model.is_absolute() else TASK4 / model
     semantic = all((model / p).is_file() for p in ("modules.json", "config.json", "model.safetensors")) and all(libraries.get(m) for m in ("torch", "sentence_transformers"))
     live = all(libraries.get(m) for m in ("numpy", "sklearn", "requests", "bs4", "pymupdf", "ddgs", "fastapi"))
     gemini_state=gemini_state or gemini_probe()
@@ -113,7 +113,7 @@ def capabilities(python,gemini_state=None):
             "default_ranker": "production" if semantic else "lexical", "default_provider": "gemini" if gemini else "ollama" if local['ready'] else "extractive",
             "ranking_label": "Semantic ranking" if semantic else "Lexical baseline",
             "generation_label": 'Gemini synthesis' if gemini else ("Local Qwen3 4B" if local['model'].startswith('qwen3:4b') else 'Local '+local['model']) if local['ready'] else "Local model unavailable" if local['enabled'] else "Source extraction",
-            "saved_example": (ROOT / "task5_standalone/examples/supplied_task4_output.json").is_file(),
+            "saved_example": (ROOT / "task5/examples/supplied_task4_output.json").is_file(),
             "notice":' '.join(notices) or None}
 
 
@@ -150,7 +150,7 @@ def validate_request(data, ready, mode="live"):
         if not isinstance(query, str) or not 2 <= len(query.strip()) <= 500:
             raise ValueError("Enter a question between 2 and 500 characters")
         if not ready["live_search"]:
-            raise ValueError("The pipeline environment is incomplete. Install integrated_pipeline/requirements-integration.txt.")
+            raise ValueError("The pipeline environment is incomplete. Install requirements.txt from the repository root.")
         if ranker == "production" and not ready["semantic_ranking"]:
             raise ValueError("BGE-M3 is not installed. Choose the existing lexical baseline in search options.")
         request["query"] = query.strip()
@@ -193,7 +193,7 @@ def command_for(request, directory, python):
             # A threshold calibrated for semantic scores is unsuitable for TF-IDF.
             # Keep Task 4's existing top-k ranking, then Task 5's relevance checks.
             # This does not change the deployment configuration or task interfaces.
-            command += ["--lexical-only", "--task4-config", str(ROOT / "website/configs/lexical.json")]
+            command += ["--lexical-only", "--task4-config", str(TASK4 / "configs/website_lexical.json")]
     else:
         command += ["--task4-input", str(directory / "input.json")]
     if request["language"]:
@@ -289,7 +289,7 @@ class JobStore:
 
     def configure_gemini(self,data):
         from task5.config import load_env_file
-        load_env_file(PIPELINE/'.env');load_env_file(ROOT/'task5_standalone/.env')
+        load_env_file(ROOT/'.env')
         supplied=data.get('api_key','')
         if not isinstance(supplied,str) or len(supplied)>500 or '\n' in supplied or '\r' in supplied:
             raise ValueError('Enter a valid API key')
@@ -313,7 +313,7 @@ class JobStore:
             folder = self.directory / identity
             folder.mkdir()
             if mode == "example":
-                payload = read_json(ROOT / "task5_standalone/examples/supplied_task4_output.json")
+                payload = read_json(ROOT / "task5/examples/supplied_task4_output.json")
                 atomic_json(folder / "input.json", payload)
             elif mode == "task4":
                 atomic_json(folder / "input.json", data["payload"])

@@ -14,7 +14,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--model',help='Available Gemini model ID; otherwise GEMINI_MODEL or the current documented Flash default')
     args=parser.parse_args()
-    load_env_file(ROOT/'integrated_pipeline/.env');load_env_file(ROOT/'task5_standalone/.env')
+    load_env_file(ROOT/'.env')
     result=probe(model=args.model)
     print(json.dumps(result,indent=2))
     return 0 if result['ready'] else 2

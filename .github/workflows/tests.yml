@@ -21,16 +21,14 @@ jobs:
           node-version: '22'
       - name: Install baseline dependencies
         run: python -m pip install -r requirements.txt
-      - name: Verify preserved source and Task 5 mirror
+      - name: Verify preserved source and single Task 5 implementation
         run: python scripts/check_release.py
       - name: Task 5
-        run: python -m unittest discover -s task5_standalone/tests -q
+        run: python -m unittest discover -s task5/tests -q
       - name: Website and API
         run: python -m unittest discover -s website/tests -q
       - name: Tasks 1-5 integration with local fixtures
         run: >-
-          python -m pytest integrated_pipeline/tests integrated_pipeline/integration_tests
-          integrated_pipeline/task2_search_collect
-          integrated_pipeline/Task1_Multilingual_Query_Generator -q
+          python -m pytest task1/tests task2/tests task4/tests pipeline/tests -q
       - name: Frontend
         run: node --test website/tests/ui.test.js

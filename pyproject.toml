@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pramaan-btp"
-version = "3.8.0"
+version = "3.8.1"
 description = "Pramaan: multilingual web evidence retrieval, grounded synthesis and a local browser website"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -18,12 +18,9 @@ Issues = "https://github.com/akshayv12/pramaan-btp/issues"
 btp-task5 = "task5.handoff:main"
 btp-task5-evaluate = "task5.evaluation:main"
 
-[tool.setuptools]
-package-dir = {"" = "task5_standalone"}
-
 [tool.setuptools.packages.find]
-where = ["task5_standalone"]
-include = ["task5*"]
+where = ["."]
+include = ["task5"]
 
 [tool.setuptools.package-data]
 task5 = ["support_policy.json"]

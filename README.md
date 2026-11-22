@@ -21,7 +21,7 @@ Question → Task 1: query generation → Task 2: web collection
          → Answer + supporting sources + explained support label
 ```
 
-Task 4 owns retrieval ranking. Task 5 selects a bounded, diverse context from that ranked output; uploading Task 4 output bypasses Tasks 1–4. The preserved source files and production settings are listed in [the source manifest](docs/source_manifest.json).
+Task 4 owns retrieval ranking. Task 5 selects a bounded, diverse context from that ranked output; uploading Task 4 output bypasses Tasks 1–4. Each task has its own folder and README. Use [the presentation guide](docs/PRESENTATION_GUIDE.md) to explain the tasks in order, and [the cleanup audit](docs/CLEANUP_AUDIT.md) to review the verified removals.
 
 ## Quick start
 
@@ -80,7 +80,7 @@ python website/configure_gemini.py --model YOUR_AVAILABLE_MODEL_ID
 python website/setup_gemini.py
 ```
 
-The first command asks for the key using a hidden prompt, validates model access, and writes ignored backend `.env` files. Restart the website after persistent configuration changes. Never put a key in a Git commit, browser URL or command argument. The UI also offers backend-session configuration under **Search options → Configure Gemini**.
+The first command asks for the key using a hidden prompt, validates model access, and writes the shared, ignored **repository-root `.env`** file. The website, pipeline and Task 5 use this same configuration. Restart the website after persistent configuration changes. Never put a key in a Git commit, browser URL or command argument. The UI also offers backend-session configuration under **Search options → Configure Gemini**.
 
 With Gemini selected, evidence is sent to Google's API for synthesis/review. Automatic selection prefers configured Gemini, then an available local model. A failed explicit model request is shown as an error rather than presented as a successful generated answer.
 
@@ -109,7 +109,7 @@ Select **Local Qwen3 4B** to draft locally. When Gemini is configured, the websi
 Tesseract has a separate system executable and language data; see its [installation guide](https://tesseract-ocr.github.io/tessdoc/Installation.html). On macOS, `brew install tesseract` installs the runtime. On Ubuntu/Debian, use `sudo apt install tesseract-ocr`. On Windows, install a supported runtime and add its executable folder to PATH. The project setup command downloads checksum-pinned English/Hindi data.
 
 ```sh
-python -m pip install -r task5_standalone/requirements-verification.txt
+python -m pip install -r task5/requirements-verification.txt
 python website/setup_verification.py
 ```
 
@@ -121,17 +121,17 @@ All commands run from the repository root in the installed environment.
 
 ```sh
 # No-key, no-network contract demonstration using constructed evidence
-python task5_standalone/process_task4_output.py \
-  task5_standalone/examples/contract_example.json \
+python -m task5 \
+  task5/examples/contract_example.json \
   --provider extractive --output outputs/demo.json --text-output outputs/demo.txt
 
 # Use your own ranked Task 4 evidence; do not rerun retrieval
-python integrated_pipeline/run_integrated_pipeline.py \
+python pipeline/run_integrated_pipeline.py \
   --task4-input PATH_TO_TASK4_OUTPUT.json --provider gemini --strict \
   --language hi --output-dir outputs/from_task4
 
 # Run Tasks 1–5 with the existing Task 4 lexical baseline
-python integrated_pipeline/run_integrated_pipeline.py \
+python pipeline/run_integrated_pipeline.py \
   --query "Tell me about Sundara Kanda" --lexical-only \
   --provider gemini --strict --task4-top-k 24 --output-dir outputs/live
 ```
@@ -152,11 +152,9 @@ The website currently takes up to 24 ranked candidates from Task 4. LLM generati
 
 ```sh
 python scripts/check_release.py
-python -m unittest discover -s task5_standalone/tests -q
+python -m unittest discover -s task5/tests -q
 python -m unittest discover -s website/tests -q
-python -m pytest integrated_pipeline/tests integrated_pipeline/integration_tests \
-  integrated_pipeline/task2_search_collect \
-  integrated_pipeline/Task1_Multilingual_Query_Generator -q
+python -m pytest task1/tests task2/tests task4/tests pipeline/tests -q
 node --test website/tests/ui.test.js
 ```
 
@@ -165,13 +163,28 @@ Tests use constructed fixtures, mock model responses, sanitised regression evide
 ## Repository layout
 
 ```text
-website/                      Browser frontend, local HTTP API and setup tools
-integrated_pipeline/          Tasks 1–4, adapters, unified runner, Task 5 mirror
-task5_standalone/task5/        Canonical Task 5 implementation
-task5_standalone/examples/     Constructed contracts and sanitised regression fixtures
-docs/                         Setup, architecture and source preservation manifest
-scripts/                      Release checks
+task1/       Query understanding and multilingual query generation
+task2/       Web search, source collection and downloads
+task3/       Document extraction, OCR and passage preparation
+task4/       Evidence ranking, profiles, contracts and evaluation
+task5/       One shared answer-generation and support-assessment package
+pipeline/    Stage orchestration, live/resume CLI and integration tests
+website/     Browser frontend, local HTTP backend and model setup tools
+docs/        Setup, architecture, presentation guide and cleanup audit
+scripts/     Source and release checks
 ```
+
+| Folder | What to explain |
+|---|---|
+| [Task 1](task1/README.md) | Turn the question into search-query variants |
+| [Task 2](task2/README.md) | Collect documents and preserve source metadata |
+| [Task 3](task3/README.md) | Extract text/OCR and create evidence passages |
+| [Task 4](task4/README.md) | Rank passages for the original question |
+| [Task 5](task5/README.md) | Generate a cited answer and assess its support |
+| [Pipeline](pipeline/README.md) | Connect the task interfaces and isolate each run |
+| [Website](website/README.md) | Submit a question and inspect answers/sources |
+
+Task 5 has one implementation, imported by both the website and pipeline; no sync script or mirrored code tree is needed. The [source manifest](docs/source_manifest.json) records preserved processing files and the path/configuration changes needed for this layout.
 
 Search history, downloaded sources, logs, keys and weights stay local and are ignored by Git. This server binds to loopback and is intended for local use. It does not include authentication or a public multi-user deployment configuration.
 

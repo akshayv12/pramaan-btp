@@ -10,7 +10,7 @@
 | Task 4 | Query/context/source scoring and ranked evidence | `task4_output.json` |
 | Task 5 | Diverse context selection, grounded answer generation and support review | `task5_output.json` |
 
-The unified CLI and website use the existing subprocess boundaries so upstream modules named `app` or `main` do not collide. A live run has its own directory. The browser polls the Python backend for stage status; the backend delegates research to `integrated_pipeline/run_integrated_pipeline.py`.
+The unified CLI and website use the existing subprocess boundaries so upstream modules named `app` or `main` do not collide. A live run has its own directory. The browser polls the Python backend for stage status; the backend delegates research to `pipeline/run_integrated_pipeline.py`.
 
 ## Task 4 input to Task 5
 
@@ -25,7 +25,7 @@ Task 5 accepts a single-query envelope with `schema_version: "1.0.0"`, or a batc
 }
 ```
 
-The string in this structural illustration stands for an actual envelope object. Use [the complete constructed envelope](../task5_standalone/examples/contract_example.json) as a valid input, rather than this abbreviated illustration. The formal contracts are [Task 3 → 4](../integrated_pipeline/schemas/task3_to_task4.v1.schema.json) and [Task 4 → 5](../integrated_pipeline/schemas/task4_to_task5.v1.schema.json).
+The string in this structural illustration stands for an actual envelope object. Use [the complete constructed envelope](../task5/examples/contract_example.json) as a valid input, rather than this abbreviated illustration. The formal contracts are [Task 3 → 4](../task4/schemas/task3_to_task4.v1.schema.json) and [Task 4 → 5](../task4/schemas/task4_to_task5.v1.schema.json).
 
 Each ranked item carries `rank`, `passage_id`, `text`, `query_relevance`, `indian_context_relevance`, `source_signal`, `final_score` and provenance. Source metadata can include URL/title/document ID/type; extraction metadata carries page/method and optional OCR confidence. Traceability contains the matching selected IDs and references. Malformed envelopes are rejected.
 
@@ -65,7 +65,7 @@ Task 5 selects a diverse context from the ranked candidates, creates exact sourc
 
 Standard verification adds local multilingual NLI where installed and a criteria-based model review. Review considers faithfulness, question relevance, coverage, source quality, agreement and language/readability. Thorough adds a sampled alternative and a consistency signal. Missing NLI, contradictions, incomplete coverage and review failures are surfaced.
 
-The support policy JSON is distributed with both Task 5 packages and the installable wheel. Its machine-judged pilot metadata is preserved; historical run logs and reports are excluded. Human calibration remains pending.
+The support policy JSON is distributed with the single Task 5 package and its installable wheel. The website and pipeline import that same package. Its machine-judged pilot metadata is preserved; historical run logs and reports are excluded. Human calibration remains pending.
 
 ## Local HTTP API
 
@@ -85,4 +85,4 @@ Requests use `application/json` and the same local origin as the frontend. The b
 
 ## Release preservation
 
-[source_manifest.json](source_manifest.json) records the Tasks 1–4 runtime source/configuration distributed in this release. `scripts/check_release.py` verifies those files and Task 5 mirror equality. The release's website has small interpreter/port portability adjustments and defaults to Source extraction when no LLM is ready; explicit unavailable model requests still fail visibly. The sync tool and package metadata include `support_policy.json`. Regression fixtures retain their evidence/scores while local path metadata is sanitised. The saved browser example is a constructed Hindi fixture, replacing private collection history. Its test expects a complete answer from that authored input. The five-stage integration test now inserts its supported sentence inside the HTML body; the old fixture placed it after the closing document tag, outside the extractor's valid content scope. These are test/fixture changes, not changes to Tasks 1–4 processing.
+[source_manifest.json](source_manifest.json) records unchanged processing files and the path/configuration edits required by the task folders. `scripts/check_release.py` checks the recorded hashes and the single Task 5 package. Query generation, collection, extraction, ranking weights, evidence selection and synthesis/reliability rules are preserved. Stage imports/subprocess paths, the verifier directory and shared environment loading follow the new layout. Regression fixtures retain their evidence and scores. The saved browser example is explicitly constructed. See [the cleanup audit](CLEANUP_AUDIT.md) for duplicate verification and the rationale for retained files.

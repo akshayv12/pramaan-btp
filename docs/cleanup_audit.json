@@ -1,0 +1,189 @@
+{
+  "baseline_commit": "2a85c2c4f094de1923c16c242b9f09d4026e7672",
+  "removed_files": 29,
+  "identical_pairs": [
+    {
+      "removed_path": "integrated_pipeline/integration_tests/test_task5_handoff.py",
+      "retained_path": "task5/tests/test_handoff.py",
+      "sha256": "dfc2ef3cd03505bf8f8f8a7e543188ceafdda16072e67aab92a3110108c301d2",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/process_task4_output.py",
+      "sha256": "fe8aa3fd78a270f7b17a9324f5efec94b6f1d7cda9ce69aa0813db9969af1515",
+      "verification": "Removed and retained files were byte-identical before relocation.",
+      "verified_equal_to": "task5_standalone/process_task4_output.py",
+      "replacement_entry_point": "python -m task5 / btp-task5"
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/intent.py",
+      "retained_path": "task5/intent.py",
+      "sha256": "bad0dc4a554a7de36d82d394b08690fceb5d778b922a904f910c8972209ad3ef",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/verification.py",
+      "retained_path": "task5/verification.py",
+      "sha256": "1f0ebee7714d94703125c7c1b302639ce1ee2dbe52e7c3bc5c4d307d8609f478",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/support.py",
+      "retained_path": "task5/support.py",
+      "sha256": "6c61c1bd847d574289e23f489ca6c5ee9af62808e51a8af03ec7032757ad550f",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/config.py",
+      "retained_path": "task5/config.py",
+      "sha256": "43fb0fb8a807dfd263f73e2103b1f29aca47e94e9944f83cac116c5f45f9761c",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/reliability.py",
+      "retained_path": "task5/reliability.py",
+      "sha256": "5cb3e68b5f37d9201f57668196768cb6b8ab644d92c997281b82fa59e37ad688",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/generation.py",
+      "retained_path": "task5/generation.py",
+      "sha256": "02ce01761d85e1483068b52fa420152dcdf344e20c60949a0c60418de88848b6",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/handoff.py",
+      "retained_path": "task5/handoff.py",
+      "sha256": "0c9a87c795d8fad4de3d192e676a05f659823856589eb4403ee48238a9e54d34",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/evaluation.py",
+      "retained_path": "task5/evaluation.py",
+      "sha256": "c8dee14998aa010c907bad80910ca889590f9494217f020f95e7a76236665a21",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/__init__.py",
+      "retained_path": "task5/__init__.py",
+      "sha256": "63155c7940664966dfc7ab47afa49caa856b2a0d174022fed16921b2c9ff0ad6",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/support_policy.json",
+      "retained_path": "task5/support_policy.json",
+      "sha256": "bf5c41219f7ceeb154cb46adc399b4a94352e94b2a23dd51bc5633e4eaa584f6",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/human_review.py",
+      "retained_path": "task5/human_review.py",
+      "sha256": "9c8984608fe7fc1c8b1e5b6e6659c2e0f67f8f19b54871cdc2ef0058c6ded600",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/providers.py",
+      "retained_path": "task5/providers.py",
+      "sha256": "624e2746ab96a946eab872d5a061b8923d3d191906475cecd3517542f7b965b7",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/experiments.py",
+      "retained_path": "task5/experiments.py",
+      "sha256": "01d5d2591a6f589ccabcac8d71a9704244ecdcc1ca861b05ea5f47789a2996f1",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/content.py",
+      "retained_path": "task5/content.py",
+      "sha256": "49a0792e76792f16dc3f755c81b844c269d54cc4402e89e0d4971a0e70d9c03f",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/schemas.py",
+      "retained_path": "task5/schemas.py",
+      "sha256": "67b4e1b0164b1325663c93b426a8e68c249d71a383bb2533fabbeb7416f33c78",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/pipeline.py",
+      "retained_path": "task5/pipeline.py",
+      "sha256": "85d290fbca5b6d11c1c3303e23752a1268304ed6ecedf8412507b6369f2eefcf",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/text.py",
+      "retained_path": "task5/text.py",
+      "sha256": "3b71bb754c68d0ad83c70e64f2a5a3bd32f6ba78e56e36085b2c56829e385159",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/language.py",
+      "retained_path": "task5/language.py",
+      "sha256": "9c61b50c3a0068b870a9e96145b2daea961ee58889e6ff3d1ec7c3ffccad2bc6",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/topic.py",
+      "retained_path": "task5/topic.py",
+      "sha256": "3b356fd2ae75a3e80f95e35b842d9d65e5868f7bb648514f8f4fc4716ccf5e0b",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/collection.py",
+      "retained_path": "task5/collection.py",
+      "sha256": "c8eeeaf44871b8713ffe147a90e8c375f571c529a7c98a8c49a11b1b87b6695e",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/planning.py",
+      "retained_path": "task5/planning.py",
+      "sha256": "0bde41318b3bc7e880ab9766dfcf9d702e0411837ca9f2d07279f1e8b0707c47",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/nli.py",
+      "retained_path": "task5/nli.py",
+      "sha256": "7a690e597527a33b403cf8697bf02b1bc014e34b0c36961010063a624c7a8311",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/evidence.py",
+      "retained_path": "task5/evidence.py",
+      "sha256": "fb0bd0e2ab913a4ca6376a4d2ea1836de15e28d25b2d4dd972a7d3488a92b0ff",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/__main__.py",
+      "retained_path": "task5/__main__.py",
+      "sha256": "bb64c50d47690ab7e32616ce01d2bc0a1d55a9f3c76cc09b41f26d25f7235bab",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    },
+    {
+      "removed_path": "integrated_pipeline/task5/synthesis.py",
+      "retained_path": "task5/synthesis.py",
+      "sha256": "b95d61815f1ddf7ce1a960f8c5091129fa97279e16c1928374d35c52c8c27cf9",
+      "verification": "Removed and retained files were byte-identical before relocation."
+    }
+  ],
+  "replaced_helpers": [
+    {
+      "removed_path": "task5_standalone/process_task4_output.py",
+      "reason": "Repeated CLI wrapper replaced by the existing python -m task5 entry point.",
+      "sha256": "fe8aa3fd78a270f7b17a9324f5efec94b6f1d7cda9ce69aa0813db9969af1515"
+    },
+    {
+      "removed_path": "task5_standalone/sync_to_integrated.py",
+      "reason": "Only synchronised the duplicate Task 5 tree, which is removed.",
+      "sha256": "55ea4bf4b11987627c7adcdb3fa3600ea8e92e4abd0eaecff5befb2d66e15590"
+    }
+  ],
+  "unchanged_processing_files": 62,
+  "path_configuration_edits": [
+    "pipeline/run_integrated_pipeline.py",
+    "pipeline/run_pipeline.py",
+    "task5/config.py",
+    "task5/handoff.py"
+  ],
+  "unchanged_function_definitions_in_preserved_files": 343
+}

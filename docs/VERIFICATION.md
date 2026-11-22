@@ -1,26 +1,25 @@
-# Release verification
+# Layout revision verification
 
-Prepared on 22 November 2026 using a fresh, isolated **Python 3.12.16 environment on macOS arm64**. The original working project's virtual environment was not reused for the runtime tests.
+Checked on 22 November 2026 with Python 3.12.16 on macOS arm64. The baseline dependency set is unchanged. The editable package was reinstalled after relocation, and a separate wheel installation was checked outside the repository.
 
 | Check | Result |
 |---|---|
-| Fresh `pip install -r requirements.txt` | Passed; tested versions recorded in `constraints-py312.txt` |
+| Shared Task 5 suite | 142 passed |
+| Website/backend/HTTP/configuration suite | 49 passed |
+| Task 1/2/4 and cross-task integration suite | 263 passed, 9 skipped |
+| JavaScript frontend | 12 passed |
+| Total executed checks | 466 passed |
 | `pip check` | No broken requirements |
-| Task 5 standalone suite | 142 passed |
-| Website/backend/HTTP suite | 48 passed |
-| Integrated ranking, handoff and Tasks 1–5 suite | 277 passed, 13 skipped |
-| JavaScript frontend suite | 12 passed |
-| No-key constructed contract CLI | Generated JSON and text with citations/support explanation |
-| Package build | Wheel includes all 24 Task 5 Python modules and `support_policy.json` |
-| Installed wheel in a second empty environment | Source-grounded answer generated; packaged support policy loaded |
-| Actual `website/server.py` launch | Frontend and HTTP demo passed on an unused loopback port; returned Hindi answer with two sources |
-| Source preservation | 42 Tasks 1–4 runtime source/configuration files match the working project; Task 5 copies match |
-| Publication scan | No known local API credentials, common token/private-key patterns, personal home paths or roll number found in release files |
+| Source preservation | 62 unchanged files; four explicit task/path-configuration edits recorded |
+| Duplicate audit | 27 byte-identical pairs verified; 29 redundant/obsolete files removed |
+| Public resume CLI | Saved Task 4 evidence generated cited JSON/text through the shared package |
+| Actual website launch | Frontend and HTTP Hindi example passed using the relocated pipeline |
+| Wheel | One Task 5 package, all 24 modules and support policy; no mirror or test packages |
 
-The integrated tests include a real five-stage run against local HTML/PDF sources and a native-Tesseract mixed-PDF check. Only the external search-result list is substituted in the five-stage test; extraction, ranking and Task 5 run their real code.
+The integrated suite runs the real five-stage pipeline against local HTML/PDF sources; only the external search-result list is substituted. Native Tesseract mixed-PDF extraction also passed. The four lexical stage tests formerly gated on a separate Task 4 environment now execute using the installed root environment.
 
-The 13 skips cover seven optional BGE model tests, two absent historical Task 3 replay cases, and four legacy Task 4 tests gated on a separate `.venv` directory. Historical user runs are deliberately absent. Independent Linux CI is configured, but local verification does not imply that hosted CI has already passed. Windows interpreter layout is unit-tested; a complete Windows execution was not performed here.
+Nine skips cover seven optional BGE model tests and two historical Task 3 replay cases whose private inputs are not published. The lower count compared with the initial 479 checks reflects removal of 18 duplicated handoff checks, execution of four formerly skipped checks and one added shared-environment regression check; unique coverage was retained.
 
-Gemini generation, Qwen downloads/inference, a fresh NLI model download and real semantic BGE ranking were not repeated for this publication check. Tests mock external model replies and verify their contracts; they do not establish factual accuracy or per-language human calibration. Existing model-judged support-policy metadata is preserved without publishing private pilot logs.
+The initial publication's GitHub Linux CI passed. The reorganised commit has the same offline workflow with updated paths; its hosted result is available in the repository's Actions tab. Local verification does not itself establish a hosted CI result. Full Windows execution, fresh Gemini/Qwen inference, NLI weight download and real BGE ranking were not repeated for this folder change. Existing model-review/calibration limitations remain unchanged.
 
-Release-only changes cover setup/documentation, safe fixtures, packaging of the support policy, the Task 5 sync helper, Windows interpreter selection, a consistent website port and the no-model default. Tasks 1–4 runtime source/configuration and Task 5 generation/reliability algorithms were copied unchanged. See [architecture](ARCHITECTURE.md#release-preservation) for fixture changes.
+The original working project, report and private model/history folders outside this Git checkout were not edited. See [cleanup audit](CLEANUP_AUDIT.md) and [source manifest](source_manifest.json) for the exact preservation scope.

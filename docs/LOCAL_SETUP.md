@@ -25,7 +25,7 @@ The preferred Gemini setup uses a hidden prompt:
 python website/configure_gemini.py --model YOUR_AVAILABLE_MODEL_ID
 ```
 
-Alternatively, copy `.env.example` to `integrated_pipeline/.env` and edit it locally. The website and integrated runner load that file; the standalone entry point also loads `task5_standalone/.env`. Existing process environment variables take priority. Restart the backend after editing persistent configuration.
+Alternatively, copy `.env.example` to `.env` in the repository root and edit it locally. The website, pipeline and Task 5 load this one shared file. Existing process environment variables take priority. Restart the backend after editing persistent configuration. When upgrading an older checkout, copy your local settings into this root file and run `python -m pip install -r requirements.txt` to refresh the relocated editable package; do not commit credentials.
 
 Relevant settings:
 
@@ -52,13 +52,13 @@ This optional setup retains the existing Task 4 implementation and production pr
 2. Install the existing semantic dependencies:
 
    ```sh
-   python -m pip install -r integrated_pipeline/requirements.txt
-   python integrated_pipeline/scripts/prepare_model.py --config integrated_pipeline/configs/cpu.json
+   python -m pip install -r task4/requirements.txt
+   python task4/scripts/prepare_model.py --config task4/configs/cpu.json
    ```
 
 3. Restart the website and choose semantic ranking after readiness is reported.
 
-The helper downloads the pinned model to `integrated_pipeline/.venv/models/bge-m3/`, checks an embedding and writes a local manifest. Its `.venv` model-storage folder is separate from the root `.integration-venv` interpreter. Expect a multi-GB download. The helper may normalise the selected model configuration when explicitly run; the distributed production ranking weights are unchanged. Real semantic-model tests are opt-in, using `--run-model-tests` with the integrated pytest suite.
+The helper downloads the pinned model to `task4/.venv/models/bge-m3/`, checks an embedding and writes a local manifest. Its `.venv` model-storage folder is separate from the root `.integration-venv` interpreter. Expect a multi-GB download. The helper may normalise the selected model configuration when explicitly run; the distributed production ranking weights are unchanged. Real semantic-model tests are opt-in, using `--run-model-tests` with the integrated pytest suite.
 
 ## Common problems
 
@@ -82,7 +82,7 @@ The website limits concurrent work and each job's runtime. Inspect the stage tra
 Task 5 includes bounded experiments for passage count/order and direct cross-lingual versus translate-first synthesis:
 
 ```sh
-python -m task5.experiments task5_standalone/examples/contract_example.json --output-dir outputs/experiment
+python -m task5.experiments task5/examples/contract_example.json --output-dir outputs/experiment
 ```
 
 The default creates a plan only. `--execute` explicitly enables model calls. Use saved evidence to compare generation settings without rerunning retrieval. `python -m task5.human_review --help` exposes blinded review export and calibration. Human review starts pending; the tool does not manufacture human labels.
