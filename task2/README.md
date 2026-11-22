@@ -41,8 +41,6 @@ E:\btp\
 │   ├── relevance_labels.csv       # Preliminary title/URL relevance labels
 │   └── task3_input.json           # Latest generated Task 3 package
 ├── Task1_Multilingual_Query_Generator\
-├── testbed\
-├── testbed_results\
 └── downloads_live_10\
 ```
 
