@@ -3,7 +3,7 @@
 > **Pramaan:** Indian-Context-Aware Multilingual and Multimodal Web Retrieval & Summarization  
 > **Team:** Praveen Kumar (230041018) & Vivek Tej (230041014)  
 > **Supervisors:** Dr. Puneet Gupta & Dr. Vijay Kumar Sohani  
-> **Department:** Department of Electrical Engineering, Indian Institute of Technology Indore  
+> **Department:** Department of Mathematics and Computing, Indian Institute of Technology Indore  
 
 ---
 
