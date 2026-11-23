@@ -14,7 +14,7 @@ def route_document(file_path: str) -> str:
     if ext in ['.html', '.htm', '.txt']:
         return 'DIRECT_EXTRACTION'
     
-    if ext in ['.jpg', '.jpeg', '.png', '.bmp', '.tiff']:
+    if ext in ['.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.webp']:
         return 'OCR_REQUIRED'
     
     if ext == '.pdf':

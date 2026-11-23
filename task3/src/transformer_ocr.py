@@ -5,21 +5,21 @@ Fulfills BTP Requirement: "Evaluate freely available transformer-based OCR
 options for English and Devanagari; keep a practical non-transformer OCR 
 baseline for comparison."
 
-Primary Engine: Surya OCR (Vision Transformer, requires Docker)
-Fallback Engine: EasyOCR (ResNet + BiLSTM + Attention, runs locally)
+Primary Engine: Surya OCR (Vision Transformer, PyTorch native)
+Fallback Engine: EasyOCR (ResNet + BiLSTM + Attention, runs locally on CPU/GPU)
 """
 import os
 import re
 from PIL import Image
 
-# --- Try Surya first (requires Docker) ---
+# --- Try Surya first (Vision Transformer) ---
 try:
     from surya.recognition import RecognitionPredictor
     SURYA_AVAILABLE = True
 except ImportError:
     SURYA_AVAILABLE = False
 
-# --- Fallback: EasyOCR (pure PyTorch, no Docker) ---
+# --- Fallback: EasyOCR (pure PyTorch) ---
 try:
     import easyocr
     EASYOCR_AVAILABLE = True
@@ -37,8 +37,8 @@ def _strip_html_tags(html_text):
 class TransformerOCREngine:
     """
     Deep Learning OCR engine with automatic backend selection:
-      1. Surya (Vision Transformer) -- if Docker is available
-      2. EasyOCR (ResNet + BiLSTM + Attention) -- local fallback
+      1. Surya (Vision Transformer) -- primary high-accuracy model
+      2. EasyOCR (ResNet + BiLSTM + Attention) -- local CPU/GPU fallback
     
     Both support Hindi and English natively.
     """
@@ -61,15 +61,18 @@ class TransformerOCREngine:
         
         # Fallback to EasyOCR
         if self.backend is None and EASYOCR_AVAILABLE:
-            print("Loading EasyOCR (ResNet + BiLSTM + Attention)...")
-            print(f"Languages: {self.languages}")
-            self._easyocr_reader = easyocr.Reader(
-                self.languages,
-                gpu=False,
-                verbose=False
-            )
-            self.backend = "EASYOCR_TRANSFORMER"
-            print("[SUCCESS] EasyOCR loaded successfully!\n")
+            try:
+                print("Loading EasyOCR (ResNet + BiLSTM + Attention)...")
+                print(f"Languages: {self.languages}")
+                self._easyocr_reader = easyocr.Reader(
+                    self.languages,
+                    gpu=False,
+                    verbose=False
+                )
+                self.backend = "EASYOCR_TRANSFORMER"
+                print("[SUCCESS] EasyOCR loaded successfully!\n")
+            except Exception as e:
+                print(f"[WARNING] EasyOCR failed to load: {e}")
         
         if self.backend is None:
             print("[ERROR] No transformer OCR backend available.")
@@ -84,7 +87,19 @@ class TransformerOCREngine:
             avg_confidence: float (0.0 to 1.0)
         """
         if self.backend == "SURYA_TRANSFORMER":
-            return self._extract_surya(image_path)
+            try:
+                return self._extract_surya(image_path)
+            except Exception as e:
+                print(f"[WARNING] Surya extraction error: {e}. Attempting EasyOCR fallback...")
+                if self._easyocr_reader is None and EASYOCR_AVAILABLE:
+                    try:
+                        self._easyocr_reader = easyocr.Reader(self.languages, gpu=False, verbose=False)
+                    except Exception:
+                        pass
+                if self._easyocr_reader is not None:
+                    self.backend = "EASYOCR_TRANSFORMER"
+                    return self._extract_easyocr(image_path)
+                return "", 0.0
         elif self.backend == "EASYOCR_TRANSFORMER":
             return self._extract_easyocr(image_path)
         else:
@@ -134,7 +149,7 @@ if __name__ == "__main__":
     print("--- Testing Transformer-Based OCR ---")
     
     if not SURYA_AVAILABLE and not EASYOCR_AVAILABLE:
-        print("No OCR backend available. Install: pip install easyocr")
+        print("No OCR backend available. Install: pip install easyocr  OR  pip install surya-ocr")
     else:
         test_images = [
             ("English", "data/images/english/eng1.jpeg"),

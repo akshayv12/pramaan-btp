@@ -25,9 +25,10 @@ from deduplicator import Deduplicator
 
 # Optional: Transformer OCR engine (Surya)
 try:
-    from transformer_ocr import TransformerOCREngine, SURYA_AVAILABLE
+    from transformer_ocr import TransformerOCREngine, SURYA_AVAILABLE, EASYOCR_AVAILABLE
 except ImportError:
     SURYA_AVAILABLE = False
+    EASYOCR_AVAILABLE = False
 
 
 # ---------------------------------------------------------------------------
@@ -136,7 +137,7 @@ def extract_and_prepare(document_path, engine_type="tesseract",
     elif content_type not in {"html", "pdf", "image"}:
         raise ValueError(f"Unsupported document type: {content_type}")
 
-    engine = transformer_engine if engine_type == "transformer" and SURYA_AVAILABLE else None
+    engine = transformer_engine if engine_type == "transformer" and (SURYA_AVAILABLE or EASYOCR_AVAILABLE) else None
     print(f"--- Processing: {filename} ---")
     all_passages = []
     routes = set()
@@ -246,10 +247,10 @@ if __name__ == "__main__":
     # Initialize transformer engine if requested
     transformer_engine = None
     if args.engine == "transformer":
-        if SURYA_AVAILABLE:
+        if SURYA_AVAILABLE or EASYOCR_AVAILABLE:
             transformer_engine = TransformerOCREngine(languages=["hi", "en"])
         else:
-            print("Warning: surya-ocr not installed. Falling back to Tesseract.")
+            print("Warning: neither surya-ocr nor easyocr installed. Falling back to Tesseract.")
             args.engine = "tesseract"
     
     print(f"Pipeline initialized:")
@@ -261,7 +262,7 @@ if __name__ == "__main__":
     
     # Process all files
     all_results = []
-    supported_exts = ('.png', '.jpg', '.jpeg', '.bmp', '.tiff', '.html', '.htm', '.pdf')
+    supported_exts = ('.png', '.jpg', '.jpeg', '.bmp', '.tiff', '.html', '.htm', '.pdf', '.webp')
     
     for root, _, files in os.walk(data_dir):
         for filename in sorted(files):

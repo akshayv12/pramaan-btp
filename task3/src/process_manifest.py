@@ -1,4 +1,4 @@
-"""Process the saved documents selected by a Task 2 v1.0 handoff."""
+"""Process the saved documents selected by a Task 2 v1.0 handoff with Smart 3-Lane Routing and Auto-Escalation."""
 import argparse
 import json
 import os
@@ -6,6 +6,33 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path, PureWindowsPath
 from tempfile import NamedTemporaryFile
+
+
+def _detect_devanagari_hint(doc):
+    """
+    Checks if a document or query has Devanagari/Hindi/Sanskrit hints,
+    directing it to Lane 3 (Vision Transformer / Neural OCR) for superior accuracy.
+    """
+    instructions = doc.get("ocr_instructions", {})
+    expected = [s.lower() for s in instructions.get("expected_scripts", [])]
+    if any(s in expected for s in ["devanagari", "hindi", "sanskrit", "hi", "sa"]):
+        return True
+
+    meta = doc.get("source_metadata", {})
+    lang = (meta.get("language") or "").lower()
+    det_lang = (meta.get("detected_language") or "").lower()
+    if lang in ["hi", "sa", "hin", "san"] or "devanagari" in det_lang or "hindi" in det_lang:
+        return True
+
+    orig_q = doc.get("original_query") or doc.get("query") or doc.get("search_query") or ""
+    if any('\u0900' <= char <= '\u097f' for char in orig_q):
+        return True
+
+    title = (doc.get("title") or "").lower()
+    if any('\u0900' <= char <= '\u097f' for char in title):
+        return True
+
+    return False
 
 
 def _read_package(path):
@@ -74,10 +101,35 @@ def _write_output(path, payload):
             temporary.unlink(missing_ok=True)
 
 
-def process_manifest(input_path, output_path=None, *, collection_root=None):
-    """Write final passages and per-document outcomes. Fatal manifest errors leave existing output intact."""
+def process_manifest(input_path, output_path=None, *, collection_root=None, default_engine="auto"):
+    """
+    Write final passages and per-document outcomes.
+    Fulfills 3-Lane Smart Routing and Auto-Escalation:
+      - Lane 1: Direct extraction (HTML / Text PDFs)
+      - Lane 2: Tesseract Baseline (Latin / Clean scans)
+      - Lane 3: Vision Transformer / EasyOCR (Devanagari / Indic script priority)
+      - Dynamic Auto-Escalation: Promotes low-confidence Tesseract scans (<60%) to Transformer
+    """
     from main import extract_and_prepare
     from deduplicator import Deduplicator
+
+    # Initialize Deep Transformer OCR Engine once for the batch if available
+    transformer_engine = None
+    try:
+        from transformer_ocr import TransformerOCREngine, SURYA_AVAILABLE, EASYOCR_AVAILABLE
+        if SURYA_AVAILABLE or EASYOCR_AVAILABLE:
+            transformer_engine = TransformerOCREngine(languages=["hi", "en"])
+            if transformer_engine.backend is None:
+                transformer_engine = None
+    except Exception as e:
+        print(f"[TASK 3] Transformer OCR init notice: {e}", file=sys.stderr)
+        transformer_engine = None
+
+    transformer_ready = transformer_engine is not None and transformer_engine.backend is not None
+    if transformer_ready:
+        print(f"[TASK 3] Deep Vision Transformer ready: {transformer_engine.backend}")
+    else:
+        print("[TASK 3] Transformer not installed; running full baseline OCR.")
 
     manifest = Path(input_path).resolve()
     destination = Path(output_path).resolve() if output_path else manifest.with_name("task3_output.json")
@@ -87,6 +139,7 @@ def process_manifest(input_path, output_path=None, *, collection_root=None):
     package, requests = _read_package(manifest)
     deduplicators = defaultdict(Deduplicator)
     results = []
+    
     for doc in package["documents"]:
         key = doc["doc_id"]
         queue = requests.get(key)
@@ -118,8 +171,62 @@ def process_manifest(input_path, output_path=None, *, collection_root=None):
                 if not hints and expected_ocr:
                     hints = None  # Task 2 could not inspect the PDF; let the extractor inspect every page.
             group = doc.get("query_slug") or doc.get("original_query") or ""
-            result = extract_and_prepare(path, document_id=key, content_type=media, ocr_pages=hints,
-                                         deduplicator=deduplicators[group])
+
+            # -------------------------------------------------------------
+            # SMART 3-LANE ROUTING DECISION:
+            # -------------------------------------------------------------
+            if default_engine == "transformer" and transformer_ready:
+                doc_engine = "transformer"
+                lane_desc = "Lane 3: Vision Transformer (Manual Override)"
+            elif default_engine == "tesseract":
+                doc_engine = "tesseract"
+                lane_desc = "Lane 2: Tesseract Baseline (Manual Override)"
+            else: # "auto"
+                if transformer_ready and _detect_devanagari_hint(doc):
+                    doc_engine = "transformer"
+                    lane_desc = "Lane 3: Vision Transformer (Devanagari / Indic script priority)"
+                else:
+                    doc_engine = "tesseract"
+                    lane_desc = "Lane 2: Tesseract Baseline (Fast CPU Latin extraction)"
+
+            if expected_ocr:
+                print(f"  [ROUTER] {key} -> {lane_desc}")
+
+            result = extract_and_prepare(
+                path,
+                engine_type=doc_engine,
+                transformer_engine=transformer_engine,
+                document_id=key,
+                content_type=media,
+                ocr_pages=hints,
+                deduplicator=deduplicators[group]
+            )
+
+            # -------------------------------------------------------------
+            # DYNAMIC AUTO-ESCALATION:
+            # If Tesseract produced LOW reliability (< 60% confidence),
+            # auto-escalate to Lane 3 (Transformer)
+            # -------------------------------------------------------------
+            if (doc_engine == "tesseract" and transformer_ready and
+                result.get("extraction_method") in ["OCR", "OCR_REQUIRED", "MIXED_EXTRACTION"] and
+                result.get("avg_ocr_confidence", 100.0) < 60.0):
+                print(f"  [ROUTER] {key}: Low confidence ({result.get('avg_ocr_confidence')}%), auto-escalating to Lane 3 (Transformer)...")
+                try:
+                    escalated = extract_and_prepare(
+                        path,
+                        engine_type="transformer",
+                        transformer_engine=transformer_engine,
+                        document_id=key,
+                        content_type=media,
+                        ocr_pages=hints,
+                        deduplicator=deduplicators[group]
+                    )
+                    if escalated.get("avg_ocr_confidence", 0) > result.get("avg_ocr_confidence", 0):
+                        print(f"  [ROUTER] {key}: Escalation improved confidence to {escalated['avg_ocr_confidence']}% ({escalated['reliability']})")
+                        result = escalated
+                except Exception as esc_err:
+                    print(f"  [ROUTER] {key}: Escalation fallback: {esc_err}", file=sys.stderr)
+
             result["source_path"] = doc["saved_path"]
             for passage in result["passages"]:
                 passage["source_path"] = doc["saved_path"]
@@ -148,10 +255,12 @@ def main(argv=None):
     parser.add_argument("manifest", type=Path)
     parser.add_argument("--output", type=Path, help="Defaults to task3_output.json beside the manifest")
     parser.add_argument("--collection-root", type=Path, help="Base for saved_path; defaults to the manifest directory")
+    parser.add_argument("--engine", choices=["auto", "tesseract", "transformer"], default="auto",
+                        help="OCR routing strategy: auto (Smart 3-Lane routing), tesseract (baseline), transformer")
     args = parser.parse_args(argv)
     output = args.output or args.manifest.with_name("task3_output.json")
     try:
-        summary = process_manifest(args.manifest, output, collection_root=args.collection_root)
+        summary = process_manifest(args.manifest, output, collection_root=args.collection_root, default_engine=args.engine)
     except (ValueError, OSError, ImportError) as exc:
         print(f"[TASK 3] {exc}", file=sys.stderr)
         return 2
