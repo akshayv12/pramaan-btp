@@ -249,8 +249,13 @@ Our evaluation suite (`src/evaluate.py`) rigorously tested both engines against 
 | **Devanagari Cohort** | **Surya Vision Transformer** | **3.06%** | **15.03%** | **93.9%** | 1.66 s |
 | *Improvement* | *Relative Reduction* | **95.1% reduction** | **81.9% reduction** | *+57.7% gain* | — |
 
-$$\Delta	ext{CER}_{	ext{Dev}} = rac{62.99\% - 3.06\%}{62.99\%} 	imes 100\% = 95.14\% pprox \mathbf{95.1\%}$$}
-$$\Delta	ext{WER}_{	ext{Dev}} = rac{83.24\% - 15.03\%}{83.24\%} 	imes 100\% = 81.94\% pprox \mathbf{81.9\%}$$}
+```math
+\Delta\text{CER}_{\text{Dev}} = \frac{62.99\% - 3.06\%}{62.99\%} \times 100\% \approx 95.1\%
+```
+
+```math
+\Delta\text{WER}_{\text{Dev}} = \frac{83.24\% - 15.03\%}{83.24\%} \times 100\% \approx 81.9\%
+```
 
 ### 2. Full 35-Document Real-World Batch Ingestion
 
