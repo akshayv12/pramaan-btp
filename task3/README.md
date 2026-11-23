@@ -7,7 +7,7 @@
 
 ---
 
-## 📖 Table of Contents
+##  Table of Contents
 1. [Overview & Role in Pramaan](#-overview--role-in-pramaan)
 2. [Problem Statement & Scope](#-problem-statement--scope)
 3. [Key Architectural Innovations](#-key-architectural-innovations)
@@ -23,7 +23,7 @@
 
 ---
 
-## 🌟 Overview & Role in Pramaan
+##  Overview & Role in Pramaan
 
 **Pramaan** is an end-to-end question-answering and information retrieval platform designed specifically for the cultural, historical, and linguistic nuances of the Indian context. 
 
@@ -50,7 +50,7 @@ Task 2 dynamically discovers and downloads heterogeneous, unvetted web assets (r
 
 ---
 
-## 🎯 Problem Statement & Scope
+##  Problem Statement & Scope
 
 ### The Core Challenges:
 1. **Multimodal Format Heterogeneity:** Web retrievals range from clean UTF-8 HTML to scanned dual-column archival PDFs and compressed mobile camera captures (`.jpg`, `.png`, `.webp`).
@@ -69,7 +69,7 @@ Task 2 dynamically discovers and downloads heterogeneous, unvetted web assets (r
 
 ---
 
-## ⚡ Key Architectural Innovations
+##  Key Architectural Innovations
 
 ```text
 Incoming Document (PDF / Image / HTML)
@@ -152,7 +152,7 @@ Before passing noisy images to OCR models, Task 3 executes a 3-stage OpenCV enha
 
 ---
 
-## 📋 Data Contract & Schema Specifications
+##  Data Contract & Schema Specifications
 
 Task 3 adheres strictly to the decoupled pipeline schema:
 
@@ -234,7 +234,7 @@ Task 3 writes the enriched, passage-chunked output consumed by Task 4:
 
 ---
 
-## 📊 Benchmarking & Empirical Results
+##  Benchmarking & Empirical Results
 
 Our evaluation suite (`src/evaluate.py`) rigorously tested both engines against a diverse ground-truth corpus containing dense English prints, degraded mobile camera captures, scanned Hindi literary books, and classical Sanskrit stotrams.
 
@@ -249,8 +249,8 @@ Our evaluation suite (`src/evaluate.py`) rigorously tested both engines against 
 | **Devanagari Cohort** | **Surya Vision Transformer** | **3.06%** | **15.03%** | **93.9%** | 1.66 s |
 | *Improvement* | *Relative Reduction* | **95.1% reduction** | **81.9% reduction** | *+57.7% gain* | — |
 
-$$\Delta	ext{CER}_{	ext{Dev}} = rac{62.99\% - 3.06\%}{62.99\%} 	imes 100\% = 95.14\% pprox \mathbf{95.1\%}$$
-$$\Delta	ext{WER}_{	ext{Dev}} = rac{83.24\% - 15.03\%}{83.24\%} 	imes 100\% = 81.94\% pprox \mathbf{81.9\%}$$
+$$\Delta	ext{CER}_{	ext{Dev}} = rac{62.99\% - 3.06\%}{62.99\%} 	imes 100\% = 95.14\% pprox \mathbf{95.1\%}$$}
+$$\Delta	ext{WER}_{	ext{Dev}} = rac{83.24\% - 15.03\%}{83.24\%} 	imes 100\% = 81.94\% pprox \mathbf{81.9\%}$$}
 
 ### 2. Full 35-Document Real-World Batch Ingestion
 
@@ -266,7 +266,7 @@ Evaluating the end-to-end pipeline on 35 real-world heterogeneous web documents 
 
 ---
 
-## ⚠️ Drawbacks, Known Limitations & Future Work
+##  Drawbacks, Known Limitations & Future Work
 
 While Task 3 achieves state-of-the-art accuracy for Indian web retrieval, several engineering tradeoffs and limitations exist:
 
@@ -281,7 +281,7 @@ While Task 3 achieves state-of-the-art accuracy for Indian web retrieval, severa
 
 ---
 
-## 💻 Installation & Setup Instructions
+##  Installation & Setup Instructions
 
 ### 1. Prerequisites
 - **Python 3.12** installed (recommended for compatibility across all pipeline packages).
@@ -337,7 +337,7 @@ pip install -r task3/requirements.txt
 
 ---
 
-## 🚀 Execution Guide
+##  Execution Guide
 
 ### A. Running End-to-End Until Task 3 (Tasks 1, 2, and 3)
 To run the query expansion (Task 1), web crawling & scraping (Task 2), and document extraction/OCR (Task 3) in sequence:
@@ -429,7 +429,7 @@ This prints the full comparison table with Character Error Rates (CER), Word Err
 
 ---
 
-## 📂 Directory Structure & Code Map
+##  Directory Structure & Code Map
 
 ```text
 task3/
